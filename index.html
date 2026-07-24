@@ -167,8 +167,10 @@ function render(d) {
   const acct = d.account, err = d.error;
   const age = Math.round((Date.now() - new Date(d.generated_at)) / 60000);
   $("dot").className = "dot" + (err ? " err" : "");
+  const kc = d.kucoin || {};
+  const kcTxt = kc.configured ? " · KUCOIN " + kc.mode + " $" + (kc.usdt || 0) : " · KUCOIN not linked";
   $("statusline").textContent =
-    (err ? "DEGRADED — " + err : "AGENT LIVE") + " · " + d.mode + " · updated " + age + "m ago";
+    (err ? "DEGRADED — " + err : "AGENT LIVE") + " · " + d.mode + kcTxt + " · updated " + age + "m ago";
 
   // KPIs
   const pending = (d.signals || []).filter(s => s.status === "pending");
