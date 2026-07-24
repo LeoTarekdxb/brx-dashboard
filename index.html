@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<title>BRX Trading Terminal</title>
+<style>
+  :root{
+    --bg:#0A0E14; --panel:#101623; --panel2:#0D1320; --line:#1D2735; --line2:#2A3648;
+    --ink:#E9EEF5; --mut:#8595AB; --dim:#5A6A80;
+    --gold:#E8B84B; --up:#3DD68C; --dn:#F0564A; --pend:#F5A83C; --info:#5CA8F0;
+    --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    --sans:-apple-system,'Avenir Next','Segoe UI',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5;
+       padding:max(10px,env(safe-area-inset-top)) 14px 40px;max-width:1180px;margin:0 auto}
+
+  header{display:flex;align-items:center;gap:12px;padding:10px 0 14px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .logo{width:32px;height:32px;border:1.5px solid var(--gold);display:grid;place-items:center;
+        font-family:var(--mono);font-weight:700;color:var(--gold);font-size:11px;border-radius:4px}
+  header h1{font-size:15px;font-weight:600}
+  header small{display:block;color:var(--mut);font-size:10px;letter-spacing:1.3px;text-transform:uppercase}
+  .status{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:var(--mut);display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--up);box-shadow:0 0 8px var(--up)}
+  .dot.err{background:var(--dn);box-shadow:0 0 8px var(--dn)}
+
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0}
+  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:13px 15px 10px;position:relative;overflow:hidden}
+  .kpi .lbl{font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--mut);font-weight:600}
+  .kpi .val{font-family:var(--mono);font-size:22px;font-weight:600;margin-top:5px;font-variant-numeric:tabular-nums}
+  .kpi .chg{font-family:var(--mono);font-size:11px;margin-top:2px;color:var(--mut)}
+  .kpi svg{position:absolute;right:0;bottom:0;opacity:.9}
+  .pos{color:var(--up)!important} .neg{color:var(--dn)!important} .amber{color:var(--pend)!important}
+
+  .grid{display:grid;grid-template-columns:1fr 320px;gap:12px;align-items:start}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;margin-bottom:12px}
+  .phead{display:flex;align-items:baseline;gap:10px;padding:11px 14px;border-bottom:1px solid var(--line)}
+  .phead h2{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;font-weight:600}
+  .phead .n{font-family:var(--mono);font-size:10.5px;color:var(--gold)}
+  .phead .hint{margin-left:auto;font-size:10.5px;color:var(--dim)}
+  .empty{padding:16px;color:var(--dim);font-size:12.5px;font-family:var(--mono)}
+
+  .signals{display:flex;flex-direction:column;gap:9px;padding:11px}
+  .sig{border:1px solid var(--line2);border-left:3px solid var(--pend);border-radius:6px;background:var(--panel2);padding:11px 13px}
+  .sig.executed{border-left-color:var(--up);opacity:.8}
+  .sig.rejected,.sig.expired{border-left-color:var(--dn);opacity:.55}
+  .sigtop{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .side{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:1px;padding:2px 7px;border-radius:3px}
+  .side.buy{background:rgba(61,214,140,.13);color:var(--up)}
+  .side.sell{background:rgba(240,86,74,.13);color:var(--dn)}
+  .sig .tk{font-family:var(--mono);font-weight:700;font-size:13.5px}
+  .score{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--gold)}
+  .why{font-size:12px;color:var(--mut);margin-top:6px;max-width:64ch}
+  .stamp{font-family:var(--mono);font-size:10.5px;margin-top:8px;letter-spacing:.4px}
+  .stamp.pending{color:var(--pend)} .stamp.executed{color:var(--up)}
+  .stamp.rejected,.stamp.expired{color:var(--dn)} .stamp.auto{color:var(--info)}
+
+  .tblwrap{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:12.5px;font-variant-numeric:tabular-nums}
+  th{font-size:9.5px;letter-spacing:1.1px;text-transform:uppercase;color:var(--dim);text-align:left;
+     padding:8px 13px;border-bottom:1px solid var(--line);font-weight:600;white-space:nowrap}
+  th.r,td.r{text-align:right}
+  td{padding:8px 13px;border-bottom:1px solid var(--line);white-space:nowrap}
+  tr:last-child td{border-bottom:0}
+  td.tk{font-family:var(--mono);font-weight:700}
+  td.num{font-family:var(--mono)}
+  .vd{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.7px;padding:2px 7px;border-radius:3px}
+  .vd.strong_buy{background:rgba(61,214,140,.14);color:var(--up)}
+  .vd.buy{background:rgba(92,168,240,.14);color:var(--info)}
+  .vd.watch{background:rgba(245,168,60,.14);color:var(--pend)}
+  .vd.monitor,.vd.pass{background:rgba(133,149,171,.12);color:var(--mut)}
+  .bar{display:inline-block;width:46px;height:5px;background:var(--line);border-radius:3px;vertical-align:2px;margin-left:7px;overflow:hidden}
+  .bar i{display:block;height:100%;background:var(--gold);border-radius:3px}
+
+  .alloc{display:flex;align-items:center;gap:16px;padding:14px}
+  .legend{display:flex;flex-direction:column;gap:7px;font-size:12px;flex:1}
+  .legend div{display:flex;align-items:center;gap:8px;color:var(--mut)}
+  .legend i{width:9px;height:9px;border-radius:2px;flex:none}
+  .legend b{margin-left:auto;font-family:var(--mono);color:var(--ink)}
+  .hrow{display:flex;align-items:center;gap:9px;padding:7px 14px;font-size:12.5px}
+  .hrow .tk{font-family:var(--mono);font-weight:700;width:58px}
+  .hrow .nm{color:var(--dim);font-size:11px;flex:1}
+  .hrow .pl{font-family:var(--mono);font-size:12px;font-variant-numeric:tabular-nums}
+  .frow{display:flex;gap:9px;padding:6px 14px;font-size:11.5px;color:var(--mut)}
+  .frow time{font-family:var(--mono);color:var(--dim);font-size:10px;flex:none;width:78px}
+  .frow b{color:var(--ink)}
+
+  footer{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);font-size:10.5px;color:var(--dim);line-height:1.6}
+  footer b{color:var(--mut)}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">BRX</div>
+  <div><h1>BRX Trading Terminal</h1><small>7-Gate Agent · Paper Trading</small></div>
+  <div class="status"><span class="dot" id="dot"></span><span id="statusline">loading…</span></div>
+</header>
+
+<div class="kpis" id="kpis"></div>
+
+<div class="grid">
+  <div>
+    <section class="panel">
+      <div class="phead"><h2>Signal Queue</h2><span class="n" id="sq-n"></span>
+        <span class="hint">approve / reject on Telegram</span></div>
+      <div class="signals" id="signals"></div>
+    </section>
+    <section class="panel">
+      <div class="phead"><h2>Watchlist — Composite Ranking</h2><span class="n" id="wl-n"></span></div>
+      <div class="tblwrap"><table>
+        <thead><tr><th>Ticker</th><th class="r">Composite</th><th>Verdict</th><th>Scored</th></tr></thead>
+        <tbody id="watchlist"></tbody>
+      </table></div>
+    </section>
+  </div>
+  <div>
+    <section class="panel">
+      <div class="phead"><h2>Allocation</h2></div>
+      <div class="alloc">
+        <svg width="96" height="96" viewBox="0 0 42 42" id="donut" role="img" aria-label="Allocation"></svg>
+        <div class="legend" id="legend"></div>
+      </div>
+    </section>
+    <section class="panel">
+      <div class="phead"><h2>Holdings</h2><span class="hint">live P&amp;L</span></div>
+      <div id="holdings"></div>
+    </section>
+    <section class="panel">
+      <div class="phead"><h2>Crypto Radar</h2><span class="hint">follow the money</span></div>
+      <div id="radar"></div>
+    </section>
+    <section class="panel">
+      <div class="phead"><h2>Recent Fills</h2></div>
+      <div id="fills"></div>
+    </section>
+  </div>
+</div>
+
+<footer>
+  <b>Leander Tarek Khatib · BRX Technologies L.L.C — DIFC · brxdxb.com</b><br>
+  Paper trading — simulated money, real market data. Research tooling, not investment advice.
+  Buy signals execute only after owner approval on Telegram; autonomy is earned from recorded
+  outcomes, never assumed.
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const usd = v => "$" + Number(v).toLocaleString("en-US", {maximumFractionDigits: 0});
+const pct = v => (v >= 0 ? "+" : "") + Number(v).toFixed(2) + "%";
+
+function spark(values, color) {
+  if (!values || values.length < 2) return "";
+  const w = 110, h = 32, min = Math.min(...values), max = Math.max(...values), span = (max - min) || 1;
+  const pts = values.map((v, i) =>
+    `${(i / (values.length - 1) * w).toFixed(1)} ${(h - 4 - (v - min) / span * (h - 8)).toFixed(1)}`);
+  return `<svg width="${w}" height="${h}" aria-hidden="true">
+    <path d="M${pts.join(" L")}" fill="none" stroke="${color}" stroke-width="1.5"/></svg>`;
+}
+
+function render(d) {
+  const acct = d.account, err = d.error;
+  const age = Math.round((Date.now() - new Date(d.generated_at)) / 60000);
+  $("dot").className = "dot" + (err ? " err" : "");
+  $("statusline").textContent =
+    (err ? "DEGRADED — " + err : "AGENT LIVE") + " · " + d.mode + " · updated " + age + "m ago";
+
+  // KPIs
+  const pending = (d.signals || []).filter(s => s.status === "pending");
+  const eq = acct ? acct.equity : null;
+  const dayPl = acct ? acct.day_pl : 0;
+  const dayPct = acct && acct.last_equity ? dayPl / acct.last_equity * 100 : 0;
+  const hist = (d.equity_history && d.equity_history.equity || []).filter(Boolean);
+  $("kpis").innerHTML = `
+    <div class="kpi"><div class="lbl">Portfolio Value</div>
+      <div class="val">${eq != null ? usd(eq) : "—"}</div>
+      <div class="chg ${dayPl >= 0 ? "pos" : "neg"}">${acct ? (dayPl >= 0 ? "▲" : "▼") + " " + usd(Math.abs(dayPl)) + " · " + pct(dayPct) + " today" : "awaiting keys"}</div>
+      ${spark(hist, dayPl >= 0 ? "#3DD68C" : "#F0564A")}</div>
+    <div class="kpi"><div class="lbl">P&amp;L — since start</div>
+      <div class="val ${acct && acct.total_pl >= 0 ? "pos" : "neg"}">${acct && acct.total_pl != null ? usd(acct.total_pl) : "—"}</div>
+      <div class="chg">3-month window</div>${spark(hist, "#E8B84B")}</div>
+    <div class="kpi"><div class="lbl">Signals Pending Approval</div>
+      <div class="val amber">${pending.length}</div>
+      <div class="chg">${pending.length ? "cards on your Telegram" : "queue clear"}</div></div>
+    <div class="kpi"><div class="lbl">Watchlist Scored</div>
+      <div class="val">${(d.verdicts || []).length}</div>
+      <div class="chg">latest 7-gate results</div></div>`;
+
+  // Signals
+  const sigs = d.signals || [];
+  $("sq-n").textContent = pending.length + " awaiting";
+  $("signals").innerHTML = sigs.length ? sigs.map(s => {
+    const cls = s.status === "pending" ? "" : " " + s.status;
+    const conf = s.n_outcomes ? `calibrated ${(s.confidence * 100).toFixed(0)}% (n=${s.n_outcomes})` : "cold start — no history yet";
+    const stamps = {
+      pending: "🟡 PENDING — answer on Telegram, expires in 24h",
+      executed: s.tier === "A" ? "✓ AUTO-EXECUTED (Tier A)" : "✓ APPROVED &amp; EXECUTED",
+      rejected: "✕ REJECTED — no order sent",
+      expired: "⏱ EXPIRED — silence never trades",
+      auto_approved: "✓ AUTO-APPROVED (Tier A)",
+      approved: "…APPROVED — executing",
+    };
+    return `<div class="sig${cls}"><div class="sigtop">
+      <span class="side ${s.side}">${s.side.toUpperCase()}</span>
+      <span class="tk">${s.symbol}</span>
+      <span style="font-family:var(--mono);font-size:12px;color:var(--mut)">${usd(s.notional)}</span>
+      ${s.composite ? `<span class="score">COMPOSITE ${Math.round(s.composite)}/100</span>` : ""}</div>
+      <div class="why">${s.reason || ""} · ${conf}</div>
+      <div class="stamp ${s.status === "auto_approved" ? "auto" : s.status}">${stamps[s.status] || s.status}</div></div>`;
+  }).join("") : `<div class="empty">No signals yet — first rebalance runs at 17:45 Dubai on the next trading day.</div>`;
+
+  // Watchlist
+  const wl = (d.verdicts || []).slice(0, 15);
+  $("wl-n").textContent = "top " + wl.length;
+  $("watchlist").innerHTML = wl.length ? wl.map(v => `<tr>
+    <td class="tk">${v.ticker}</td>
+    <td class="r num">${v.score}<span class="bar"><i style="width:${Math.min(100, v.score)}%"></i></span></td>
+    <td><span class="vd ${(v.verdict || "").toLowerCase()}">${(v.verdict || "?").replace("_", " ").toUpperCase()}</span></td>
+    <td style="color:var(--dim)">${v.date || ""}</td></tr>`).join("")
+    : `<tr><td colspan="4" class="empty">No scores yet — next scheduled scan will populate this.</td></tr>`;
+
+  // Allocation donut: invested vs cash
+  if (acct) {
+    const invested = (d.positions || []).reduce((a, p) => a + p.market_value, 0);
+    const cash = Math.max(0, acct.equity - invested);
+    const investedPct = acct.equity ? invested / acct.equity * 100 : 0;
+    const cashPct = 100 - investedPct;
+    $("donut").innerHTML = `
+      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#1D2735" stroke-width="5"/>
+      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#5CA8F0" stroke-width="5"
+        stroke-dasharray="${investedPct.toFixed(1)} ${(100 - investedPct).toFixed(1)}" stroke-dashoffset="25"/>`;
+    $("legend").innerHTML = `
+      <div><i style="background:#5CA8F0"></i>US Equities<b>${investedPct.toFixed(0)}%</b></div>
+      <div><i style="background:#8595AB"></i>Cash<b>${cashPct.toFixed(0)}%</b></div>`;
+  } else {
+    $("legend").innerHTML = `<div>awaiting Alpaca keys</div>`;
+  }
+
+  // Holdings
+  const posns = d.positions || [];
+  $("holdings").innerHTML = posns.length ? posns.map(p => `
+    <div class="hrow"><span class="tk">${p.symbol}</span>
+      <span class="nm">${p.qty} sh · ${usd(p.market_value)}</span>
+      <span class="pl ${p.unrealized_plpc >= 0 ? "pos" : "neg"}">${pct(p.unrealized_plpc)}</span></div>`).join("")
+    : `<div class="empty">No positions yet.</div>`;
+
+  // Crypto radar
+  const radar = d.crypto_radar || [];
+  $("radar").innerHTML = radar.length ? radar.map(c => {
+    const f = c.flow;
+    const col = f >= 60 ? "var(--up)" : f >= 45 ? "var(--pend)" : "var(--dn)";
+    const ls = c.long_short;
+    const lsFlag = ls > 2.0 ? " ⚠crowded" : "";
+    return `<div class="hrow"><span class="tk">${c.symbol}</span>
+      <span class="nm">flow ${f != null ? f.toFixed(0) : "—"}/100${lsFlag}</span>
+      <span class="pl" style="color:${col}">${c.funding != null ? (c.funding*100).toFixed(3)+"%" : ""}</span></div>`;
+  }).join("") : `<div class="empty">Radar loading…</div>`;
+
+  // Fills
+  const fills = (d.fills || []).slice(0, 8);
+  $("fills").innerHTML = fills.length ? fills.map(f => `
+    <div class="frow"><time>${(f.time || "").slice(5, 16).replace("T", " ")}</time>
+      <span><b>${(f.side || "").toUpperCase()} ${f.symbol}</b> ${f.qty} @ $${f.price} (${usd(f.value)})</span></div>`).join("")
+    : `<div class="empty">No fills yet.</div>`;
+}
+
+async function load() {
+  try {
+    const d = await (await fetch("data.json?t=" + Date.now())).json();
+    render(d);
+  } catch (e) {
+    $("statusline").textContent = "cannot load data.json";
+    $("dot").className = "dot err";
+  }
+}
+load();
+setInterval(load, 60000);
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+</script>
+</body>
+</html>

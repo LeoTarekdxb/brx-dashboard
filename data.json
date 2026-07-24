@@ -1,0 +1,824 @@
+{
+ "generated_at": "2026-07-24T16:15:12.902375+00:00",
+ "mode": "PAPER TRADING",
+ "account": {
+  "equity": 100421.38,
+  "cash": 5000.08,
+  "buying_power": 287179.97,
+  "last_equity": 100000.0,
+  "day_pl": 421.38,
+  "total_pl": 421.38
+ },
+ "positions": [
+  {
+   "symbol": "AAPL",
+   "qty": 36.605495553,
+   "market_value": 12189.63,
+   "avg_entry": 324.404569,
+   "current": 333.0,
+   "unrealized_pl": 314.64,
+   "unrealized_plpc": 2.65
+  },
+  {
+   "symbol": "AMZN",
+   "qty": 50.706648447,
+   "market_value": 11835.95,
+   "avg_entry": 234.19,
+   "current": 233.4201,
+   "unrealized_pl": -39.04,
+   "unrealized_plpc": -0.33
+  },
+  {
+   "symbol": "GOOGL",
+   "qty": 37.157980354,
+   "market_value": 11881.26,
+   "avg_entry": 319.581148,
+   "current": 319.7499,
+   "unrealized_pl": 6.27,
+   "unrealized_plpc": 0.05
+  },
+  {
+   "symbol": "JNJ",
+   "qty": 45.337261182,
+   "market_value": 11919.62,
+   "avg_entry": 261.925614,
+   "current": 262.91,
+   "unrealized_pl": 44.63,
+   "unrealized_plpc": 0.38
+  },
+  {
+   "symbol": "META",
+   "qty": 19.564193985,
+   "market_value": 11799.84,
+   "avg_entry": 606.975683,
+   "current": 603.1346,
+   "unrealized_pl": -75.15,
+   "unrealized_plpc": -0.63
+  },
+  {
+   "symbol": "MSFT",
+   "qty": 30.950265874,
+   "market_value": 11898.98,
+   "avg_entry": 383.679741,
+   "current": 384.455,
+   "unrealized_pl": 23.99,
+   "unrealized_plpc": 0.2
+  },
+  {
+   "symbol": "NVDA",
+   "qty": 57.304318521,
+   "market_value": 12088.92,
+   "avg_entry": 207.226791,
+   "current": 210.96,
+   "unrealized_pl": 213.93,
+   "unrealized_plpc": 1.8
+  },
+  {
+   "symbol": "TSM",
+   "qty": 28.902221789,
+   "market_value": 11810.17,
+   "avg_entry": 410.867721,
+   "current": 408.625,
+   "unrealized_pl": -64.82,
+   "unrealized_plpc": -0.55
+  }
+ ],
+ "equity_history": {
+  "timestamps": [
+   1777075200,
+   1777334400,
+   1777420800,
+   1777507200,
+   1777593600,
+   1777680000,
+   1777939200,
+   1778025600,
+   1778112000,
+   1778198400,
+   1778284800,
+   1778544000,
+   1778630400,
+   1778716800,
+   1778803200,
+   1778889600,
+   1779148800,
+   1779235200,
+   1779321600,
+   1779408000,
+   1779494400,
+   1779840000,
+   1779926400,
+   1780012800,
+   1780099200,
+   1780358400,
+   1780444800,
+   1780531200,
+   1780617600,
+   1780704000,
+   1780963200,
+   1781049600,
+   1781136000,
+   1781222400,
+   1781308800,
+   1781568000,
+   1781654400,
+   1781740800,
+   1781827200,
+   1782172800,
+   1782259200,
+   1782345600,
+   1782432000,
+   1782518400,
+   1782777600,
+   1782864000,
+   1782950400,
+   1783036800,
+   1783382400,
+   1783468800,
+   1783555200,
+   1783641600,
+   1783728000,
+   1783987200,
+   1784073600,
+   1784160000,
+   1784246400,
+   1784332800,
+   1784592000,
+   1784678400,
+   1784764800,
+   1784851200
+  ],
+  "equity": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   100000.0,
+   100000.0
+  ]
+ },
+ "recent_orders": [
+  {
+   "symbol": "AMZN",
+   "side": "buy",
+   "notional": "11875",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-24T10:46:57.520006Z"
+  },
+  {
+   "symbol": "NVDA",
+   "side": "buy",
+   "notional": "11875",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-24T10:46:56.27972Z"
+  },
+  {
+   "symbol": "META",
+   "side": "buy",
+   "notional": "11875",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-24T10:46:54.913943Z"
+  },
+  {
+   "symbol": "MSFT",
+   "side": "buy",
+   "notional": "11875",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-24T10:46:53.533793Z"
+  },
+  {
+   "symbol": "GOOGL",
+   "side": "buy",
+   "notional": "11875",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-24T10:46:52.261836Z"
+  },
+  {
+   "symbol": "AAPL",
+   "side": "buy",
+   "notional": "11875",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-24T10:46:50.940041Z"
+  },
+  {
+   "symbol": "TSM",
+   "side": "buy",
+   "notional": "11875",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-24T10:46:49.851914Z"
+  },
+  {
+   "symbol": "JNJ",
+   "side": "buy",
+   "notional": "11875",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-24T10:46:48.35877Z"
+  }
+ ],
+ "fills": [
+  {
+   "time": "2026-07-24T13:34:34.92769Z",
+   "side": "buy",
+   "symbol": "GOOGL",
+   "qty": 1.157980354,
+   "price": 319.66,
+   "value": 370.16
+  },
+  {
+   "time": "2026-07-24T13:34:34.926227Z",
+   "side": "buy",
+   "symbol": "GOOGL",
+   "qty": 2.0,
+   "price": 319.66,
+   "value": 639.32
+  },
+  {
+   "time": "2026-07-24T13:34:24.334723Z",
+   "side": "buy",
+   "symbol": "GOOGL",
+   "qty": 1.0,
+   "price": 319.8,
+   "value": 319.8
+  },
+  {
+   "time": "2026-07-24T13:34:04.267293Z",
+   "side": "buy",
+   "symbol": "AAPL",
+   "qty": 1.605495553,
+   "price": 324.99,
+   "value": 521.77
+  },
+  {
+   "time": "2026-07-24T13:34:04.265641Z",
+   "side": "buy",
+   "symbol": "AAPL",
+   "qty": 1.0,
+   "price": 324.99,
+   "value": 324.99
+  },
+  {
+   "time": "2026-07-24T13:33:54.48405Z",
+   "side": "buy",
+   "symbol": "NVDA",
+   "qty": 1.304318521,
+   "price": 207.71,
+   "value": 270.92
+  },
+  {
+   "time": "2026-07-24T13:33:54.482472Z",
+   "side": "buy",
+   "symbol": "NVDA",
+   "qty": 1.0,
+   "price": 207.71,
+   "value": 207.71
+  },
+  {
+   "time": "2026-07-24T13:33:53.31375Z",
+   "side": "buy",
+   "symbol": "GOOGL",
+   "qty": 2.0,
+   "price": 319.78,
+   "value": 639.56
+  },
+  {
+   "time": "2026-07-24T13:33:34.643391Z",
+   "side": "buy",
+   "symbol": "NVDA",
+   "qty": 1.0,
+   "price": 207.73,
+   "value": 207.73
+  },
+  {
+   "time": "2026-07-24T13:33:32.962139Z",
+   "side": "buy",
+   "symbol": "GOOGL",
+   "qty": 5.0,
+   "price": 319.34,
+   "value": 1596.7
+  },
+  {
+   "time": "2026-07-24T13:33:11.131007Z",
+   "side": "buy",
+   "symbol": "AAPL",
+   "qty": 1.0,
+   "price": 324.69,
+   "value": 324.69
+  },
+  {
+   "time": "2026-07-24T13:33:04.806155Z",
+   "side": "buy",
+   "symbol": "JNJ",
+   "qty": 1.337261182,
+   "price": 262.23,
+   "value": 350.67
+  },
+  {
+   "time": "2026-07-24T13:33:04.804607Z",
+   "side": "buy",
+   "symbol": "JNJ",
+   "qty": 21.0,
+   "price": 262.23,
+   "value": 5506.83
+  },
+  {
+   "time": "2026-07-24T13:32:59.376164Z",
+   "side": "buy",
+   "symbol": "AAPL",
+   "qty": 1.0,
+   "price": 324.98,
+   "value": 324.98
+  },
+  {
+   "time": "2026-07-24T13:32:43.460283Z",
+   "side": "buy",
+   "symbol": "TSM",
+   "qty": 1.902221789,
+   "price": 410.93,
+   "value": 781.68
+  },
+  {
+   "time": "2026-07-24T13:32:43.458756Z",
+   "side": "buy",
+   "symbol": "TSM",
+   "qty": 22.0,
+   "price": 410.93,
+   "value": 9040.46
+  },
+  {
+   "time": "2026-07-24T13:32:36.902327Z",
+   "side": "buy",
+   "symbol": "NVDA",
+   "qty": 25.0,
+   "price": 207.46,
+   "value": 5186.5
+  },
+  {
+   "time": "2026-07-24T13:32:33.931604Z",
+   "side": "buy",
+   "symbol": "GOOGL",
+   "qty": 5.0,
+   "price": 319.36,
+   "value": 1596.8
+  },
+  {
+   "time": "2026-07-24T13:32:32.456191Z",
+   "side": "buy",
+   "symbol": "META",
+   "qty": 1.564193985,
+   "price": 605.82,
+   "value": 947.62
+  },
+  {
+   "time": "2026-07-24T13:32:32.454387Z",
+   "side": "buy",
+   "symbol": "META",
+   "qty": 1.0,
+   "price": 605.82,
+   "value": 605.82
+  },
+  {
+   "time": "2026-07-24T13:32:17.143208Z",
+   "side": "buy",
+   "symbol": "MSFT",
+   "qty": 1.950265874,
+   "price": 383.64,
+   "value": 748.2
+  },
+  {
+   "time": "2026-07-24T13:32:17.141285Z",
+   "side": "buy",
+   "symbol": "MSFT",
+   "qty": 28.0,
+   "price": 383.64,
+   "value": 10741.92
+  },
+  {
+   "time": "2026-07-24T13:31:43.156092Z",
+   "side": "buy",
+   "symbol": "MSFT",
+   "qty": 1.0,
+   "price": 384.87,
+   "value": 384.87
+  },
+  {
+   "time": "2026-07-24T13:31:17.68315Z",
+   "side": "buy",
+   "symbol": "JNJ",
+   "qty": 23.0,
+   "price": 261.63,
+   "value": 6017.49
+  },
+  {
+   "time": "2026-07-24T13:31:05.912748Z",
+   "side": "buy",
+   "symbol": "AAPL",
+   "qty": 32.0,
+   "price": 324.33,
+   "value": 10378.56
+  },
+  {
+   "time": "2026-07-24T13:30:52.214929Z",
+   "side": "buy",
+   "symbol": "AMZN",
+   "qty": 1.706648447,
+   "price": 234.19,
+   "value": 399.68
+  },
+  {
+   "time": "2026-07-24T13:30:52.212528Z",
+   "side": "buy",
+   "symbol": "AMZN",
+   "qty": 49.0,
+   "price": 234.19,
+   "value": 11475.31
+  },
+  {
+   "time": "2026-07-24T13:30:29.109293Z",
+   "side": "buy",
+   "symbol": "TSM",
+   "qty": 5.0,
+   "price": 410.57,
+   "value": 2052.85
+  },
+  {
+   "time": "2026-07-24T13:30:15.218412Z",
+   "side": "buy",
+   "symbol": "NVDA",
+   "qty": 29.0,
+   "price": 206.97,
+   "value": 6002.13
+  },
+  {
+   "time": "2026-07-24T13:30:09.017522Z",
+   "side": "buy",
+   "symbol": "GOOGL",
+   "qty": 21.0,
+   "price": 319.65,
+   "value": 6712.65
+  },
+  {
+   "time": "2026-07-24T13:30:06.191242Z",
+   "side": "buy",
+   "symbol": "META",
+   "qty": 17.0,
+   "price": 607.15,
+   "value": 10321.55
+  }
+ ],
+ "verdicts": [
+  {
+   "ticker": "JNJ",
+   "verdict": "STRONG BUY",
+   "score": 87.8,
+   "date": "2026-07-24",
+   "thesis": ""
+  },
+  {
+   "ticker": "TSM",
+   "verdict": "STRONG BUY",
+   "score": 86.9,
+   "date": "2026-07-24",
+   "thesis": ""
+  },
+  {
+   "ticker": "AAPL",
+   "verdict": "BUY",
+   "score": 81.3,
+   "date": "2026-07-24",
+   "thesis": ""
+  },
+  {
+   "ticker": "GOOGL",
+   "verdict": "BUY",
+   "score": 79.8,
+   "date": "2026-07-24",
+   "thesis": ""
+  },
+  {
+   "ticker": "MSFT",
+   "verdict": "BUY",
+   "score": 79.5,
+   "date": "2026-07-24",
+   "thesis": ""
+  },
+  {
+   "ticker": "META",
+   "verdict": "BUY",
+   "score": 78.9,
+   "date": "2026-07-24",
+   "thesis": ""
+  },
+  {
+   "ticker": "NVDA",
+   "verdict": "BUY",
+   "score": 74.4,
+   "date": "2026-07-24",
+   "thesis": ""
+  },
+  {
+   "ticker": "AMZN",
+   "verdict": "BUY",
+   "score": 71.1,
+   "date": "2026-07-24",
+   "thesis": ""
+  },
+  {
+   "ticker": "UNH",
+   "verdict": "WATCH",
+   "score": 60.2,
+   "date": "2026-07-24",
+   "thesis": ""
+  }
+ ],
+ "error": null,
+ "crypto_radar": [
+  {
+   "symbol": "BTC",
+   "flow": 77.8,
+   "funding": 6.02e-05,
+   "long_short": 1.9087,
+   "taker": 1.0409
+  },
+  {
+   "symbol": "ETH",
+   "flow": 53.5,
+   "funding": 2.33e-05,
+   "long_short": 2.3659,
+   "taker": 0.9218
+  },
+  {
+   "symbol": "SOL",
+   "flow": 49.2,
+   "funding": -0.00010042,
+   "long_short": 2.8506,
+   "taker": 0.9797
+  },
+  {
+   "symbol": "AVAX",
+   "flow": 82.0,
+   "funding": -0.00014392,
+   "long_short": 1.4863,
+   "taker": 1.1652
+  },
+  {
+   "symbol": "LINK",
+   "flow": 69.8,
+   "funding": 1.845e-05,
+   "long_short": 1.9369,
+   "taker": 1.0263
+  },
+  {
+   "symbol": "LTC",
+   "flow": 61.0,
+   "funding": 9.439e-05,
+   "long_short": 2.4153,
+   "taker": 1.0213
+  }
+ ],
+ "signals": [
+  {
+   "id": 16,
+   "created_at": "2026-07-24T10:46:55.807043",
+   "symbol": "AMZN",
+   "side": "buy",
+   "notional": 11875.0,
+   "verdict": "buy",
+   "composite": 71.1,
+   "confidence": 0.0,
+   "n_outcomes": 0,
+   "tier": "A",
+   "status": "executed",
+   "reason": "equal-weight target $11,875, held $0",
+   "expires_at": "2026-07-25T10:46:55.807043"
+  },
+  {
+   "id": 15,
+   "created_at": "2026-07-24T10:46:54.479467",
+   "symbol": "NVDA",
+   "side": "buy",
+   "notional": 11875.0,
+   "verdict": "buy",
+   "composite": 74.4,
+   "confidence": 0.0,
+   "n_outcomes": 0,
+   "tier": "A",
+   "status": "executed",
+   "reason": "equal-weight target $11,875, held $0",
+   "expires_at": "2026-07-25T10:46:54.479467"
+  },
+  {
+   "id": 14,
+   "created_at": "2026-07-24T10:46:53.089149",
+   "symbol": "META",
+   "side": "buy",
+   "notional": 11875.0,
+   "verdict": "buy",
+   "composite": 78.9,
+   "confidence": 0.0,
+   "n_outcomes": 0,
+   "tier": "A",
+   "status": "executed",
+   "reason": "equal-weight target $11,875, held $0",
+   "expires_at": "2026-07-25T10:46:53.089149"
+  },
+  {
+   "id": 13,
+   "created_at": "2026-07-24T10:46:51.772804",
+   "symbol": "MSFT",
+   "side": "buy",
+   "notional": 11875.0,
+   "verdict": "buy",
+   "composite": 79.5,
+   "confidence": 0.0,
+   "n_outcomes": 0,
+   "tier": "A",
+   "status": "executed",
+   "reason": "equal-weight target $11,875, held $0",
+   "expires_at": "2026-07-25T10:46:51.772804"
+  },
+  {
+   "id": 12,
+   "created_at": "2026-07-24T10:46:50.556152",
+   "symbol": "GOOGL",
+   "side": "buy",
+   "notional": 11875.0,
+   "verdict": "buy",
+   "composite": 79.8,
+   "confidence": 0.0,
+   "n_outcomes": 0,
+   "tier": "A",
+   "status": "executed",
+   "reason": "equal-weight target $11,875, held $0",
+   "expires_at": "2026-07-25T10:46:50.556152"
+  },
+  {
+   "id": 11,
+   "created_at": "2026-07-24T10:46:49.340631",
+   "symbol": "AAPL",
+   "side": "buy",
+   "notional": 11875.0,
+   "verdict": "buy",
+   "composite": 81.3,
+   "confidence": 0.0,
+   "n_outcomes": 0,
+   "tier": "A",
+   "status": "executed",
+   "reason": "equal-weight target $11,875, held $0",
+   "expires_at": "2026-07-25T10:46:49.340631"
+  },
+  {
+   "id": 10,
+   "created_at": "2026-07-24T10:46:47.890644",
+   "symbol": "TSM",
+   "side": "buy",
+   "notional": 11875.0,
+   "verdict": "strong_buy",
+   "composite": 86.9,
+   "confidence": 0.0,
+   "n_outcomes": 0,
+   "tier": "A",
+   "status": "executed",
+   "reason": "equal-weight target $11,875, held $0",
+   "expires_at": "2026-07-25T10:46:47.890644"
+  },
+  {
+   "id": 9,
+   "created_at": "2026-07-24T10:46:46.498834",
+   "symbol": "JNJ",
+   "side": "buy",
+   "notional": 11875.0,
+   "verdict": "strong_buy",
+   "composite": 87.8,
+   "confidence": 0.0,
+   "n_outcomes": 0,
+   "tier": "A",
+   "status": "executed",
+   "reason": "equal-weight target $11,875, held $0",
+   "expires_at": "2026-07-25T10:46:46.498834"
+  },
+  {
+   "id": 8,
+   "created_at": "2026-07-24T10:20:28.425416",
+   "symbol": "AMZN",
+   "side": "buy",
+   "notional": 11875.0,
+   "verdict": "buy",
+   "composite": 71.1,
+   "confidence": 0.0,
+   "n_outcomes": 0,
+   "tier": "B",
+   "status": "expired",
+   "reason": "equal-weight target $11,875, held $0",
+   "expires_at": "2026-07-25T10:20:28.425416"
+  },
+  {
+   "id": 7,
+   "created_at": "2026-07-24T10:20:28.423425",
+   "symbol": "NVDA",
+   "side": "buy",
+   "notional": 11875.0,
+   "verdict": "buy",
+   "composite": 74.4,
+   "confidence": 0.0,
+   "n_outcomes": 0,
+   "tier": "B",
+   "status": "expired",
+   "reason": "equal-weight target $11,875, held $0",
+   "expires_at": "2026-07-25T10:20:28.423425"
+  },
+  {
+   "id": 6,
+   "created_at": "2026-07-24T10:20:28.420649",
+   "symbol": "META",
+   "side": "buy",
+   "notional": 11875.0,
+   "verdict": "buy",
+   "composite": 78.9,
+   "confidence": 0.0,
+   "n_outcomes": 0,
+   "tier": "B",
+   "status": "expired",
+   "reason": "equal-weight target $11,875, held $0",
+   "expires_at": "2026-07-25T10:20:28.420649"
+  },
+  {
+   "id": 5,
+   "created_at": "2026-07-24T10:20:28.416914",
+   "symbol": "MSFT",
+   "side": "buy",
+   "notional": 11875.0,
+   "verdict": "buy",
+   "composite": 79.5,
+   "confidence": 0.0,
+   "n_outcomes": 0,
+   "tier": "B",
+   "status": "expired",
+   "reason": "equal-weight target $11,875, held $0",
+   "expires_at": "2026-07-25T10:20:28.416914"
+  }
+ ]
+}
