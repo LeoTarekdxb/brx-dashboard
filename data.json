@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-25T15:00:00.778469+00:00",
+ "generated_at": "2026-07-25T15:15:00.381740+00:00",
  "mode": "PAPER TRADING",
  "account": {
   "equity": 99753.08,
@@ -606,55 +606,70 @@
  "crypto_radar": [
   {
    "symbol": "BTC",
-   "flow": 76.0,
-   "funding": 1.268e-05,
-   "long_short": 1.8345,
-   "taker": 1.3942
+   "flow": 54.8,
+   "funding": 1.024e-05,
+   "long_short": 1.8369,
+   "taker": 0.8876
   },
   {
    "symbol": "ETH",
-   "flow": 67.2,
-   "funding": 3.05e-05,
-   "long_short": 2.4165,
-   "taker": 1.461
+   "flow": 53.5,
+   "funding": 3.362e-05,
+   "long_short": 2.406,
+   "taker": 0.9538
   },
   {
    "symbol": "SOL",
    "flow": 67.0,
-   "funding": -4.668e-05,
-   "long_short": 2.8153,
-   "taker": 1.2899
+   "funding": -4.848e-05,
+   "long_short": 2.8226,
+   "taker": 1.1033
   },
   {
    "symbol": "AVAX",
    "flow": 76.0,
-   "funding": 9.586e-05,
-   "long_short": 1.3798,
-   "taker": 1.2169
+   "funding": 9.947e-05,
+   "long_short": 1.3277,
+   "taker": 1.1088
   },
   {
    "symbol": "LINK",
-   "flow": 60.8,
-   "funding": -1.571e-05,
-   "long_short": 1.8637,
-   "taker": 0.7903
+   "flow": 68.2,
+   "funding": -1.375e-05,
+   "long_short": 1.8719,
+   "taker": 0.9393
   },
   {
    "symbol": "LTC",
    "flow": 61.0,
-   "funding": 5.293e-05,
-   "long_short": 2.5894,
-   "taker": 1.3034
+   "funding": 5.242e-05,
+   "long_short": 2.5562,
+   "taker": 1.2123
   },
   {
    "symbol": "TRX",
-   "flow": 60.8,
-   "funding": -4.34e-05,
-   "long_short": 1.7579,
-   "taker": 0.8838
+   "flow": 82.0,
+   "funding": -3.442e-05,
+   "long_short": 1.7397,
+   "taker": 1.5264
   }
  ],
  "signals": [
+  {
+   "id": 37,
+   "created_at": "2026-07-25T15:10:26.703280",
+   "symbol": "TRXUSD",
+   "side": "buy",
+   "notional": 14962.96,
+   "verdict": "crypto_momentum",
+   "composite": 68.2,
+   "confidence": 0.0,
+   "n_outcomes": 0,
+   "tier": "A",
+   "status": "auto_approved",
+   "reason": "24/7 sleeve: tech score 68, slot $14,963 of 15% cap",
+   "expires_at": "2026-07-26T15:10:26.703280"
+  },
   {
    "id": 36,
    "created_at": "2026-07-25T14:10:29.784238",
@@ -819,21 +834,6 @@
    "status": "auto_approved",
    "reason": "24/7 sleeve: tech score 57, slot $14,963 of 15% cap",
    "expires_at": "2026-07-26T04:11:09.308513"
-  },
-  {
-   "id": 25,
-   "created_at": "2026-07-25T03:10:24.233099",
-   "symbol": "TRXUSD",
-   "side": "buy",
-   "notional": 14962.96,
-   "verdict": "crypto_momentum",
-   "composite": 66.32,
-   "confidence": 0.0,
-   "n_outcomes": 0,
-   "tier": "A",
-   "status": "auto_approved",
-   "reason": "24/7 sleeve: tech score 66, slot $14,963 of 15% cap",
-   "expires_at": "2026-07-26T03:10:24.233099"
   }
  ]
 }
