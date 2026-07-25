@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-25T19:45:00.325159+00:00",
+ "generated_at": "2026-07-25T20:05:00.298162+00:00",
  "mode": "PAPER TRADING",
  "account": {
   "equity": 99753.08,
@@ -215,7 +215,72 @@
    99753.08
   ]
  },
- "recent_orders": [],
+ "recent_orders": [
+  {
+   "symbol": "AMZN",
+   "side": "buy",
+   "notional": "11875",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-24T10:46:57.520006Z"
+  },
+  {
+   "symbol": "NVDA",
+   "side": "buy",
+   "notional": "11875",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-24T10:46:56.27972Z"
+  },
+  {
+   "symbol": "META",
+   "side": "buy",
+   "notional": "11875",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-24T10:46:54.913943Z"
+  },
+  {
+   "symbol": "MSFT",
+   "side": "buy",
+   "notional": "11875",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-24T10:46:53.533793Z"
+  },
+  {
+   "symbol": "GOOGL",
+   "side": "buy",
+   "notional": "11875",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-24T10:46:52.261836Z"
+  },
+  {
+   "symbol": "AAPL",
+   "side": "buy",
+   "notional": "11875",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-24T10:46:50.940041Z"
+  },
+  {
+   "symbol": "TSM",
+   "side": "buy",
+   "notional": "11875",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-24T10:46:49.851914Z"
+  },
+  {
+   "symbol": "JNJ",
+   "side": "buy",
+   "notional": "11875",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-24T10:46:48.35877Z"
+  }
+ ],
  "fills": [
   {
    "time": "2026-07-24T13:34:34.92769Z",
@@ -531,7 +596,7 @@
    "thesis": ""
   }
  ],
- "error": "Alpaca fetch failed: HTTPSConnectionPool(host='paper-api.alpaca.markets', port=443): Max retries exceeded with url: /v2/orders?status=all&limit=25&direction=desc (Caused by ConnectTimeoutError(<HTTPSConnection(host='paper-api.alpaca.markets', port=443) at 0x109731f90>, 'Connection to paper-api.alpaca.markets timed out. (connect timeout=20)'))",
+ "error": null,
  "binance": {
   "configured": false,
   "mode": "TESTNET",
@@ -541,52 +606,52 @@
  "crypto_radar": [
   {
    "symbol": "BTC",
-   "flow": 76.0,
-   "funding": 1.896e-05,
-   "long_short": 1.8361,
-   "taker": 1.6959
+   "flow": 54.8,
+   "funding": 1.914e-05,
+   "long_short": 1.8265,
+   "taker": 0.7387
   },
   {
    "symbol": "ETH",
-   "flow": 53.5,
-   "funding": 1.143e-05,
-   "long_short": 2.4106,
-   "taker": 0.9632
+   "flow": 46.0,
+   "funding": 3.82e-06,
+   "long_short": 2.399,
+   "taker": 0.8397
   },
   {
    "symbol": "SOL",
-   "flow": 60.8,
-   "funding": -4.312e-05,
-   "long_short": 2.867,
-   "taker": 1.0622
+   "flow": 45.8,
+   "funding": -4.305e-05,
+   "long_short": 2.861,
+   "taker": 0.6897
   },
   {
    "symbol": "AVAX",
-   "flow": 53.2,
+   "flow": 60.8,
    "funding": 0.0001,
    "long_short": 1.2676,
-   "taker": 0.8963
+   "taker": 0.9258
   },
   {
    "symbol": "LINK",
-   "flow": 75.8,
-   "funding": -1.086e-05,
-   "long_short": 1.8802,
-   "taker": 1.002
+   "flow": 54.8,
+   "funding": 2.73e-06,
+   "long_short": 1.876,
+   "taker": 0.8075
   },
   {
    "symbol": "LTC",
    "flow": 61.0,
-   "funding": 3.309e-05,
-   "long_short": 2.5273,
-   "taker": 1.2901
+   "funding": 3.927e-05,
+   "long_short": 2.5174,
+   "taker": 1.4261
   },
   {
    "symbol": "TRX",
    "flow": 50.8,
-   "funding": 6.009e-05,
-   "long_short": 1.7337,
-   "taker": 0.4548
+   "funding": 4.793e-05,
+   "long_short": 1.7345,
+   "taker": 0.774
   }
  ],
  "signals": [
