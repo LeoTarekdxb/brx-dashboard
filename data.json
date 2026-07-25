@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-07-25T23:05:00.585646+00:00",
+ "generated_at": "2026-07-25T23:47:58.492161+00:00",
  "mode": "PAPER TRADING",
  "account": {
-  "equity": 99753.08,
-  "cash": 5000.07,
-  "buying_power": 285308.71,
+  "equity": 99752.79,
+  "cash": 4999.78,
+  "buying_power": 285307.55,
   "last_equity": 99753.07917064207,
-  "day_pl": 0.0,
-  "total_pl": -246.92
+  "day_pl": -0.29,
+  "total_pl": -247.21
  },
  "positions": [
   {
@@ -217,6 +217,22 @@
  },
  "recent_orders": [
   {
+   "symbol": "BTC/USD",
+   "side": "sell",
+   "notional": null,
+   "qty": "0.000759854",
+   "status": "filled",
+   "submitted_at": "2026-07-25T23:47:58.867718422Z"
+  },
+  {
+   "symbol": "BTC/USD",
+   "side": "buy",
+   "notional": "50",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-25T23:47:33.778136Z"
+  },
+  {
    "symbol": "AMZN",
    "side": "buy",
    "notional": "11875",
@@ -282,6 +298,22 @@
   }
  ],
  "fills": [
+  {
+   "time": "2026-07-25T23:47:58.870635Z",
+   "side": "sell",
+   "symbol": "BTC/USD",
+   "qty": 0.000759854,
+   "price": 64313.8,
+   "value": 48.87
+  },
+  {
+   "time": "2026-07-25T23:47:33.785082Z",
+   "side": "buy",
+   "symbol": "BTC/USD",
+   "qty": 0.000761759,
+   "price": 64357.87,
+   "value": 49.03
+  },
   {
    "time": "2026-07-24T13:34:34.92769Z",
    "side": "buy",
@@ -607,21 +639,21 @@
   {
    "symbol": "BTC",
    "flow": 62.2,
-   "funding": 3.694e-05,
+   "funding": 3.663e-05,
    "long_short": 1.8074,
    "taker": 0.9924
   },
   {
    "symbol": "ETH",
    "flow": 73.2,
-   "funding": -1.85e-05,
+   "funding": -1.815e-05,
    "long_short": 2.3875,
    "taker": 1.3358
   },
   {
    "symbol": "SOL",
-   "flow": 67.0,
-   "funding": -3.18e-06,
+   "flow": 61.0,
+   "funding": 1.5e-07,
    "long_short": 2.8476,
    "taker": 1.1942
   },
@@ -635,21 +667,21 @@
   {
    "symbol": "LINK",
    "flow": 69.8,
-   "funding": 5.034e-05,
+   "funding": 5.528e-05,
    "long_short": 1.8794,
    "taker": 1.026
   },
   {
    "symbol": "LTC",
    "flow": 61.0,
-   "funding": 3.715e-05,
+   "funding": 3.653e-05,
    "long_short": 2.5511,
    "taker": 1.1502
   },
   {
    "symbol": "TRX",
-   "flow": 75.8,
-   "funding": -3.58e-06,
+   "flow": 69.8,
+   "funding": 1.007e-05,
    "long_short": 1.7322,
    "taker": 1.0064
   }
