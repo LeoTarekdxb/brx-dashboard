@@ -1,41 +1,41 @@
 {
- "generated_at": "2026-07-25T01:05:00.265450+00:00",
+ "generated_at": "2026-07-25T02:05:00.327529+00:00",
  "mode": "PAPER TRADING",
  "account": {
-  "equity": 99651.66,
+  "equity": 99753.09,
   "cash": 5000.08,
-  "buying_power": 285024.75,
+  "buying_power": 285308.75,
   "last_equity": 100000.0,
-  "day_pl": -348.34,
-  "total_pl": -348.34
+  "day_pl": -246.91,
+  "total_pl": -246.91
  },
  "positions": [
   {
    "symbol": "AAPL",
    "qty": 36.605495553,
-   "market_value": 12218.91,
+   "market_value": 12190.36,
    "avg_entry": 324.404569,
-   "current": 333.8,
-   "unrealized_pl": 343.92,
-   "unrealized_plpc": 2.9
+   "current": 333.02,
+   "unrealized_pl": 315.37,
+   "unrealized_plpc": 2.66
   },
   {
    "symbol": "AMZN",
    "qty": 50.706648447,
-   "market_value": 11741.14,
+   "market_value": 11769.52,
    "avg_entry": 234.19,
-   "current": 231.5504,
-   "unrealized_pl": -133.85,
-   "unrealized_plpc": -1.13
+   "current": 232.11,
+   "unrealized_pl": -105.47,
+   "unrealized_plpc": -0.89
   },
   {
    "symbol": "GOOGL",
    "qty": 37.157980354,
-   "market_value": 11847.75,
+   "market_value": 11880.89,
    "avg_entry": 319.581148,
-   "current": 318.848,
-   "unrealized_pl": -27.24,
-   "unrealized_plpc": -0.23
+   "current": 319.74,
+   "unrealized_pl": 5.9,
+   "unrealized_plpc": 0.05
   },
   {
    "symbol": "JNJ",
@@ -49,38 +49,38 @@
   {
    "symbol": "META",
    "qty": 19.564193985,
-   "market_value": 11623.09,
+   "market_value": 11644.41,
    "avg_entry": 606.975683,
-   "current": 594.1,
-   "unrealized_pl": -251.9,
-   "unrealized_plpc": -2.12
+   "current": 595.19,
+   "unrealized_pl": -230.58,
+   "unrealized_plpc": -1.94
   },
   {
    "symbol": "MSFT",
    "qty": 30.950265874,
-   "market_value": 11804.43,
+   "market_value": 11813.72,
    "avg_entry": 383.679741,
-   "current": 381.4,
-   "unrealized_pl": -70.56,
-   "unrealized_plpc": -0.59
+   "current": 381.7,
+   "unrealized_pl": -61.27,
+   "unrealized_plpc": -0.52
   },
   {
    "symbol": "NVDA",
    "qty": 57.304318521,
-   "market_value": 11850.53,
+   "market_value": 11852.83,
    "avg_entry": 207.226791,
-   "current": 206.7999,
-   "unrealized_pl": -24.46,
-   "unrealized_plpc": -0.21
+   "current": 206.84,
+   "unrealized_pl": -22.16,
+   "unrealized_plpc": -0.19
   },
   {
    "symbol": "TSM",
    "qty": 28.902221789,
-   "market_value": 11623.9,
+   "market_value": 11659.45,
    "avg_entry": 410.867721,
-   "current": 402.18,
-   "unrealized_pl": -251.09,
-   "unrealized_plpc": -2.11
+   "current": 403.41,
+   "unrealized_pl": -215.54,
+   "unrealized_plpc": -1.81
   }
  ],
  "equity_history": {
@@ -604,55 +604,70 @@
  "crypto_radar": [
   {
    "symbol": "BTC",
-   "flow": 54.8,
-   "funding": 6.786e-05,
-   "long_short": 1.8531,
-   "taker": 0.2428
+   "flow": 69.8,
+   "funding": 7.222e-05,
+   "long_short": 1.8555,
+   "taker": 1.0907
   },
   {
    "symbol": "ETH",
-   "flow": 53.5,
-   "funding": 5.656e-05,
-   "long_short": 2.4106,
-   "taker": 0.9565
+   "flow": 46.0,
+   "funding": 6.174e-05,
+   "long_short": 2.4072,
+   "taker": 0.8094
   },
   {
    "symbol": "SOL",
-   "flow": 67.0,
-   "funding": -1.446e-05,
-   "long_short": 2.8153,
-   "taker": 1.1576
+   "flow": 61.0,
+   "funding": 9.19e-06,
+   "long_short": 2.7922,
+   "taker": 1.2735
   },
   {
    "symbol": "AVAX",
-   "flow": 60.8,
-   "funding": -1.893e-05,
-   "long_short": 1.4938,
-   "taker": 0.7927
+   "flow": 69.8,
+   "funding": 2.833e-05,
+   "long_short": 1.4802,
+   "taker": 1.0014
   },
   {
    "symbol": "LINK",
-   "flow": 54.8,
-   "funding": 4.058e-05,
-   "long_short": 1.8498,
-   "taker": 0.8009
+   "flow": 69.8,
+   "funding": 5.034e-05,
+   "long_short": 1.8417,
+   "taker": 1.0763
   },
   {
    "symbol": "LTC",
    "flow": 46.0,
-   "funding": 2.415e-05,
-   "long_short": 2.319,
-   "taker": 0.8096
+   "funding": 3.403e-05,
+   "long_short": 2.3167,
+   "taker": 0.8205
   },
   {
    "symbol": "TRX",
-   "flow": 62.2,
-   "funding": 3.401e-05,
-   "long_short": 1.6969,
-   "taker": 0.9252
+   "flow": 76.0,
+   "funding": 4.351e-05,
+   "long_short": 1.694,
+   "taker": 1.158
   }
  ],
  "signals": [
+  {
+   "id": 23,
+   "created_at": "2026-07-25T01:10:25.458440",
+   "symbol": "TRXUSD",
+   "side": "buy",
+   "notional": 14947.75,
+   "verdict": "crypto_momentum",
+   "composite": 69.28,
+   "confidence": 0.0,
+   "n_outcomes": 0,
+   "tier": "A",
+   "status": "auto_approved",
+   "reason": "24/7 sleeve: tech score 69, slot $14,948 of 15% cap",
+   "expires_at": "2026-07-26T01:10:25.458440"
+  },
   {
    "id": 22,
    "created_at": "2026-07-25T00:10:26.720036",
@@ -817,21 +832,6 @@
    "status": "executed",
    "reason": "equal-weight target $11,875, held $0",
    "expires_at": "2026-07-25T10:46:50.556152"
-  },
-  {
-   "id": 11,
-   "created_at": "2026-07-24T10:46:49.340631",
-   "symbol": "AAPL",
-   "side": "buy",
-   "notional": 11875.0,
-   "verdict": "buy",
-   "composite": 81.3,
-   "confidence": 0.0,
-   "n_outcomes": 0,
-   "tier": "A",
-   "status": "executed",
-   "reason": "equal-weight target $11,875, held $0",
-   "expires_at": "2026-07-25T10:46:49.340631"
   }
  ]
 }
