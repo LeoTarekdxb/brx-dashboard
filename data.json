@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-25T12:05:00.273814+00:00",
+ "generated_at": "2026-07-25T13:00:07.370543+00:00",
  "mode": "PAPER TRADING",
  "account": {
   "equity": 99753.08,
@@ -607,54 +607,69 @@
   {
    "symbol": "BTC",
    "flow": 62.2,
-   "funding": 9.14e-06,
+   "funding": 1.306e-05,
    "long_short": 1.8225,
    "taker": 0.9079
   },
   {
    "symbol": "ETH",
    "flow": 46.0,
-   "funding": 3.065e-05,
+   "funding": 4.918e-05,
    "long_short": 2.4072,
    "taker": 0.7802
   },
   {
    "symbol": "SOL",
    "flow": 53.2,
-   "funding": -5.193e-05,
+   "funding": -5.615e-05,
    "long_short": 2.7523,
    "taker": 0.9855
   },
   {
    "symbol": "AVAX",
    "flow": 76.0,
-   "funding": 2.283e-05,
+   "funding": 4.412e-05,
    "long_short": 1.4679,
    "taker": 1.4039
   },
   {
    "symbol": "LINK",
    "flow": 54.8,
-   "funding": 4.2e-06,
+   "funding": 1.09e-06,
    "long_short": 1.7949,
    "taker": 0.7496
   },
   {
    "symbol": "LTC",
    "flow": 53.5,
-   "funding": 3.967e-05,
+   "funding": 3.416e-05,
    "long_short": 2.3727,
    "taker": 0.9765
   },
   {
    "symbol": "TRX",
    "flow": 82.0,
-   "funding": -5.881e-05,
+   "funding": -2.24e-05,
    "long_short": 1.7255,
    "taker": 1.4944
   }
  ],
  "signals": [
+  {
+   "id": 34,
+   "created_at": "2026-07-25T12:10:26.373877",
+   "symbol": "TRXUSD",
+   "side": "buy",
+   "notional": 14962.96,
+   "verdict": "crypto_momentum",
+   "composite": 68.2,
+   "confidence": 0.0,
+   "n_outcomes": 0,
+   "tier": "A",
+   "status": "auto_approved",
+   "reason": "24/7 sleeve: tech score 68, slot $14,963 of 15% cap",
+   "expires_at": "2026-07-26T12:10:26.373877"
+  },
   {
    "id": 33,
    "created_at": "2026-07-25T11:10:26.424083",
@@ -819,21 +834,6 @@
    "status": "auto_approved",
    "reason": "24/7 sleeve: tech score 69, slot $14,948 of 15% cap",
    "expires_at": "2026-07-26T01:10:25.458440"
-  },
-  {
-   "id": 22,
-   "created_at": "2026-07-25T00:10:26.720036",
-   "symbol": "TRXUSD",
-   "side": "buy",
-   "notional": 14947.75,
-   "verdict": "crypto_momentum",
-   "composite": 66.32,
-   "confidence": 0.0,
-   "n_outcomes": 0,
-   "tier": "A",
-   "status": "auto_approved",
-   "reason": "24/7 sleeve: tech score 66, slot $14,948 of 15% cap",
-   "expires_at": "2026-07-26T00:10:26.720036"
   }
  ]
 }
