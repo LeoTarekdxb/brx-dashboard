@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-25T05:05:00.345962+00:00",
+ "generated_at": "2026-07-25T06:05:00.244127+00:00",
  "mode": "PAPER TRADING",
  "account": {
   "equity": 99753.09,
@@ -604,55 +604,70 @@
  "crypto_radar": [
   {
    "symbol": "BTC",
-   "flow": 76.0,
-   "funding": 8.1e-05,
-   "long_short": 1.8604,
-   "taker": 1.2513
+   "flow": 54.8,
+   "funding": 7.433e-05,
+   "long_short": 1.8612,
+   "taker": 0.5628
   },
   {
    "symbol": "ETH",
-   "flow": 61.0,
-   "funding": 6.623e-05,
-   "long_short": 2.4095,
-   "taker": 1.0196
+   "flow": 46.0,
+   "funding": 5.176e-05,
+   "long_short": 2.406,
+   "taker": 0.8974
   },
   {
    "symbol": "SOL",
-   "flow": 61.0,
-   "funding": 2.827e-05,
-   "long_short": 2.8183,
-   "taker": 1.3184
+   "flow": 39.8,
+   "funding": 1.782e-05,
+   "long_short": 2.8241,
+   "taker": 0.7872
   },
   {
    "symbol": "AVAX",
    "flow": 76.0,
-   "funding": 5.026e-05,
-   "long_short": 1.4704,
-   "taker": 1.9781
+   "funding": 3.733e-05,
+   "long_short": 1.4594,
+   "taker": 1.9113
   },
   {
    "symbol": "LINK",
-   "flow": 76.0,
-   "funding": 6.737e-05,
-   "long_short": 1.8153,
-   "taker": 1.2104
+   "flow": 54.8,
+   "funding": 4.75e-05,
+   "long_short": 1.8161,
+   "taker": 0.8282
   },
   {
    "symbol": "LTC",
-   "flow": 67.2,
-   "funding": 7.806e-05,
-   "long_short": 2.3212,
-   "taker": 1.1639
+   "flow": 46.0,
+   "funding": 6.668e-05,
+   "long_short": 2.3223,
+   "taker": 0.7431
   },
   {
    "symbol": "TRX",
-   "flow": 54.8,
-   "funding": 1.223e-05,
-   "long_short": 1.7174,
-   "taker": 0.7899
+   "flow": 82.0,
+   "funding": -1.865e-05,
+   "long_short": 1.7556,
+   "taker": 1.6675
   }
  ],
  "signals": [
+  {
+   "id": 27,
+   "created_at": "2026-07-25T05:10:33.512020",
+   "symbol": "TRXUSD",
+   "side": "buy",
+   "notional": 14962.96,
+   "verdict": "crypto_momentum",
+   "composite": 57.32,
+   "confidence": 0.0,
+   "n_outcomes": 0,
+   "tier": "A",
+   "status": "auto_approved",
+   "reason": "24/7 sleeve: tech score 57, slot $14,963 of 15% cap",
+   "expires_at": "2026-07-26T05:10:33.512020"
+  },
   {
    "id": 26,
    "created_at": "2026-07-25T04:11:09.308513",
@@ -817,21 +832,6 @@
    "status": "executed",
    "reason": "equal-weight target $11,875, held $0",
    "expires_at": "2026-07-25T10:46:55.807043"
-  },
-  {
-   "id": 15,
-   "created_at": "2026-07-24T10:46:54.479467",
-   "symbol": "NVDA",
-   "side": "buy",
-   "notional": 11875.0,
-   "verdict": "buy",
-   "composite": 74.4,
-   "confidence": 0.0,
-   "n_outcomes": 0,
-   "tier": "A",
-   "status": "executed",
-   "reason": "equal-weight target $11,875, held $0",
-   "expires_at": "2026-07-25T10:46:54.479467"
   }
  ]
 }
