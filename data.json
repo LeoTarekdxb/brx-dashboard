@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-25T04:05:00.248023+00:00",
+ "generated_at": "2026-07-25T05:05:00.345962+00:00",
  "mode": "PAPER TRADING",
  "account": {
   "equity": 99753.09,
@@ -605,54 +605,69 @@
   {
    "symbol": "BTC",
    "flow": 76.0,
-   "funding": 7.399e-05,
-   "long_short": 1.8474,
-   "taker": 1.1774
+   "funding": 8.1e-05,
+   "long_short": 1.8604,
+   "taker": 1.2513
   },
   {
    "symbol": "ETH",
-   "flow": 53.5,
-   "funding": 6.928e-05,
-   "long_short": 2.4025,
-   "taker": 0.9467
+   "flow": 61.0,
+   "funding": 6.623e-05,
+   "long_short": 2.4095,
+   "taker": 1.0196
   },
   {
    "symbol": "SOL",
    "flow": 61.0,
-   "funding": 2.97e-05,
-   "long_short": 2.8124,
-   "taker": 1.1587
+   "funding": 2.827e-05,
+   "long_short": 2.8183,
+   "taker": 1.3184
   },
   {
    "symbol": "AVAX",
-   "flow": 69.8,
-   "funding": 4.691e-05,
-   "long_short": 1.474,
-   "taker": 1.0004
+   "flow": 76.0,
+   "funding": 5.026e-05,
+   "long_short": 1.4704,
+   "taker": 1.9781
   },
   {
    "symbol": "LINK",
-   "flow": 54.8,
-   "funding": 6.96e-05,
-   "long_short": 1.8337,
-   "taker": 0.6813
+   "flow": 76.0,
+   "funding": 6.737e-05,
+   "long_short": 1.8153,
+   "taker": 1.2104
   },
   {
    "symbol": "LTC",
-   "flow": 46.0,
-   "funding": 6.82e-05,
-   "long_short": 2.3333,
-   "taker": 0.5735
+   "flow": 67.2,
+   "funding": 7.806e-05,
+   "long_short": 2.3212,
+   "taker": 1.1639
   },
   {
    "symbol": "TRX",
    "flow": 54.8,
-   "funding": 2.748e-05,
-   "long_short": 1.73,
-   "taker": 0.2664
+   "funding": 1.223e-05,
+   "long_short": 1.7174,
+   "taker": 0.7899
   }
  ],
  "signals": [
+  {
+   "id": 26,
+   "created_at": "2026-07-25T04:11:09.308513",
+   "symbol": "TRXUSD",
+   "side": "buy",
+   "notional": 14962.96,
+   "verdict": "crypto_momentum",
+   "composite": 57.32,
+   "confidence": 0.0,
+   "n_outcomes": 0,
+   "tier": "A",
+   "status": "auto_approved",
+   "reason": "24/7 sleeve: tech score 57, slot $14,963 of 15% cap",
+   "expires_at": "2026-07-26T04:11:09.308513"
+  },
   {
    "id": 25,
    "created_at": "2026-07-25T03:10:24.233099",
@@ -817,21 +832,6 @@
    "status": "executed",
    "reason": "equal-weight target $11,875, held $0",
    "expires_at": "2026-07-25T10:46:54.479467"
-  },
-  {
-   "id": 14,
-   "created_at": "2026-07-24T10:46:53.089149",
-   "symbol": "META",
-   "side": "buy",
-   "notional": 11875.0,
-   "verdict": "buy",
-   "composite": 78.9,
-   "confidence": 0.0,
-   "n_outcomes": 0,
-   "tier": "A",
-   "status": "executed",
-   "reason": "equal-weight target $11,875, held $0",
-   "expires_at": "2026-07-25T10:46:53.089149"
   }
  ]
 }
