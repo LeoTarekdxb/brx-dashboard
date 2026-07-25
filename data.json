@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-25T00:05:00.297483+00:00",
+ "generated_at": "2026-07-25T01:05:00.265450+00:00",
  "mode": "PAPER TRADING",
  "account": {
   "equity": 99651.66,
@@ -605,54 +605,69 @@
   {
    "symbol": "BTC",
    "flow": 54.8,
-   "funding": 6.068e-05,
-   "long_short": 1.8769,
-   "taker": 0.6631
+   "funding": 6.786e-05,
+   "long_short": 1.8531,
+   "taker": 0.2428
   },
   {
    "symbol": "ETH",
    "flow": 53.5,
-   "funding": 5.506e-05,
-   "long_short": 2.3967,
-   "taker": 0.944
+   "funding": 5.656e-05,
+   "long_short": 2.4106,
+   "taker": 0.9565
   },
   {
    "symbol": "SOL",
-   "flow": 53.2,
-   "funding": -4.023e-05,
-   "long_short": 2.8388,
-   "taker": 0.9726
+   "flow": 67.0,
+   "funding": -1.446e-05,
+   "long_short": 2.8153,
+   "taker": 1.1576
   },
   {
    "symbol": "AVAX",
-   "flow": 82.0,
-   "funding": -5.232e-05,
-   "long_short": 1.4802,
-   "taker": 1.6284
+   "flow": 60.8,
+   "funding": -1.893e-05,
+   "long_short": 1.4938,
+   "taker": 0.7927
   },
   {
    "symbol": "LINK",
-   "flow": 62.2,
-   "funding": 2.102e-05,
-   "long_short": 1.8629,
-   "taker": 0.9672
+   "flow": 54.8,
+   "funding": 4.058e-05,
+   "long_short": 1.8498,
+   "taker": 0.8009
   },
   {
    "symbol": "LTC",
-   "flow": 61.0,
-   "funding": 2.312e-05,
-   "long_short": 2.3322,
-   "taker": 1.0608
+   "flow": 46.0,
+   "funding": 2.415e-05,
+   "long_short": 2.319,
+   "taker": 0.8096
   },
   {
    "symbol": "TRX",
-   "flow": 54.8,
-   "funding": 1.753e-05,
-   "long_short": 1.6932,
-   "taker": 0.6203
+   "flow": 62.2,
+   "funding": 3.401e-05,
+   "long_short": 1.6969,
+   "taker": 0.9252
   }
  ],
  "signals": [
+  {
+   "id": 22,
+   "created_at": "2026-07-25T00:10:26.720036",
+   "symbol": "TRXUSD",
+   "side": "buy",
+   "notional": 14947.75,
+   "verdict": "crypto_momentum",
+   "composite": 66.32,
+   "confidence": 0.0,
+   "n_outcomes": 0,
+   "tier": "A",
+   "status": "auto_approved",
+   "reason": "24/7 sleeve: tech score 66, slot $14,948 of 15% cap",
+   "expires_at": "2026-07-26T00:10:26.720036"
+  },
   {
    "id": 21,
    "created_at": "2026-07-24T23:10:26.158350",
@@ -817,21 +832,6 @@
    "status": "executed",
    "reason": "equal-weight target $11,875, held $0",
    "expires_at": "2026-07-25T10:46:49.340631"
-  },
-  {
-   "id": 10,
-   "created_at": "2026-07-24T10:46:47.890644",
-   "symbol": "TSM",
-   "side": "buy",
-   "notional": 11875.0,
-   "verdict": "strong_buy",
-   "composite": 86.9,
-   "confidence": 0.0,
-   "n_outcomes": 0,
-   "tier": "A",
-   "status": "executed",
-   "reason": "equal-weight target $11,875, held $0",
-   "expires_at": "2026-07-25T10:46:47.890644"
   }
  ]
 }
