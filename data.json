@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-26T19:10:01.242478+00:00",
+ "generated_at": "2026-07-26T19:10:50.665604+00:00",
  "mode": "PAPER TRADING",
  "account": {
   "equity": 99411.1,
@@ -832,7 +832,7 @@
  ],
  "error": null,
  "audit": {
-  "ts": "2026-07-26T19:10:07.547931+00:00",
+  "ts": "2026-07-26T19:10:56.471608+00:00",
   "checks": [
    {
     "check": "agent process",
@@ -843,19 +843,19 @@
    {
     "check": "alpaca (PAPER)",
     "status": "PASS",
-    "detail": "equity $99,640.36",
+    "detail": "equity $99,411.10",
     "fix": null
    },
    {
     "check": "binance (LIVE)",
     "status": "PASS",
-    "detail": "1.00 USDT free",
+    "detail": "0.04 USDT free",
     "fix": null
    },
    {
     "check": "dashboard",
     "status": "PASS",
-    "detail": "5m old",
+    "detail": "6m old",
     "fix": null
    },
    {
@@ -873,7 +873,7 @@
    {
     "check": "dry powder",
     "status": "WARN",
-    "detail": "$1.00 free USDT \u2014 below $5.00 min notional, no new real entry can fill until a position exits",
+    "detail": "$0.04 free USDT \u2014 below $5.00 min notional, no new real entry can fill until a position exits",
     "fix": null
    }
   ],
@@ -886,15 +886,19 @@
  "binance": {
   "configured": true,
   "mode": "LIVE",
-  "usdt": 1.0,
+  "usdt": 0.04,
   "positions": [
    {
     "asset": "BTC",
     "qty": 5.274e-05
    },
    {
+    "asset": "LTC",
+    "qty": 0.485
+   },
+   {
     "asset": "BNB",
-    "qty": 0.0101962
+    "qty": 0.01013665
    },
    {
     "asset": "KNC",
@@ -941,10 +945,6 @@
     "qty": 0.04792228
    },
    {
-    "asset": "AVAX",
-    "qty": 3.34
-   },
-   {
     "asset": "SOLO",
     "qty": 1.02943992
    },
@@ -965,33 +965,65 @@
    "plpc": 1.61
   },
   {
-   "asset": "AVAX",
-   "qty": 3.34,
-   "price": 6.669,
-   "value": 22.27,
-   "entry": 6.721,
-   "pl": -0.17,
-   "plpc": -0.77
-  },
-  {
    "asset": "BTC",
    "qty": 5.274e-05,
-   "price": 64690.89,
+   "price": 64685.51,
    "value": 3.41,
    "entry": null,
    "pl": null,
    "plpc": null
+  },
+  {
+   "asset": "LTC",
+   "qty": 0.485,
+   "price": 47.9,
+   "value": 23.23,
+   "entry": 47.9,
+   "pl": -0.0,
+   "plpc": -0.0
   }
  ],
  "binance_account": {
   "mode": "LIVE",
-  "usdt_free": 1.0,
-  "bnb_usd": 5.84,
-  "positions_usd": 48.54,
-  "total_usd": 55.38,
-  "deployed_pct": 87.6
+  "usdt_free": 0.04,
+  "bnb_usd": 5.81,
+  "positions_usd": 49.5,
+  "total_usd": 55.34,
+  "deployed_pct": 89.4
  },
  "binance_fills": [
+  {
+   "time": "2026-07-26T19:10:47.597Z",
+   "side": "sell",
+   "asset": "AVAX",
+   "amount": 0.83,
+   "price": 6.667,
+   "cost": 5.53
+  },
+  {
+   "time": "2026-07-26T19:10:47.597Z",
+   "side": "sell",
+   "asset": "AVAX",
+   "amount": 0.75,
+   "price": 6.667,
+   "cost": 5.0
+  },
+  {
+   "time": "2026-07-26T19:10:47.597Z",
+   "side": "sell",
+   "asset": "AVAX",
+   "amount": 1.13,
+   "price": 6.667,
+   "cost": 7.53
+  },
+  {
+   "time": "2026-07-26T19:10:47.597Z",
+   "side": "sell",
+   "asset": "AVAX",
+   "amount": 0.63,
+   "price": 6.667,
+   "cost": 4.2
+  },
   {
    "time": "2026-07-26T12:08:53.772Z",
    "side": "buy",
@@ -1036,6 +1068,66 @@
  "ledger": {
   "closed_trades": [
    {
+    "asset": "AVAX",
+    "bought_amount": 0.83,
+    "bought_price": 6.721,
+    "bought_at": "2026-07-26T12:08:53.772Z",
+    "sold_amount": 0.83,
+    "sold_price": 6.667,
+    "sold_at": "2026-07-26T19:10:47.597Z",
+    "cost": 5.58,
+    "proceeds": 5.53,
+    "fees": 0.0,
+    "pnl": -0.04,
+    "pnl_pct": -0.8,
+    "story": "bought 0.83 AVAX @ $6.7210 \u2192 sold @ $6.6670 \u2192 lost $0.04"
+   },
+   {
+    "asset": "AVAX",
+    "bought_amount": 0.75,
+    "bought_price": 6.721,
+    "bought_at": "2026-07-26T12:08:53.772Z",
+    "sold_amount": 0.75,
+    "sold_price": 6.667,
+    "sold_at": "2026-07-26T19:10:47.597Z",
+    "cost": 5.04,
+    "proceeds": 5.0,
+    "fees": 0.0,
+    "pnl": -0.04,
+    "pnl_pct": -0.8,
+    "story": "bought 0.75 AVAX @ $6.7210 \u2192 sold @ $6.6670 \u2192 lost $0.04"
+   },
+   {
+    "asset": "AVAX",
+    "bought_amount": 1.13,
+    "bought_price": 6.721,
+    "bought_at": "2026-07-26T12:08:53.772Z",
+    "sold_amount": 1.13,
+    "sold_price": 6.667,
+    "sold_at": "2026-07-26T19:10:47.597Z",
+    "cost": 7.59,
+    "proceeds": 7.53,
+    "fees": 0.0,
+    "pnl": -0.06,
+    "pnl_pct": -0.8,
+    "story": "bought 1.13 AVAX @ $6.7210 \u2192 sold @ $6.6670 \u2192 lost $0.06"
+   },
+   {
+    "asset": "AVAX",
+    "bought_amount": 0.63,
+    "bought_price": 6.721,
+    "bought_at": "2026-07-26T12:08:53.772Z",
+    "sold_amount": 0.63,
+    "sold_price": 6.667,
+    "sold_at": "2026-07-26T19:10:47.597Z",
+    "cost": 4.23,
+    "proceeds": 4.2,
+    "fees": 0.0,
+    "pnl": -0.03,
+    "pnl_pct": -0.8,
+    "story": "bought 0.63 AVAX @ $6.7210 \u2192 sold @ $6.6670 \u2192 lost $0.03"
+   },
+   {
     "asset": "BTC",
     "bought_amount": 9e-05,
     "bought_price": 64436.0,
@@ -1077,22 +1169,22 @@
     "story": "holding 2.05 LINK bought @ $8.4560 \u00b7 now $8.5920 \u00b7 up $0.28"
    },
    {
-    "asset": "AVAX",
-    "amount": 3.34,
-    "entry": 6.721,
-    "current": 6.667,
-    "cost": 22.45,
-    "value": 22.27,
-    "unrealized": -0.18,
-    "unrealized_pct": -0.8,
-    "bought_at": "2026-07-26T12:08:53.772Z",
-    "story": "holding 3.34 AVAX bought @ $6.7210 \u00b7 now $6.6670 \u00b7 down $0.18"
+    "asset": "LTC",
+    "amount": 0.485,
+    "entry": 47.9,
+    "current": 47.9,
+    "cost": 23.23,
+    "value": 23.23,
+    "unrealized": 0.0,
+    "unrealized_pct": 0.0,
+    "bought_at": "2026-07-26T19:10:48.837Z",
+    "story": "holding 0.485 LTC bought @ $47.9000 \u00b7 now $47.9000 \u00b7 up $0.00"
    }
   ],
-  "realized_pnl": 0.0,
-  "unrealized_pnl": 0.18,
-  "total_pnl": 0.18,
-  "trade_count": 1,
+  "realized_pnl": -0.17,
+  "unrealized_pnl": 0.36,
+  "total_pnl": 0.19,
+  "trade_count": 5,
   "win_count": 0,
   "win_rate": 0.0,
   "per_asset": {
@@ -1101,11 +1193,15 @@
     "fees": 0.0
    },
    "AVAX": {
-    "realized": 0.0,
+    "realized": -0.18,
     "fees": 0.0
    },
    "BTC": {
     "realized": -0.0,
+    "fees": 0.0
+   },
+   "LTC": {
+    "realized": 0.0,
     "fees": 0.0
    }
   }
@@ -1115,16 +1211,16 @@
   "multiplier": 1.2,
   "veto_longs": false,
   "range_position": 0.092,
-  "vs_200ma": -0.1036,
+  "vs_200ma": -0.1037,
   "proxy": true,
   "note": "MVRV/SOPR/NUPL unavailable \u2014 range+trend cycle proxy"
  },
  "cryptology": [
   {
    "asset": "BTC",
-   "final": 67.6,
-   "positioning": 67.9,
-   "flow": 42.1,
+   "final": 67.7,
+   "positioning": 68.0,
+   "flow": 42.3,
    "confidence": "low",
    "liq_state": "sweep_candidate",
    "oi_state": "short_covering",
@@ -1132,8 +1228,8 @@
   },
   {
    "asset": "ETH",
-   "final": 57.2,
-   "positioning": 52.6,
+   "final": 57.4,
+   "positioning": 52.8,
    "flow": 41.7,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
@@ -1154,7 +1250,7 @@
    "asset": "LINK",
    "final": 56.8,
    "positioning": 55.8,
-   "flow": 37.1,
+   "flow": 37.0,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "neutral",
@@ -1175,21 +1271,21 @@
   {
    "symbol": "BTC",
    "flow": 62.2,
-   "funding": 3.961e-05,
+   "funding": 3.919e-05,
    "long_short": 1.6954,
    "taker": 0.9908
   },
   {
    "symbol": "ETH",
    "flow": 67.2,
-   "funding": 8.084e-05,
+   "funding": 7.974e-05,
    "long_short": 2.0665,
    "taker": 1.6203
   },
   {
    "symbol": "SOL",
    "flow": 45.8,
-   "funding": -2.24e-06,
+   "funding": -2.4e-06,
    "long_short": 2.655,
    "taker": 0.8826
   },
@@ -1210,14 +1306,14 @@
   {
    "symbol": "LTC",
    "flow": 84.0,
-   "funding": 4.108e-05,
+   "funding": 4.142e-05,
    "long_short": 1.9028,
    "taker": 1.4372
   },
   {
    "symbol": "TRX",
    "flow": 54.8,
-   "funding": 5.35e-06,
+   "funding": 3.57e-06,
    "long_short": 1.727,
    "taker": 0.5889
   }
