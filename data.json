@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-25T23:47:58.492161+00:00",
+ "generated_at": "2026-07-26T00:05:00.238904+00:00",
  "mode": "PAPER TRADING",
  "account": {
   "equity": 99752.79,
@@ -222,7 +222,7 @@
    "notional": null,
    "qty": "0.000759854",
    "status": "filled",
-   "submitted_at": "2026-07-25T23:47:58.867718422Z"
+   "submitted_at": "2026-07-25T23:47:58.867718Z"
   },
   {
    "symbol": "BTC/USD",
@@ -566,58 +566,23 @@
  "verdicts": [
   {
    "ticker": "JNJ",
-   "verdict": "STRONG BUY",
-   "score": 87.8,
-   "date": "2026-07-24",
+   "verdict": "BUY",
+   "score": 70.4,
+   "date": "2026-07-26",
    "thesis": ""
   },
   {
    "ticker": "TSM",
-   "verdict": "STRONG BUY",
-   "score": 86.9,
-   "date": "2026-07-24",
-   "thesis": ""
-  },
-  {
-   "ticker": "AAPL",
-   "verdict": "BUY",
-   "score": 81.3,
-   "date": "2026-07-24",
-   "thesis": ""
-  },
-  {
-   "ticker": "GOOGL",
-   "verdict": "BUY",
-   "score": 79.8,
-   "date": "2026-07-24",
-   "thesis": ""
-  },
-  {
-   "ticker": "MSFT",
-   "verdict": "BUY",
-   "score": 79.5,
-   "date": "2026-07-24",
+   "verdict": "WATCH",
+   "score": 60.8,
+   "date": "2026-07-26",
    "thesis": ""
   },
   {
    "ticker": "META",
-   "verdict": "BUY",
-   "score": 78.9,
-   "date": "2026-07-24",
-   "thesis": ""
-  },
-  {
-   "ticker": "NVDA",
-   "verdict": "BUY",
-   "score": 74.4,
-   "date": "2026-07-24",
-   "thesis": ""
-  },
-  {
-   "ticker": "AMZN",
-   "verdict": "BUY",
-   "score": 71.1,
-   "date": "2026-07-24",
+   "verdict": "WATCH",
+   "score": 60.3,
+   "date": "2026-07-26",
    "thesis": ""
   },
   {
@@ -625,6 +590,41 @@
    "verdict": "WATCH",
    "score": 60.2,
    "date": "2026-07-24",
+   "thesis": ""
+  },
+  {
+   "ticker": "NVDA",
+   "verdict": "MONITOR",
+   "score": 59.9,
+   "date": "2026-07-26",
+   "thesis": ""
+  },
+  {
+   "ticker": "GOOGL",
+   "verdict": "MONITOR",
+   "score": 57.0,
+   "date": "2026-07-26",
+   "thesis": ""
+  },
+  {
+   "ticker": "MSFT",
+   "verdict": "MONITOR",
+   "score": 55.6,
+   "date": "2026-07-26",
+   "thesis": ""
+  },
+  {
+   "ticker": "AMZN",
+   "verdict": "MONITOR",
+   "score": 54.7,
+   "date": "2026-07-26",
+   "thesis": ""
+  },
+  {
+   "ticker": "AAPL",
+   "verdict": "MONITOR",
+   "score": 51.6,
+   "date": "2026-07-26",
    "thesis": ""
   }
  ],
@@ -638,52 +638,52 @@
  "crypto_radar": [
   {
    "symbol": "BTC",
-   "flow": 62.2,
-   "funding": 3.663e-05,
-   "long_short": 1.8074,
-   "taker": 0.9924
+   "flow": 54.8,
+   "funding": 3.909e-05,
+   "long_short": 1.8035,
+   "taker": 0.7491
   },
   {
    "symbol": "ETH",
-   "flow": 73.2,
-   "funding": -1.815e-05,
-   "long_short": 2.3875,
-   "taker": 1.3358
+   "flow": 52.0,
+   "funding": -1.714e-05,
+   "long_short": 2.3795,
+   "taker": 0.7922
   },
   {
    "symbol": "SOL",
-   "flow": 61.0,
-   "funding": 1.5e-07,
-   "long_short": 2.8476,
-   "taker": 1.1942
+   "flow": 47.2,
+   "funding": 2.52e-06,
+   "long_short": 2.87,
+   "taker": 0.9399
   },
   {
    "symbol": "AVAX",
    "flow": 50.8,
    "funding": 0.0001,
-   "long_short": 1.3491,
-   "taker": 0.9336
+   "long_short": 1.3164,
+   "taker": 0.9473
   },
   {
    "symbol": "LINK",
    "flow": 69.8,
-   "funding": 5.528e-05,
-   "long_short": 1.8794,
-   "taker": 1.026
+   "funding": 6.151e-05,
+   "long_short": 1.8653,
+   "taker": 1.0536
   },
   {
    "symbol": "LTC",
-   "flow": 61.0,
-   "funding": 3.653e-05,
-   "long_short": 2.5511,
-   "taker": 1.1502
+   "flow": 39.8,
+   "funding": 3.785e-05,
+   "long_short": 2.5461,
+   "taker": 0.6756
   },
   {
    "symbol": "TRX",
-   "flow": 69.8,
-   "funding": 1.007e-05,
-   "long_short": 1.7322,
-   "taker": 1.0064
+   "flow": 54.8,
+   "funding": 1.738e-05,
+   "long_short": 1.7278,
+   "taker": 0.829
   }
  ],
  "signals": [
