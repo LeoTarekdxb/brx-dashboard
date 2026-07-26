@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-07-26T13:05:00.249107+00:00",
+ "generated_at": "2026-07-26T13:15:00.223358+00:00",
  "mode": "PAPER TRADING",
  "account": {
-  "equity": 99617.98,
-  "cash": -9734.92,
-  "buying_power": 226368.75,
+  "equity": 99612.38,
+  "cash": -14610.0,
+  "buying_power": 206868.43,
   "last_equity": 99753.07917064207,
-  "day_pl": -135.1,
-  "total_pl": -382.02
+  "day_pl": -140.7,
+  "total_pl": -387.62
  },
  "positions": [
   {
@@ -63,6 +63,15 @@
    "current": 8.4375,
    "unrealized_pl": -43.91,
    "unrealized_plpc": -0.6
+  },
+  {
+   "symbol": "LTCUSD",
+   "qty": 102.938022101,
+   "market_value": 4869.47,
+   "avg_entry": 47.241031336,
+   "current": 47.3049,
+   "unrealized_pl": 6.57,
+   "unrealized_plpc": 0.14
   },
   {
    "symbol": "META",
@@ -235,6 +244,14 @@
  },
  "recent_orders": [
   {
+   "symbol": "LTC/USD",
+   "side": "buy",
+   "notional": "4980.9",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-26T13:11:05.413603134Z"
+  },
+  {
    "symbol": "AVAX/USD",
    "side": "buy",
    "notional": "7481.46",
@@ -332,6 +349,30 @@
   }
  ],
  "fills": [
+  {
+   "time": "2026-07-26T13:11:05.417702Z",
+   "side": "buy",
+   "symbol": "LTC/USD",
+   "qty": 13.781697,
+   "price": 47.31,
+   "value": 652.01
+  },
+  {
+   "time": "2026-07-26T13:11:05.417682Z",
+   "side": "buy",
+   "symbol": "LTC/USD",
+   "qty": 80.53,
+   "price": 47.215,
+   "value": 3802.22
+  },
+  {
+   "time": "2026-07-26T13:11:05.417711Z",
+   "side": "buy",
+   "symbol": "LTC/USD",
+   "qty": 8.884315132,
+   "price": 47.37,
+   "value": 420.85
+  },
   {
    "time": "2026-07-26T12:08:53.556612Z",
    "side": "buy",
@@ -720,7 +761,7 @@
  ],
  "error": null,
  "audit": {
-  "ts": "2026-07-26T13:05:05.577820+00:00",
+  "ts": "2026-07-26T13:15:05.190687+00:00",
   "checks": [
    {
     "check": "agent process",
@@ -731,7 +772,7 @@
    {
     "check": "alpaca (PAPER)",
     "status": "PASS",
-    "detail": "equity $99,617.98",
+    "detail": "equity $99,612.38",
     "fix": null
    },
    {
@@ -743,7 +784,7 @@
    {
     "check": "dashboard",
     "status": "PASS",
-    "detail": "5m old",
+    "detail": "10m old",
     "fix": null
    },
    {
@@ -834,25 +875,25 @@
   {
    "asset": "LINK",
    "qty": 2.66,
-   "price": 8.436,
-   "value": 22.44,
+   "price": 8.428,
+   "value": 22.42,
    "entry": 8.456,
-   "pl": -0.05,
-   "plpc": -0.24
+   "pl": -0.07,
+   "plpc": -0.33
   },
   {
    "asset": "AVAX",
    "qty": 3.34,
-   "price": 6.686,
-   "value": 22.33,
+   "price": 6.672,
+   "value": 22.28,
    "entry": 6.721,
-   "pl": -0.12,
-   "plpc": -0.52
+   "pl": -0.16,
+   "plpc": -0.73
   },
   {
    "asset": "BTC",
    "qty": 5.274e-05,
-   "price": 64424.64,
+   "price": 64426.19,
    "value": 3.4,
    "entry": null,
    "pl": null,
@@ -863,8 +904,8 @@
   "mode": "LIVE",
   "usdt_free": 1.0,
   "bnb_usd": 5.82,
-  "positions_usd": 48.17,
-  "total_usd": 54.98,
+  "positions_usd": 48.1,
+  "total_usd": 54.92,
   "deployed_pct": 87.6
  },
  "binance_fills": [
@@ -914,16 +955,16 @@
   "multiplier": 1.2,
   "veto_longs": false,
   "range_position": 0.088,
-  "vs_200ma": -0.1073,
+  "vs_200ma": -0.1072,
   "proxy": true,
   "note": "MVRV/SOPR/NUPL unavailable \u2014 range+trend cycle proxy"
  },
  "cryptology": [
   {
    "asset": "BTC",
-   "final": 57.2,
+   "final": 69.9,
    "positioning": 52.8,
-   "flow": 41.4,
+   "flow": 65.0,
    "confidence": "low",
    "liq_state": "sweep_candidate",
    "oi_state": "short_covering",
@@ -931,9 +972,9 @@
   },
   {
    "asset": "ETH",
-   "final": 72.5,
-   "positioning": 65.3,
-   "flow": 54.5,
+   "final": 81.8,
+   "positioning": 67.9,
+   "flow": 68.6,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "neutral",
@@ -941,9 +982,9 @@
   },
   {
    "asset": "SOL",
-   "final": 72.9,
-   "positioning": 61.7,
-   "flow": 59.5,
+   "final": 70.6,
+   "positioning": 62.0,
+   "flow": 55.0,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "short_covering",
@@ -952,8 +993,8 @@
   {
    "asset": "LINK",
    "final": 60,
-   "positioning": 70.2,
-   "flow": 45.4,
+   "positioning": 70.3,
+   "flow": 43.3,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "short_covering",
@@ -961,9 +1002,9 @@
   },
   {
    "asset": "AVAX",
-   "final": 78.6,
+   "final": 75.4,
    "positioning": 67.8,
-   "flow": 62.8,
+   "flow": 56.8,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "real_trend_confirm",
@@ -974,21 +1015,21 @@
   {
    "symbol": "BTC",
    "flow": 62.2,
-   "funding": 8.525e-05,
+   "funding": 8.543e-05,
    "long_short": 1.739,
    "taker": 0.9989
   },
   {
    "symbol": "ETH",
-   "flow": 67.2,
-   "funding": 1.232e-05,
+   "flow": 73.2,
+   "funding": -1.27e-06,
    "long_short": 2.252,
    "taker": 1.2251
   },
   {
    "symbol": "SOL",
    "flow": 39.8,
-   "funding": 4.529e-05,
+   "funding": 4.306e-05,
    "long_short": 2.7397,
    "taker": 0.8549
   },
@@ -1002,26 +1043,41 @@
   {
    "symbol": "LINK",
    "flow": 82.0,
-   "funding": -2.323e-05,
+   "funding": -2.431e-05,
    "long_short": 1.8694,
    "taker": 1.4436
   },
   {
    "symbol": "LTC",
    "flow": 67.2,
-   "funding": 2.396e-05,
+   "funding": 2.68e-05,
    "long_short": 2.0312,
    "taker": 1.3963
   },
   {
    "symbol": "TRX",
    "flow": 76.0,
-   "funding": 2.234e-05,
+   "funding": 1.986e-05,
    "long_short": 1.7196,
    "taker": 2.2719
   }
  ],
  "signals": [
+  {
+   "id": 47,
+   "created_at": "2026-07-26T13:11:04.175896",
+   "symbol": "LTCUSD",
+   "side": "buy",
+   "notional": 4980.9,
+   "verdict": "crypto_momentum",
+   "composite": 58.777,
+   "confidence": 0.0,
+   "n_outcomes": 0,
+   "tier": "A",
+   "status": "executed",
+   "reason": "24/7 sleeve: tech score 59, slot $4,981 of 15% cap",
+   "expires_at": "2026-07-27T13:11:04.175896"
+  },
   {
    "id": 46,
    "created_at": "2026-07-26T12:08:52.285405",
@@ -1186,21 +1242,6 @@
    "status": "expired",
    "reason": "equal-weight target $11,875, held $0",
    "expires_at": "2026-07-25T10:20:28.425416"
-  },
-  {
-   "id": 7,
-   "created_at": "2026-07-24T10:20:28.423425",
-   "symbol": "NVDA",
-   "side": "buy",
-   "notional": 11875.0,
-   "verdict": "buy",
-   "composite": 74.4,
-   "confidence": 0.0,
-   "n_outcomes": 0,
-   "tier": "B",
-   "status": "expired",
-   "reason": "equal-weight target $11,875, held $0",
-   "expires_at": "2026-07-25T10:20:28.423425"
   }
  ]
 }
