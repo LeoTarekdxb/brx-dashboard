@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-26T01:25:00.272709+00:00",
+ "generated_at": "2026-07-26T01:30:00.323797+00:00",
  "mode": "PAPER TRADING",
  "account": {
   "equity": 99752.79,
@@ -630,30 +630,87 @@
  ],
  "error": null,
  "binance": {
-  "configured": false,
-  "mode": "TESTNET",
-  "usdt": 0,
-  "positions": []
+  "configured": true,
+  "mode": "LIVE",
+  "usdt": 0.01,
+  "positions": [
+   {
+    "asset": "BTC",
+    "qty": 5.274e-05
+   },
+   {
+    "asset": "BNB",
+    "qty": 0.00027786
+   },
+   {
+    "asset": "KNC",
+    "qty": 0.965
+   },
+   {
+    "asset": "POWR",
+    "qty": 0.929
+   },
+   {
+    "asset": "ADA",
+    "qty": 0.8
+   },
+   {
+    "asset": "EON",
+    "qty": 4.91
+   },
+   {
+    "asset": "ADD",
+    "qty": 2.455
+   },
+   {
+    "asset": "MEETONE",
+    "qty": 2.455
+   },
+   {
+    "asset": "ATD",
+    "qty": 4.91
+   },
+   {
+    "asset": "EOP",
+    "qty": 4.91
+   },
+   {
+    "asset": "IQ",
+    "qty": 25.041
+   },
+   {
+    "asset": "EUR",
+    "qty": 0.04792228
+   },
+   {
+    "asset": "SOLO",
+    "qty": 1.02943992
+   },
+   {
+    "asset": "A",
+    "qty": 0.00088734
+   }
+  ]
  },
  "crypto_radar": [
   {
    "symbol": "BTC",
    "flow": 76.0,
-   "funding": 4.152e-05,
+   "funding": 4.021e-05,
    "long_short": 1.8137,
    "taker": 1.7332
   },
   {
    "symbol": "ETH",
    "flow": 73.2,
-   "funding": -1.003e-05,
+   "funding": -9.52e-06,
    "long_short": 2.3841,
    "taker": 1.3926
   },
   {
    "symbol": "SOL",
    "flow": 47.2,
-   "funding": 2.254e-05,
+   "funding": 2.401e-05,
    "long_short": 2.8432,
    "taker": 0.997
   },
@@ -667,21 +724,21 @@
   {
    "symbol": "LINK",
    "flow": 69.8,
-   "funding": 3.662e-05,
+   "funding": 3.211e-05,
    "long_short": 1.867,
    "taker": 1.0891
   },
   {
    "symbol": "LTC",
    "flow": 61.0,
-   "funding": 4.236e-05,
+   "funding": 4.416e-05,
    "long_short": 2.5778,
    "taker": 1.2337
   },
   {
    "symbol": "TRX",
    "flow": 69.8,
-   "funding": 1.794e-05,
+   "funding": 1.829e-05,
    "long_short": 1.7315,
    "taker": 1.0735
   }
