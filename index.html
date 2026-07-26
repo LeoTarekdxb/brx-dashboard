@@ -2,287 +2,332 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="BRX Terminal">
+<meta name="theme-color" content="#0A0E14">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-180.png">
-<title>BRX Trading Terminal</title>
+<title>BRX Trading Terminal — Multi-Asset Agent Dashboard</title>
 <style>
   :root{
     --bg:#0A0E14; --panel:#101623; --panel2:#0D1320; --line:#1D2735; --line2:#2A3648;
     --ink:#E9EEF5; --mut:#8595AB; --dim:#5A6A80;
-    --gold:#E8B84B; --up:#3DD68C; --dn:#F0564A; --pend:#F5A83C; --info:#5CA8F0;
-    --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    --gold:#E8B84B; --gold-dim:#8a6d2b;
+    --up:#3DD68C; --dn:#F0564A; --pend:#F5A83C; --info:#5CA8F0;
+    --mono:ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace;
     --sans:-apple-system,'Avenir Next','Segoe UI',system-ui,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5;
-       padding:max(10px,env(safe-area-inset-top)) 14px 40px;max-width:1180px;margin:0 auto}
+  html{background:var(--bg)}
+  body{font-family:var(--sans);color:var(--ink);background:var(--bg);min-height:100vh}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 20px 48px}
 
-  header{display:flex;align-items:center;gap:12px;padding:10px 0 14px;border-bottom:1px solid var(--line);flex-wrap:wrap}
-  .logo{width:32px;height:32px;border:1.5px solid var(--gold);display:grid;place-items:center;
-        font-family:var(--mono);font-weight:700;color:var(--gold);font-size:11px;border-radius:4px}
-  header h1{font-size:15px;font-weight:600}
-  header small{display:block;color:var(--mut);font-size:10px;letter-spacing:1.3px;text-transform:uppercase}
-  .status{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:var(--mut);display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+  header{display:flex;align-items:center;gap:20px;padding:max(16px,env(safe-area-inset-top)) 0 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{width:34px;height:34px;border:1.5px solid var(--gold);display:grid;place-items:center;
+        font-family:var(--mono);font-weight:700;color:var(--gold);font-size:12px;letter-spacing:.5px;border-radius:4px}
+  .brand h1{font-size:15px;font-weight:600;letter-spacing:.3px}
+  .brand small{display:block;color:var(--mut);font-size:10.5px;font-weight:400;letter-spacing:1.4px;text-transform:uppercase;margin-top:2px}
+  .tabs{display:flex;gap:2px;margin-left:auto;background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:3px}
+  .tab{background:none;border:0;color:var(--mut);font-family:var(--sans);font-size:12px;font-weight:600;
+       padding:6px 14px;border-radius:4px;cursor:pointer;letter-spacing:.4px}
+  .tab:hover{color:var(--ink)}
+  .tab.on{background:var(--line2);color:var(--gold)}
+  .tab:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+  .status{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;color:var(--mut)}
   .dot{width:7px;height:7px;border-radius:50%;background:var(--up);box-shadow:0 0 8px var(--up)}
   .dot.err{background:var(--dn);box-shadow:0 0 8px var(--dn)}
+  .live-note{margin:14px 0 0;font-family:var(--mono);font-size:10.5px;color:var(--dim);letter-spacing:.6px;text-transform:uppercase}
 
-  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0}
-  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:13px 15px 10px;position:relative;overflow:hidden}
-  .kpi .lbl{font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--mut);font-weight:600}
-  .kpi .val{font-family:var(--mono);font-size:22px;font-weight:600;margin-top:5px;font-variant-numeric:tabular-nums}
-  .kpi .chg{font-family:var(--mono);font-size:11px;margin-top:2px;color:var(--mut)}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;margin-top:16px}
+  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px 16px 10px;position:relative;overflow:hidden}
+  .kpi .lbl{font-size:10.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--mut);font-weight:600}
+  .kpi .val{font-family:var(--mono);font-size:24px;font-weight:600;margin-top:6px;font-variant-numeric:tabular-nums}
+  .kpi .chg{font-family:var(--mono);font-size:11.5px;margin-top:2px}
   .kpi svg{position:absolute;right:0;bottom:0;opacity:.9}
-  .pos{color:var(--up)!important} .neg{color:var(--dn)!important} .amber{color:var(--pend)!important}
+  .pos{color:var(--up)} .neg{color:var(--dn)} .amber{color:var(--pend)}
 
-  .grid{display:grid;grid-template-columns:1fr 320px;gap:12px;align-items:start}
-  @media(max-width:900px){.grid{grid-template-columns:1fr}}
-  .panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;margin-bottom:12px}
-  .phead{display:flex;align-items:baseline;gap:10px;padding:11px 14px;border-bottom:1px solid var(--line)}
-  .phead h2{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;font-weight:600}
-  .phead .n{font-family:var(--mono);font-size:10.5px;color:var(--gold)}
-  .phead .hint{margin-left:auto;font-size:10.5px;color:var(--dim)}
+  .grid{display:grid;grid-template-columns:1fr 340px;gap:14px;margin-top:14px;align-items:start}
+  @media(max-width:980px){.grid{grid-template-columns:1fr}}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:8px}
+  .phead{display:flex;align-items:baseline;gap:10px;padding:13px 16px;border-bottom:1px solid var(--line)}
+  .phead h2{font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink);font-weight:600}
+  .phead .n{font-family:var(--mono);font-size:11px;color:var(--gold)}
+  .phead .hint{margin-left:auto;font-size:11px;color:var(--dim)}
   .empty{padding:16px;color:var(--dim);font-size:12.5px;font-family:var(--mono)}
 
-  .signals{display:flex;flex-direction:column;gap:9px;padding:11px}
-  .sig{border:1px solid var(--line2);border-left:3px solid var(--pend);border-radius:6px;background:var(--panel2);padding:11px 13px}
-  .sig.executed{border-left-color:var(--up);opacity:.8}
+  .signals{display:flex;flex-direction:column;gap:10px;padding:12px}
+  .sig{border:1px solid var(--line2);border-left:3px solid var(--pend);border-radius:6px;background:var(--panel2);padding:12px 14px}
+  .sig.executed{border-left-color:var(--up)}
   .sig.rejected,.sig.expired{border-left-color:var(--dn);opacity:.55}
-  .sigtop{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
-  .side{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:1px;padding:2px 7px;border-radius:3px}
+  .sigtop{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .side{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:1px;padding:3px 8px;border-radius:3px}
   .side.buy{background:rgba(61,214,140,.13);color:var(--up)}
   .side.sell{background:rgba(240,86,74,.13);color:var(--dn)}
-  .sig .tk{font-family:var(--mono);font-weight:700;font-size:13.5px}
-  .score{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--gold)}
-  .why{font-size:12px;color:var(--mut);margin-top:6px;max-width:64ch}
-  .stamp{font-family:var(--mono);font-size:10.5px;margin-top:8px;letter-spacing:.4px}
-  .stamp.pending{color:var(--pend)} .stamp.executed{color:var(--up)}
+  .sig .tk{font-family:var(--mono);font-weight:700;font-size:14px}
+  .sig .nm{color:var(--mut);font-size:12px}
+  .chip{font-family:var(--mono);font-size:10px;color:var(--mut);border:1px solid var(--line2);padding:2px 7px;border-radius:99px;letter-spacing:.5px}
+  .score{margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--gold)}
+  .thesis{font-size:12.5px;color:var(--mut);line-height:1.55;margin-top:8px;max-width:62ch}
+  .thesis b{color:var(--ink);font-weight:600}
+  .nums{display:flex;gap:18px;margin-top:10px;font-family:var(--mono);font-size:11.5px;flex-wrap:wrap;font-variant-numeric:tabular-nums}
+  .nums span{color:var(--dim)} .nums b{color:var(--ink);font-weight:600;margin-left:5px}
+  .stamp{font-family:var(--mono);font-size:11px;margin-top:10px;letter-spacing:.5px}
+  .stamp.executed{color:var(--up)} .stamp.pending{color:var(--pend)}
   .stamp.rejected,.stamp.expired{color:var(--dn)} .stamp.auto{color:var(--info)}
 
   .tblwrap{overflow-x:auto}
-  table{width:100%;border-collapse:collapse;font-size:12.5px;font-variant-numeric:tabular-nums}
-  th{font-size:9.5px;letter-spacing:1.1px;text-transform:uppercase;color:var(--dim);text-align:left;
-     padding:8px 13px;border-bottom:1px solid var(--line);font-weight:600;white-space:nowrap}
+  table{width:100%;border-collapse:collapse;font-size:12.5px}
+  th{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--dim);text-align:left;
+     padding:9px 14px;border-bottom:1px solid var(--line);font-weight:600;white-space:nowrap}
   th.r,td.r{text-align:right}
-  td{padding:8px 13px;border-bottom:1px solid var(--line);white-space:nowrap}
+  td{padding:9px 14px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums;white-space:nowrap}
   tr:last-child td{border-bottom:0}
+  tbody tr:hover{background:rgba(232,184,75,.03)}
   td.tk{font-family:var(--mono);font-weight:700}
+  td .cls{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:8px;vertical-align:1px}
   td.num{font-family:var(--mono)}
-  .vd{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.7px;padding:2px 7px;border-radius:3px}
-  .vd.strong_buy{background:rgba(61,214,140,.14);color:var(--up)}
-  .vd.buy{background:rgba(92,168,240,.14);color:var(--info)}
-  .vd.watch{background:rgba(245,168,60,.14);color:var(--pend)}
-  .vd.monitor,.vd.pass{background:rgba(133,149,171,.12);color:var(--mut)}
-  .bar{display:inline-block;width:46px;height:5px;background:var(--line);border-radius:3px;vertical-align:2px;margin-left:7px;overflow:hidden}
+  .vd{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.8px;padding:2px 8px;border-radius:3px}
+  .vd.sb{background:rgba(61,214,140,.14);color:var(--up)}
+  .vd.b{background:rgba(92,168,240,.14);color:var(--info)}
+  .vd.w{background:rgba(245,168,60,.14);color:var(--pend)}
+  .vd.m,.vd.p{background:rgba(133,149,171,.12);color:var(--mut)}
+  .bar{display:inline-block;width:54px;height:5px;background:var(--line);border-radius:3px;vertical-align:2px;margin-left:8px;overflow:hidden}
   .bar i{display:block;height:100%;background:var(--gold);border-radius:3px}
 
-  .alloc{display:flex;align-items:center;gap:16px;padding:14px}
-  .legend{display:flex;flex-direction:column;gap:7px;font-size:12px;flex:1}
+  .col{display:flex;flex-direction:column;gap:14px}
+  .alloc{display:flex;align-items:center;gap:18px;padding:16px}
+  .legend{display:flex;flex-direction:column;gap:8px;font-size:12px;flex:1}
   .legend div{display:flex;align-items:center;gap:8px;color:var(--mut)}
   .legend i{width:9px;height:9px;border-radius:2px;flex:none}
-  .legend b{margin-left:auto;font-family:var(--mono);color:var(--ink)}
-  .hrow{display:flex;align-items:center;gap:9px;padding:7px 14px;font-size:12.5px}
-  .hrow .tk{font-family:var(--mono);font-weight:700;width:58px}
-  .hrow .nm{color:var(--dim);font-size:11px;flex:1}
+  .legend b{margin-left:auto;font-family:var(--mono);color:var(--ink);font-weight:600}
+  .hold{padding:6px 0}
+  .hrow{display:flex;align-items:center;gap:10px;padding:8px 16px;font-size:12.5px}
+  .hrow .tk{font-family:var(--mono);font-weight:700;width:64px}
+  .hrow .nm{color:var(--dim);font-size:11px;flex:1;overflow:hidden;text-overflow:ellipsis}
   .hrow .pl{font-family:var(--mono);font-size:12px;font-variant-numeric:tabular-nums}
-  .frow{display:flex;gap:9px;padding:6px 14px;font-size:11.5px;color:var(--mut)}
-  .frow time{font-family:var(--mono);color:var(--dim);font-size:10px;flex:none;width:78px}
-  .frow b{color:var(--ink)}
+  .feed{padding:8px 0;max-height:320px;overflow-y:auto}
+  .frow{display:flex;gap:10px;padding:7px 16px;font-size:11.5px;line-height:1.45}
+  .frow time{font-family:var(--mono);color:var(--dim);font-size:10.5px;flex:none;width:52px;padding-top:1px}
+  .frow p{color:var(--mut)} .frow b{color:var(--ink);font-weight:600}
+  .fdot{width:6px;height:6px;border-radius:50%;flex:none;margin-top:5px}
 
-  footer{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);font-size:10.5px;color:var(--dim);line-height:1.6}
-  footer b{color:var(--mut)}
+  footer{margin-top:28px;padding-top:16px;border-top:1px solid var(--line);display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+  footer .who{font-size:12.5px;font-weight:600}
+  footer .who span{color:var(--mut);font-weight:400}
+  footer a{color:var(--gold);text-decoration:none;font-size:12px}
+  footer .dis{margin-left:auto;font-size:10.5px;color:var(--dim);max-width:52ch;line-height:1.5}
 </style>
 </head>
 <body>
-<header>
-  <div class="logo">BRX</div>
-  <div><h1>BRX Trading Terminal</h1><small>7-Gate Agent · Paper Trading</small></div>
-  <div class="status"><span class="dot" id="dot"></span><span id="statusline">loading…</span></div>
-</header>
-
-<div class="kpis" id="kpis"></div>
-
-<div class="grid">
-  <div>
-    <section class="panel">
-      <div class="phead"><h2>Signal Queue</h2><span class="n" id="sq-n"></span>
-        <span class="hint">approve / reject on Telegram</span></div>
-      <div class="signals" id="signals"></div>
-    </section>
-    <section class="panel">
-      <div class="phead"><h2>Watchlist — Composite Ranking</h2><span class="n" id="wl-n"></span></div>
-      <div class="tblwrap"><table>
-        <thead><tr><th>Ticker</th><th class="r">Composite</th><th>Verdict</th><th>Scored</th></tr></thead>
-        <tbody id="watchlist"></tbody>
-      </table></div>
-    </section>
-  </div>
-  <div>
-    <section class="panel">
-      <div class="phead"><h2>Allocation</h2></div>
-      <div class="alloc">
-        <svg width="96" height="96" viewBox="0 0 42 42" id="donut" role="img" aria-label="Allocation"></svg>
-        <div class="legend" id="legend"></div>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo">BRX</div>
+      <div>
+        <h1>BRX Trading Terminal</h1>
+        <small>Multi-Asset Agent · 7-Gate Framework v4</small>
       </div>
-    </section>
-    <section class="panel">
-      <div class="phead"><h2>Holdings</h2><span class="hint">live P&amp;L</span></div>
-      <div id="holdings"></div>
-    </section>
-    <section class="panel">
-      <div class="phead"><h2>Crypto Radar</h2><span class="hint">follow the money</span></div>
-      <div id="radar"></div>
-    </section>
-    <section class="panel">
-      <div class="phead"><h2>Recent Fills</h2></div>
-      <div id="fills"></div>
-    </section>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Asset class filter">
+      <button class="tab on" data-c="all">All</button>
+      <button class="tab" data-c="eq">Equities</button>
+      <button class="tab" data-c="cx">Crypto</button>
+    </div>
+    <div class="status"><span class="dot" id="dot"></span><span id="statusline">loading…</span></div>
+  </header>
+  <p class="live-note" id="livenote">Live account data · autopilot on · updates every 15 min</p>
+
+  <div class="kpis" id="kpis"></div>
+
+  <div class="grid">
+    <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+      <section class="panel">
+        <div class="phead"><h2>Signal Queue</h2><span class="n" id="qn"></span>
+          <span class="hint">autopilot · Telegram mirrors every decision</span></div>
+        <div class="signals" id="sigs"></div>
+      </section>
+      <section class="panel">
+        <div class="phead"><h2>Watchlist — Composite Ranking</h2><span class="n" id="wn"></span>
+          <span class="hint">7-gate survivors + crypto flow</span></div>
+        <div class="tblwrap">
+          <table>
+            <thead><tr>
+              <th>Asset</th><th>Class</th><th class="r">Price</th><th class="r">24h</th>
+              <th class="r">Composite</th><th>Gates</th><th class="r">Flow</th><th>Verdict</th>
+            </tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <div class="col">
+      <section class="panel">
+        <div class="phead"><h2>Allocation</h2></div>
+        <div class="alloc">
+          <svg width="110" height="110" viewBox="0 0 42 42" role="img" aria-label="Allocation" id="donut"></svg>
+          <div class="legend" id="legend"></div>
+        </div>
+      </section>
+      <section class="panel">
+        <div class="phead"><h2>Holdings</h2><span class="hint">live P&amp;L</span></div>
+        <div class="hold" id="holdings"></div>
+      </section>
+      <section class="panel">
+        <div class="phead"><h2>Agent Activity</h2></div>
+        <div class="feed" id="feed"></div>
+      </section>
+    </div>
   </div>
+
+  <footer>
+    <div class="who">Leander Tarek Khatib <span>· Co-Founder &amp; CEO — BRX Technologies L.L.C — DIFC</span></div>
+    <a href="https://www.brxdxb.com">www.brxdxb.com</a>
+    <div class="dis">Research and workflow tooling. Paper trading — simulated money, real market data.
+      Not investment advice; past or paper performance predicts nothing.</div>
+  </footer>
 </div>
 
-<footer>
-  <b>Leander Tarek Khatib · BRX Technologies L.L.C — DIFC · brxdxb.com</b><br>
-  Paper trading — simulated money, real market data. Research tooling, not investment advice.
-  Buy signals execute only after owner approval on Telegram; autonomy is earned from recorded
-  outcomes, never assumed.
-</footer>
-
 <script>
-const $ = id => document.getElementById(id);
-const usd = v => "$" + Number(v).toLocaleString("en-US", {maximumFractionDigits: 0});
-const pct = v => (v >= 0 ? "+" : "") + Number(v).toFixed(2) + "%";
+const $=id=>document.getElementById(id);
+const usd=v=>"$"+Number(v).toLocaleString("en-US",{maximumFractionDigits:0});
+const usd2=v=>"$"+Number(v).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
+const pct=v=>(v>=0?"+":"")+Number(v).toFixed(2)+"%";
+const CLSCOLOR={eq:'#5CA8F0',cx:'#E8B84B'};
+const CLSNAME={eq:'Equity',cx:'Crypto'};
+const CRYPTO=/^(BTC|ETH|SOL|AVAX|LINK|LTC|TRX|DOGE|XRP|ADA)/;
+const isCrypto=s=>CRYPTO.test((s||"").replace(/[-\/]?USD.*$/,""));
+let DATA=null, FILTER='all';
 
-function spark(values, color) {
-  if (!values || values.length < 2) return "";
-  const w = 110, h = 32, min = Math.min(...values), max = Math.max(...values), span = (max - min) || 1;
-  const pts = values.map((v, i) =>
-    `${(i / (values.length - 1) * w).toFixed(1)} ${(h - 4 - (v - min) / span * (h - 8)).toFixed(1)}`);
+function spark(vals,color){
+  if(!vals||vals.length<2) return "";
+  const w=120,h=34,min=Math.min(...vals),max=Math.max(...vals),span=(max-min)||1;
+  const pts=vals.map((v,i)=>`${(i/(vals.length-1)*w).toFixed(1)} ${(h-4-(v-min)/span*(h-8)).toFixed(1)}`);
   return `<svg width="${w}" height="${h}" aria-hidden="true">
-    <path d="M${pts.join(" L")}" fill="none" stroke="${color}" stroke-width="1.5"/></svg>`;
+    <path d="M${pts.join(" L")}" fill="none" stroke="${color}" stroke-width="1.5"/>
+    <path d="M${pts.join(" L")} L${w} ${h} L0 ${h}Z" fill="${color}22"/></svg>`;
 }
 
-function render(d) {
-  const acct = d.account, err = d.error;
-  const age = Math.round((Date.now() - new Date(d.generated_at)) / 60000);
-  $("dot").className = "dot" + (err ? " err" : "");
-  const kc = d.binance || {};
-  const kcTxt = kc.configured ? " · BINANCE " + kc.mode + " $" + (kc.usdt || 0) : " · BINANCE not linked";
-  $("statusline").textContent =
-    (err ? "DEGRADED — " + err : "AGENT LIVE") + " · " + d.mode + kcTxt + " · updated " + age + "m ago";
+function render(){
+  const d=DATA, a=d.account||{}, err=d.error;
+  const age=Math.round((Date.now()-new Date(d.generated_at))/60000);
+  $("dot").className="dot"+(err?" err":"");
+  const bn=d.binance||{};
+  $("statusline").textContent=(err?"DEGRADED":"AGENT LIVE")+" · BROKER: ALPACA ("+(d.mode||"PAPER").replace(" TRADING","")+")"
+    +(bn.configured?" · BINANCE "+bn.mode:"")+" · "+age+"m ago";
 
-  // KPIs
-  const pending = (d.signals || []).filter(s => s.status === "pending");
-  const eq = acct ? acct.equity : null;
-  const dayPl = acct ? acct.day_pl : 0;
-  const dayPct = acct && acct.last_equity ? dayPl / acct.last_equity * 100 : 0;
-  const hist = (d.equity_history && d.equity_history.equity || []).filter(Boolean);
-  $("kpis").innerHTML = `
+  const sigs=(d.signals||[]), pending=sigs.filter(s=>s.status==='pending');
+  const hist=(d.equity_history&&d.equity_history.equity||[]).filter(Boolean);
+  const dayPl=a.day_pl||0, totPl=a.total_pl||0;
+  const dayPct=a.last_equity?dayPl/a.last_equity*100:0;
+
+  $("kpis").innerHTML=`
     <div class="kpi"><div class="lbl">Portfolio Value</div>
-      <div class="val">${eq != null ? usd(eq) : "—"}</div>
-      <div class="chg ${dayPl >= 0 ? "pos" : "neg"}">${acct ? (dayPl >= 0 ? "▲" : "▼") + " " + usd(Math.abs(dayPl)) + " · " + pct(dayPct) + " today" : "awaiting keys"}</div>
-      ${spark(hist, dayPl >= 0 ? "#3DD68C" : "#F0564A")}</div>
+      <div class="val">${a.equity!=null?usd(a.equity):"—"}</div>
+      <div class="chg ${dayPl>=0?"pos":"neg"}">${(dayPl>=0?"▲ +":"▼ ")+usd2(Math.abs(dayPl))} · ${pct(dayPct)} today</div>
+      ${spark(hist,dayPl>=0?"#3DD68C":"#F0564A")}</div>
     <div class="kpi"><div class="lbl">P&amp;L — since start</div>
-      <div class="val ${acct && acct.total_pl >= 0 ? "pos" : "neg"}">${acct && acct.total_pl != null ? usd(acct.total_pl) : "—"}</div>
-      <div class="chg">3-month window</div>${spark(hist, "#E8B84B")}</div>
-    <div class="kpi"><div class="lbl">Signals Pending Approval</div>
-      <div class="val amber">${pending.length}</div>
-      <div class="chg">${pending.length ? "cards on your Telegram" : "queue clear"}</div></div>
+      <div class="val ${totPl>=0?"pos":"neg"}">${usd2(totPl)}</div>
+      <div class="chg" style="color:var(--mut)">3-month window · ${a.equity?((totPl/a.equity)*100).toFixed(2):"0"}%</div>
+      ${spark(hist,"#E8B84B")}</div>
+    <div class="kpi"><div class="lbl">Signals — 24h</div>
+      <div class="val ${pending.length?"amber":""}">${sigs.length}</div>
+      <div class="chg" style="color:var(--mut)">${pending.length?pending.length+" awaiting you":"autopilot · queue clear"}</div></div>
     <div class="kpi"><div class="lbl">Watchlist Scored</div>
-      <div class="val">${(d.verdicts || []).length}</div>
-      <div class="chg">latest 7-gate results</div></div>`;
+      <div class="val">${(d.verdicts||[]).length}<span style="font-size:14px;color:var(--dim)"> + ${(d.crypto_radar||[]).length} crypto</span></div>
+      <div class="chg" style="color:var(--mut)">latest 7-gate results</div></div>`;
 
   // Signals
-  const sigs = d.signals || [];
-  $("sq-n").textContent = pending.length + " awaiting";
-  $("signals").innerHTML = sigs.length ? sigs.map(s => {
-    const cls = s.status === "pending" ? "" : " " + s.status;
-    const conf = s.n_outcomes ? `calibrated ${(s.confidence * 100).toFixed(0)}% (n=${s.n_outcomes})` : "cold start — no history yet";
-    const stamps = {
-      pending: "🟡 PENDING — answer on Telegram, expires in 24h",
-      executed: s.tier === "A" ? "✓ AUTO-EXECUTED (Tier A)" : "✓ APPROVED &amp; EXECUTED",
-      rejected: "✕ REJECTED — no order sent",
-      expired: "⏱ EXPIRED — silence never trades",
-      auto_approved: "✓ AUTO-APPROVED (Tier A)",
-      approved: "…APPROVED — executing",
-    };
-    return `<div class="sig${cls}"><div class="sigtop">
-      <span class="side ${s.side}">${s.side.toUpperCase()}</span>
-      <span class="tk">${s.symbol}</span>
-      <span style="font-family:var(--mono);font-size:12px;color:var(--mut)">${usd(s.notional)}</span>
-      ${s.composite ? `<span class="score">COMPOSITE ${Math.round(s.composite)}/100</span>` : ""}</div>
-      <div class="why">${s.reason || ""} · ${conf}</div>
-      <div class="stamp ${s.status === "auto_approved" ? "auto" : s.status}">${stamps[s.status] || s.status}</div></div>`;
-  }).join("") : `<div class="empty">No signals yet — first rebalance runs at 17:45 Dubai on the next trading day.</div>`;
+  const fs=sigs.filter(s=>FILTER==='all'||(FILTER==='cx')===isCrypto(s.symbol));
+  $("qn").textContent=pending.length?pending.length+" awaiting":"autopilot";
+  const STAMP={pending:"🟡 PENDING — answer on Telegram, expires in 24h",
+    executed:"✓ EXECUTED", auto_approved:"✓ AUTO-APPROVED (Tier A)",
+    approved:"…APPROVED — executing", rejected:"✕ REJECTED — no order sent",
+    expired:"⏱ EXPIRED — silence never trades"};
+  $("sigs").innerHTML=fs.length?fs.slice(0,8).map(s=>{
+    const cls=isCrypto(s.symbol)?'cx':'eq';
+    const conf=s.n_outcomes?`calibrated ${(s.confidence*100).toFixed(0)}% (n=${s.n_outcomes})`:"cold start — no history yet";
+    return `<div class="sig ${s.status}">
+      <div class="sigtop"><span class="side ${s.side}">${s.side.toUpperCase()}</span>
+        <span class="tk">${s.symbol}</span>
+        <span class="nm">${usd2(s.notional)}</span>
+        <span class="chip">${CLSNAME[cls]}</span>
+        ${s.composite?`<span class="score">COMPOSITE ${Math.round(s.composite)}/100</span>`:""}</div>
+      <p class="thesis">${s.reason||""} · <b>${conf}</b></p>
+      <div class="nums">
+        <div><span>Tier</span><b>${s.tier||"—"}</b></div>
+        <div><span>Verdict</span><b>${(s.verdict||"—").toUpperCase()}</b></div>
+        <div><span>Time</span><b>${(s.created_at||"").slice(5,16).replace("T"," ")}</b></div></div>
+      <div class="stamp ${s.status==='auto_approved'?'auto':s.status}">${STAMP[s.status]||s.status}</div></div>`;
+  }).join(""):`<div class="empty">No signals in this class yet.</div>`;
 
-  // Watchlist
-  const wl = (d.verdicts || []).slice(0, 15);
-  $("wl-n").textContent = "top " + wl.length;
-  $("watchlist").innerHTML = wl.length ? wl.map(v => `<tr>
-    <td class="tk">${v.ticker}</td>
-    <td class="r num">${v.score}<span class="bar"><i style="width:${Math.min(100, v.score)}%"></i></span></td>
-    <td><span class="vd ${(v.verdict || "").toLowerCase()}">${(v.verdict || "?").replace("_", " ").toUpperCase()}</span></td>
-    <td style="color:var(--dim)">${v.date || ""}</td></tr>`).join("")
-    : `<tr><td colspan="4" class="empty">No scores yet — next scheduled scan will populate this.</td></tr>`;
+  // Watchlist: equities (verdicts) + crypto (radar)
+  const VMAP={"STRONG BUY":"sb","BUY":"b","WATCH":"w","MONITOR":"m","PASS":"p"};
+  let rows=[];
+  (d.verdicts||[]).forEach(v=>rows.push({tk:v.ticker,cls:'eq',score:v.score,
+    verdict:v.verdict,gates:"7/7",flow:null,price:null,chg:null}));
+  (d.crypto_radar||[]).forEach(c=>rows.push({tk:c.symbol,cls:'cx',score:c.flow,
+    verdict:c.flow>=55?"BUY":"WATCH",gates:"flow",flow:c.flow,price:null,
+    chg:c.funding!=null?c.funding*100:null,crowded:c.long_short>2}));
+  const fr=rows.filter(r=>FILTER==='all'||r.cls===(FILTER==='cx'?'cx':'eq')).sort((x,y)=>(y.score||0)-(x.score||0));
+  $("wn").textContent=fr.length+" shown";
+  $("rows").innerHTML=fr.length?fr.map(r=>`<tr>
+    <td class="tk"><span class="cls" style="background:${CLSCOLOR[r.cls]}"></span>${r.tk}</td>
+    <td style="color:var(--mut)">${CLSNAME[r.cls]}</td>
+    <td class="r num" style="color:var(--dim)">${r.price?usd2(r.price):"—"}</td>
+    <td class="r num" style="color:var(--dim)">${r.chg!=null?r.chg.toFixed(3)+"%":"—"}</td>
+    <td class="r num">${r.score!=null?r.score.toFixed(1):"—"}<span class="bar"><i style="width:${Math.min(100,r.score||0)}%"></i></span></td>
+    <td class="num" style="color:var(--mut)">${r.gates}</td>
+    <td class="r num" style="color:${r.crowded?'var(--dn)':'var(--dim)'}">${r.flow!=null?(r.crowded?"crowded":r.flow.toFixed(0)):"—"}</td>
+    <td><span class="vd ${VMAP[r.verdict]||'m'}">${r.verdict}</span></td></tr>`).join("")
+    :`<tr><td colspan="8" class="empty">No scores yet.</td></tr>`;
 
-  // Allocation donut: invested vs cash
-  if (acct) {
-    const invested = (d.positions || []).reduce((a, p) => a + p.market_value, 0);
-    const cash = Math.max(0, acct.equity - invested);
-    const investedPct = acct.equity ? invested / acct.equity * 100 : 0;
-    const cashPct = 100 - investedPct;
-    $("donut").innerHTML = `
-      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#1D2735" stroke-width="5"/>
-      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#5CA8F0" stroke-width="5"
-        stroke-dasharray="${investedPct.toFixed(1)} ${(100 - investedPct).toFixed(1)}" stroke-dashoffset="25"/>`;
-    $("legend").innerHTML = `
-      <div><i style="background:#5CA8F0"></i>US Equities<b>${investedPct.toFixed(0)}%</b></div>
-      <div><i style="background:#8595AB"></i>Cash<b>${cashPct.toFixed(0)}%</b></div>`;
-  } else {
-    $("legend").innerHTML = `<div>awaiting Alpaca keys</div>`;
-  }
+  // Allocation
+  const pos=d.positions||[];
+  const eqV=pos.filter(p=>!isCrypto(p.symbol)).reduce((s,p)=>s+p.market_value,0);
+  const cxV=pos.filter(p=>isCrypto(p.symbol)).reduce((s,p)=>s+p.market_value,0);
+  const cash=Math.max(0,(a.equity||0)-eqV-cxV);
+  const tot=(a.equity||1);
+  const segs=[["US Equities","#5CA8F0",eqV/tot*100],["Crypto","#E8B84B",cxV/tot*100],["Cash","#8595AB",cash/tot*100]];
+  let off=25,circles=`<circle cx="21" cy="21" r="15.9" fill="none" stroke="#1D2735" stroke-width="5"/>`;
+  segs.forEach(([n,c,v])=>{ if(v>0.4){circles+=`<circle cx="21" cy="21" r="15.9" fill="none" stroke="${c}" stroke-width="5"
+      stroke-dasharray="${v.toFixed(1)} ${(100-v).toFixed(1)}" stroke-dashoffset="${off}"/>`; off=(off-v+100)%100;} });
+  $("donut").innerHTML=circles;
+  $("legend").innerHTML=segs.map(([n,c,v])=>`<div><i style="background:${c}"></i>${n}<b>${v.toFixed(0)}%</b></div>`).join("");
 
   // Holdings
-  const posns = d.positions || [];
-  $("holdings").innerHTML = posns.length ? posns.map(p => `
-    <div class="hrow"><span class="tk">${p.symbol}</span>
-      <span class="nm">${p.qty} sh · ${usd(p.market_value)}</span>
-      <span class="pl ${p.unrealized_plpc >= 0 ? "pos" : "neg"}">${pct(p.unrealized_plpc)}</span></div>`).join("")
-    : `<div class="empty">No positions yet.</div>`;
+  $("holdings").innerHTML=pos.length?pos.map(p=>`<div class="hrow">
+    <span class="tk">${p.symbol}</span>
+    <span class="nm">${Number(p.qty).toFixed(p.qty<1?4:2)} · ${usd(p.market_value)}</span>
+    <span class="pl ${p.unrealized_plpc>=0?"pos":"neg"}">${pct(p.unrealized_plpc)}</span></div>`).join("")
+    :`<div class="empty">No positions.</div>`;
 
-  // Crypto radar
-  const radar = d.crypto_radar || [];
-  $("radar").innerHTML = radar.length ? radar.map(c => {
-    const f = c.flow;
-    const col = f >= 60 ? "var(--up)" : f >= 45 ? "var(--pend)" : "var(--dn)";
-    const ls = c.long_short;
-    const lsFlag = ls > 2.0 ? " ⚠crowded" : "";
-    return `<div class="hrow"><span class="tk">${c.symbol}</span>
-      <span class="nm">flow ${f != null ? f.toFixed(0) : "—"}/100${lsFlag}</span>
-      <span class="pl" style="color:${col}">${c.funding != null ? (c.funding*100).toFixed(3)+"%" : ""}</span></div>`;
-  }).join("") : `<div class="empty">Radar loading…</div>`;
-
-  // Fills
-  const fills = (d.fills || []).slice(0, 8);
-  $("fills").innerHTML = fills.length ? fills.map(f => `
-    <div class="frow"><time>${(f.time || "").slice(5, 16).replace("T", " ")}</time>
-      <span><b>${(f.side || "").toUpperCase()} ${f.symbol}</b> ${f.qty} @ $${f.price} (${usd(f.value)})</span></div>`).join("")
-    : `<div class="empty">No fills yet.</div>`;
+  // Activity feed — signals + fills merged, newest first
+  const acts=[];
+  sigs.slice(0,10).forEach(s=>acts.push({t:s.created_at,
+    c:s.status==='executed'||s.status==='auto_approved'?"var(--up)":s.status==='pending'?"var(--pend)":"var(--dn)",
+    h:`<b>${s.side.toUpperCase()} ${s.symbol}</b> ${usd(s.notional)} — ${(STAMP[s.status]||s.status).replace(/^[^A-Za-z]+/,"")}`}));
+  (d.fills||[]).slice(0,10).forEach(f=>acts.push({t:f.time,c:"var(--info)",
+    h:`Fill: <b>${(f.side||"").toUpperCase()} ${f.symbol}</b> ${Number(f.qty).toFixed(4)} @ ${usd2(f.price)}`}));
+  acts.sort((x,y)=>new Date(y.t)-new Date(x.t));
+  $("feed").innerHTML=acts.length?acts.slice(0,14).map(x=>`<div class="frow">
+    <time>${(x.t||"").slice(11,16)}</time><span class="fdot" style="background:${x.c}"></span><p>${x.h}</p></div>`).join("")
+    :`<div class="empty">No activity yet.</div>`;
 }
 
-async function load() {
-  try {
-    const d = await (await fetch("data.json?t=" + Date.now())).json();
-    render(d);
-  } catch (e) {
-    $("statusline").textContent = "cannot load data.json";
-    $("dot").className = "dot err";
-  }
+async function load(){
+  try{ DATA=await (await fetch("data.json?t="+Date.now())).json(); render(); }
+  catch(e){ $("statusline").textContent="cannot load data"; $("dot").className="dot err"; }
 }
-load();
-setInterval(load, 60000);
-if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>{
+  document.querySelectorAll(".tab").forEach(x=>x.classList.remove("on"));
+  t.classList.add("on"); FILTER=t.dataset.c; if(DATA) render();
+}));
+load(); setInterval(load,60000);
+if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
 </script>
 </body>
 </html>
