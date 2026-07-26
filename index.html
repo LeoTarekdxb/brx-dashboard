@@ -10,7 +10,7 @@
 <title>BRX Trading Terminal</title>
 <style>
   :root{
-    --bg:#080B11; --panel:#0F151F; --panel2:#0B1018; --line:#1A2331; --line2:#26314260;
+    --bg:#080B11; --panel:#0F151F; --panel2:#0B1018; --line:#1A2331; --soft:#26314255;
     --ink:#EAF0F7; --mut:#8291A8; --dim:#55637A;
     --gold:#E8B84B; --up:#35D68A; --dn:#F0564A; --pend:#F5A83C; --info:#5CA8F0;
     --real:#35D68A; --paper:#5CA8F0;
@@ -19,68 +19,100 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5;
-       padding:max(10px,env(safe-area-inset-top)) 14px 40px;max-width:1240px;margin:0 auto}
+       padding:max(10px,env(safe-area-inset-top)) 14px 44px;max-width:1280px;margin:0 auto}
 
   header{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
   .logo{width:34px;height:34px;border:1.5px solid var(--gold);display:grid;place-items:center;
         font-family:var(--mono);font-weight:700;color:var(--gold);font-size:11px;border-radius:5px}
-  header h1{font-size:15px;font-weight:700;letter-spacing:.2px}
+  header h1{font-size:15px;font-weight:700}
   header small{display:block;color:var(--mut);font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase}
   .status{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--mut);text-align:right}
   .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--up);box-shadow:0 0 8px var(--up);margin-right:5px}
   .dot.err{background:var(--dn);box-shadow:0 0 8px var(--dn)}
 
-  /* MODE SWITCH — hard separation between real money and paper */
-  .modes{display:flex;gap:6px;margin:14px 0 4px;flex-wrap:wrap}
-  .mode{flex:1;min-width:150px;background:var(--panel2);border:1px solid var(--line);border-radius:9px;
-        padding:11px 14px;cursor:pointer;text-align:left;transition:border-color .15s,background .15s}
-  .mode:hover{border-color:var(--line2)}
-  .mode .t{font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--mut);font-weight:700}
-  .mode .v{font-family:var(--mono);font-size:19px;font-weight:700;margin-top:3px}
-  .mode .s{font-family:var(--mono);font-size:10.5px;margin-top:1px}
-  .mode.on.real{border-color:var(--real);background:rgba(53,214,138,.07)}
-  .mode.on.paper{border-color:var(--paper);background:rgba(92,168,240,.07)}
-  .tagreal{color:var(--real)} .tagpaper{color:var(--paper)}
-  .badge{font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:1px;padding:2px 6px;border-radius:3px;vertical-align:2px;margin-left:6px}
+  /* ── BOOK SWITCH ── */
+  .books{display:flex;gap:8px;margin:14px 0 6px;flex-wrap:wrap}
+  .book{flex:1;min-width:170px;background:var(--panel2);border:1.5px solid var(--line);border-radius:10px;
+        padding:12px 15px;cursor:pointer;transition:.15s}
+  .book:hover{border-color:var(--soft)}
+  .book .t{font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--mut);font-weight:700}
+  .book .v{font-family:var(--mono);font-size:21px;font-weight:700;margin-top:3px}
+  .book .s{font-family:var(--mono);font-size:10.5px;margin-top:1px;color:var(--mut)}
+  .book.on.real{border-color:var(--real);background:rgba(53,214,138,.08)}
+  .book.on.paper{border-color:var(--paper);background:rgba(92,168,240,.08)}
+  .tagreal{color:var(--real)}.tagpaper{color:var(--paper)}
+  .badge{font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:1px;
+         padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:2px}
   .badge.real{background:rgba(53,214,138,.16);color:var(--real)}
   .badge.paper{background:rgba(92,168,240,.16);color:var(--paper)}
 
-  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:11px;margin:12px 0}
+  /* ── 5 KPI CARDS ── */
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:10px;margin:12px 0}
   .kpi{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:12px 14px}
-  .kpi .lbl{font-size:9.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--mut);font-weight:700}
-  .kpi .val{font-family:var(--mono);font-size:22px;font-weight:700;margin-top:4px;font-variant-numeric:tabular-nums}
-  .kpi .chg{font-family:var(--mono);font-size:10.5px;margin-top:1px;color:var(--mut)}
-  .pos{color:var(--up)!important}.neg{color:var(--dn)!important}.amb{color:var(--pend)!important}
+  .kpi .lbl{font-size:9px;letter-spacing:1.3px;text-transform:uppercase;color:var(--mut);font-weight:700}
+  .kpi .val{font-family:var(--mono);font-size:21px;font-weight:700;margin-top:4px;font-variant-numeric:tabular-nums}
+  .kpi .chg{font-family:var(--mono);font-size:10px;margin-top:2px;color:var(--dim)}
+  .pos{color:var(--up)!important}.neg{color:var(--dn)!important}
 
-  .grid{display:grid;grid-template-columns:1fr 330px;gap:12px;align-items:start}
+  .grid{display:grid;grid-template-columns:1fr 320px;gap:12px;align-items:start}
   @media(max-width:940px){.grid{grid-template-columns:1fr}}
   .panel{background:var(--panel);border:1px solid var(--line);border-radius:9px;margin-bottom:12px;overflow:hidden}
   .phead{display:flex;align-items:baseline;gap:9px;padding:11px 14px;border-bottom:1px solid var(--line)}
   .phead h2{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;font-weight:700}
   .phead .n{font-family:var(--mono);font-size:10px;color:var(--gold)}
   .phead .hint{margin-left:auto;font-size:10px;color:var(--dim)}
-  .empty{padding:16px;color:var(--dim);font-size:12px;font-family:var(--mono)}
+  .empty{padding:15px;color:var(--dim);font-size:12px;font-family:var(--mono)}
 
   table{width:100%;border-collapse:collapse;font-size:12px;font-variant-numeric:tabular-nums}
   th{font-size:9px;letter-spacing:1.1px;text-transform:uppercase;color:var(--dim);text-align:left;
      padding:8px 13px;border-bottom:1px solid var(--line);font-weight:700;white-space:nowrap}
   th.r,td.r{text-align:right}
-  td{padding:9px 13px;border-bottom:1px solid var(--line);white-space:nowrap}
+  td{padding:9px 13px;border-bottom:1px solid var(--soft);white-space:nowrap}
   tr:last-child td{border-bottom:0}
   td.tk{font-family:var(--mono);font-weight:700}
   td.num{font-family:var(--mono)}
   tbody tr:hover{background:rgba(232,184,75,.03)}
 
-  .rowline{display:flex;align-items:center;gap:9px;padding:8px 14px;font-size:12px;border-bottom:1px solid var(--line2)}
+  /* ── TRADE CARDS: bought / sold / made ── */
+  .trade{border:1px solid var(--soft);border-left:3px solid var(--dim);border-radius:7px;
+         background:var(--panel2);padding:11px 13px;margin:9px 12px}
+  .trade.win{border-left-color:var(--up)}.trade.loss{border-left-color:var(--dn)}
+  .trade.open{border-left-color:var(--pend)}
+  .trade .top{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .trade .as{font-family:var(--mono);font-weight:700;font-size:13.5px}
+  .trade .rs{margin-left:auto;font-family:var(--mono);font-weight:700;font-size:13px}
+  .trade .legs{font-family:var(--mono);font-size:11px;color:var(--mut);margin-top:7px;line-height:1.7}
+  .trade .legs b{color:var(--ink)}
+  .chip{font-family:var(--mono);font-size:8.5px;letter-spacing:.8px;padding:2px 6px;border-radius:3px;font-weight:700}
+  .chip.w{background:rgba(53,214,138,.15);color:var(--up)}
+  .chip.l{background:rgba(240,86,74,.15);color:var(--dn)}
+  .chip.o{background:rgba(245,168,60,.15);color:var(--pend)}
+
+  /* ── ACTIVITY (prominent) ── */
+  .act{display:flex;gap:10px;padding:9px 14px;font-size:11.5px;border-bottom:1px solid var(--soft);align-items:flex-start}
+  .act:last-child{border-bottom:0}
+  .act time{font-family:var(--mono);color:var(--dim);font-size:10px;width:74px;flex:none;padding-top:1px}
+  .act .bd{width:6px;height:6px;border-radius:50%;flex:none;margin-top:5px}
+  .act .tx{flex:1}
+  .act .tx b{font-family:var(--mono);font-size:11px}
+  .act .tx span{display:block;color:var(--dim);font-size:10px;margin-top:1px}
+
+  .rowline{display:flex;align-items:center;gap:9px;padding:8px 14px;font-size:12px;border-bottom:1px solid var(--soft)}
   .rowline:last-child{border-bottom:0}
-  .rowline .tk{font-family:var(--mono);font-weight:700;width:58px}
+  .rowline .tk{font-family:var(--mono);font-weight:700;width:56px}
   .rowline .nm{color:var(--dim);font-size:10.5px;flex:1}
-  .rowline .pl{font-family:var(--mono);font-size:11.5px;font-variant-numeric:tabular-nums}
-  .bar{display:inline-block;width:44px;height:4px;background:var(--line);border-radius:3px;vertical-align:2px;margin-left:7px;overflow:hidden}
+  .rowline .pl{font-family:var(--mono);font-size:11.5px}
+  .bar{display:inline-block;width:42px;height:4px;background:var(--line);border-radius:3px;vertical-align:2px;margin-left:6px;overflow:hidden}
   .bar i{display:block;height:100%;border-radius:3px}
 
+  .alloc{display:flex;align-items:center;gap:16px;padding:14px}
+  .legend{display:flex;flex-direction:column;gap:7px;font-size:11.5px;flex:1}
+  .legend div{display:flex;align-items:center;gap:8px;color:var(--mut)}
+  .legend i{width:9px;height:9px;border-radius:2px;flex:none}
+  .legend b{margin-left:auto;font-family:var(--mono);color:var(--ink)}
+
   .regime{display:flex;align-items:center;gap:10px;padding:11px 14px;border-bottom:1px solid var(--line)}
-  .regime .st{font-family:var(--mono);font-weight:700;font-size:12.5px;letter-spacing:.5px}
+  .regime .st{font-family:var(--mono);font-weight:700;font-size:12.5px}
   .regime .ml{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--mut)}
 
   footer{margin-top:18px;padding-top:13px;border-top:1px solid var(--line);font-size:10px;color:var(--dim);line-height:1.6}
@@ -95,80 +127,82 @@
   <div class="status"><span class="dot" id="dot"></span><span id="statusline">loading…</span></div>
 </header>
 
-<!-- MODE SWITCH: real money vs paper are never mixed -->
-<div class="modes">
-  <div class="mode real on" data-m="crypto" id="mCrypto">
-    <div class="t">🔴 Crypto — Binance <span class="badge real">REAL MONEY</span></div>
-    <div class="v" id="mCryptoVal">—</div>
-    <div class="s" id="mCryptoSub">—</div>
+<div class="books">
+  <div class="book real on" data-b="crypto" id="bC">
+    <div class="t">🔴 Crypto · Binance <span class="badge real">REAL MONEY</span></div>
+    <div class="v tagreal" id="bCv">—</div><div class="s" id="bCs">—</div>
   </div>
-  <div class="mode paper" data-m="equities" id="mEq">
-    <div class="t">📄 Equities — Alpaca <span class="badge paper">PAPER</span></div>
-    <div class="v" id="mEqVal">—</div>
-    <div class="s" id="mEqSub">—</div>
+  <div class="book paper" data-b="equities" id="bE">
+    <div class="t">📄 Equities · Alpaca <span class="badge paper">PAPER</span></div>
+    <div class="v tagpaper" id="bEv">—</div><div class="s" id="bEs">—</div>
   </div>
 </div>
 
-<div id="viewCrypto">
-  <div class="kpis" id="cryptoKpis"></div>
+<!-- ══════════ CRYPTO BOOK ══════════ -->
+<div id="vC">
+  <div class="kpis" id="kC"></div>
+
+  <section class="panel">
+    <div class="phead"><h2>⚡ Agent Activity</h2><span class="hint">what the agent did, newest first</span></div>
+    <div id="actC"></div>
+  </section>
+
   <div class="grid">
     <div>
       <section class="panel">
-        <div class="phead"><h2>Live Positions</h2><span class="badge real">REAL MONEY</span>
-          <span class="hint">entry vs market</span></div>
-        <div style="overflow-x:auto"><table>
-          <thead><tr><th>Asset</th><th class="r">Qty</th><th class="r">Entry</th>
-            <th class="r">Price</th><th class="r">Value</th><th class="r">P&amp;L</th></tr></thead>
-          <tbody id="bnPos"></tbody>
-        </table></div>
+        <div class="phead"><h2>Trades — Bought / Sold / Result</h2><span class="n" id="tN"></span>
+          <span class="hint">FIFO matched, fees included</span></div>
+        <div id="trades"></div>
       </section>
       <section class="panel">
-        <div class="phead"><h2>Executed Fills</h2><span class="hint">read back from Binance</span></div>
-        <div style="overflow-x:auto"><table>
-          <thead><tr><th>Time</th><th>Side</th><th>Asset</th>
-            <th class="r">Amount</th><th class="r">Price</th><th class="r">Cost</th></tr></thead>
-          <tbody id="bnFills"></tbody>
-        </table></div>
+        <div class="phead"><h2>Signal Queue</h2><span class="n" id="sqC">autopilot</span></div>
+        <div id="sigC"></div>
       </section>
     </div>
     <div>
       <section class="panel">
-        <div class="phead"><h2>Cryptology Engine</h2><span class="hint">3-layer confluence</span></div>
-        <div class="regime" id="regime"></div>
-        <div id="cryEngine"></div>
+        <div class="phead"><h2>Crypto Holdings</h2><span class="badge real">REAL</span></div>
+        <div id="holdC"></div>
       </section>
       <section class="panel">
-        <div class="phead"><h2>Flow Radar</h2><span class="hint">funding · L/S · taker</span></div>
-        <div id="radar"></div>
+        <div class="phead"><h2>Allocation</h2><span class="hint">coins + USDT only</span></div>
+        <div class="alloc"><svg width="96" height="96" viewBox="0 0 42 42" id="donut"></svg>
+          <div class="legend" id="legend"></div></div>
+      </section>
+      <section class="panel">
+        <div class="phead"><h2>Cryptology Engine</h2><span class="hint">3-layer</span></div>
+        <div class="regime" id="regime"></div><div id="cryE"></div>
       </section>
     </div>
   </div>
 </div>
 
-<div id="viewEquities" style="display:none">
-  <div class="kpis" id="eqKpis"></div>
+<!-- ══════════ EQUITIES BOOK ══════════ -->
+<div id="vE" style="display:none">
+  <div class="kpis" id="kE"></div>
+
+  <section class="panel">
+    <div class="phead"><h2>⚡ Agent Activity</h2><span class="hint">equity decisions</span></div>
+    <div id="actE"></div>
+  </section>
+
   <div class="grid">
     <div>
-      <section class="panel">
-        <div class="phead"><h2>Holdings</h2><span class="badge paper">PAPER</span>
-          <span class="hint">simulated capital</span></div>
-        <div style="overflow-x:auto"><table>
-          <thead><tr><th>Ticker</th><th class="r">Qty</th><th class="r">Value</th><th class="r">P&amp;L</th></tr></thead>
-          <tbody id="eqPos"></tbody>
-        </table></div>
-      </section>
       <section class="panel">
         <div class="phead"><h2>7-Gate Watchlist</h2><span class="n" id="wlN"></span></div>
         <div style="overflow-x:auto"><table>
           <thead><tr><th>Ticker</th><th class="r">Composite</th><th>Verdict</th><th>Scored</th></tr></thead>
-          <tbody id="watchlist"></tbody>
-        </table></div>
+          <tbody id="wl"></tbody></table></div>
+      </section>
+      <section class="panel">
+        <div class="phead"><h2>Signal Queue</h2><span class="n" id="sqE">autopilot</span></div>
+        <div id="sigE"></div>
       </section>
     </div>
     <div>
       <section class="panel">
-        <div class="phead"><h2>Signal Queue</h2><span class="n" id="sqN"></span></div>
-        <div id="signals"></div>
+        <div class="phead"><h2>Equity Holdings</h2><span class="badge paper">PAPER</span></div>
+        <div id="holdE"></div>
       </section>
     </div>
   </div>
@@ -181,177 +215,184 @@
 
 <footer>
   <b>Leander Tarek Khatib · BRX Technologies L.L.C — DIFC · brxdxb.com</b><br>
-  <span style="color:var(--real)">CRYPTO = real money on Binance.</span>
-  <span style="color:var(--paper)">EQUITIES = Alpaca paper, simulated.</span>
-  The two books are tracked separately and never combined.
-  Research and workflow tooling — not investment advice.
+  <span class="tagreal">CRYPTO = real money on Binance.</span>
+  <span class="tagpaper">EQUITIES = Alpaca paper, simulated.</span>
+  Books are tracked separately and never combined. Research tooling — not investment advice.
 </footer>
 
 <script>
-const $ = id => document.getElementById(id);
-const usd = (v,d=2) => "$" + Number(v).toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});
-const pct = v => (v>=0?"+":"") + Number(v).toFixed(2) + "%";
-const sgn = v => v>=0 ? "pos" : "neg";
-let MODE = localStorage.getItem("brxMode") || "crypto";
-
-function setMode(m){
-  MODE = m; localStorage.setItem("brxMode", m);
-  $("viewCrypto").style.display   = m==="crypto"   ? "" : "none";
-  $("viewEquities").style.display = m==="equities" ? "" : "none";
-  $("mCrypto").classList.toggle("on", m==="crypto");
-  $("mEq").classList.toggle("on", m==="equities");
-}
-document.querySelectorAll(".mode").forEach(el =>
-  el.addEventListener("click", () => setMode(el.dataset.m)));
+const $=id=>document.getElementById(id);
+const usd=(v,d=2)=>"$"+Number(v).toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});
+const pct=v=>(v>=0?"+":"")+Number(v).toFixed(2)+"%";
+const sg=v=>v>=0?"pos":"neg";
+const CC={LINK:"#2A5ADA",AVAX:"#E84142",BTC:"#F7931A",ETH:"#627EEA",SOL:"#14F195",
+          LTC:"#BFBBBB",BNB:"#F0B90B",USDT:"#26A17B"};
+let BOOK=localStorage.getItem("brxBook")||"crypto";
+function setBook(b){BOOK=b;localStorage.setItem("brxBook",b);
+  $("vC").style.display=b==="crypto"?"":"none";$("vE").style.display=b==="equities"?"":"none";
+  $("bC").classList.toggle("on",b==="crypto");$("bE").classList.toggle("on",b==="equities");}
+document.querySelectorAll(".book").forEach(e=>e.addEventListener("click",()=>setBook(e.dataset.b)));
 
 function render(d){
-  const age = Math.round((Date.now() - new Date(d.generated_at))/60000);
-  const ba  = d.binance_account || {};
-  const err = d.error;
-  $("dot").className = "dot" + (err ? " err" : "");
-  $("statusline").innerHTML =
-    `${err ? "DEGRADED" : "AGENT LIVE"} · BINANCE ${ba.mode||"—"} · ALPACA PAPER · ${age}m ago`;
+  const age=Math.round((Date.now()-new Date(d.generated_at))/60000);
+  const ba=d.binance_account||{}, L=d.ledger||{}, acct=d.account||{};
+  $("dot").className="dot"+(d.error?" err":"");
+  $("statusline").textContent=`AGENT LIVE · BINANCE ${ba.mode||"—"} · ALPACA PAPER · ${age}m ago`;
 
-  // ---- mode headline numbers ----
-  const bnPos = d.binance_positions || [];
-  const bnPL  = bnPos.reduce((a,p)=>a+(p.pl||0),0);
-  $("mCryptoVal").textContent = ba.total_usd!=null ? usd(ba.total_usd) : "—";
-  $("mCryptoVal").className = "v tagreal";
-  $("mCryptoSub").innerHTML = ba.total_usd!=null
-    ? `<span class="${sgn(bnPL)}">${bnPL>=0?"+":""}${usd(bnPL)} open</span> · ${ba.deployed_pct}% deployed`
-    : "not linked";
+  // ── book headlines
+  const bnPL=L.total_pnl ?? 0;
+  $("bCv").textContent=ba.total_usd!=null?usd(ba.total_usd):"—";
+  $("bCs").innerHTML=`<span class="${sg(bnPL)}">${bnPL>=0?"+":""}${usd(bnPL)}</span> total · ${ba.deployed_pct??0}% deployed`;
+  const eqPL=(acct.equity||0)-100000;
+  $("bEv").textContent=acct.equity!=null?usd(acct.equity,0):"—";
+  $("bEs").innerHTML=`<span class="${sg(eqPL)}">${eqPL>=0?"+":""}${usd(eqPL,0)}</span> since start`;
 
-  const acct = d.account || {};
-  const eqPL = (acct.equity||0) - 100000;
-  $("mEqVal").textContent = acct.equity!=null ? usd(acct.equity,0) : "—";
-  $("mEqVal").className = "v tagpaper";
-  $("mEqSub").innerHTML = `<span class="${sgn(eqPL)}">${eqPL>=0?"+":""}${usd(eqPL,0)}</span> since start`;
-
-  // ---- CRYPTO KPIs (real money only) ----
-  $("cryptoKpis").innerHTML = `
-    <div class="kpi"><div class="lbl">Real Capital</div>
+  // ── CRYPTO KPIs (5)
+  const sigs=d.signals||[], sig24=sigs.length;
+  $("kC").innerHTML=`
+    <div class="kpi"><div class="lbl">Portfolio Value</div>
       <div class="val tagreal">${ba.total_usd!=null?usd(ba.total_usd):"—"}</div>
-      <div class="chg">positions ${usd(ba.positions_usd||0)} · cash ${usd(ba.usdt_free||0)}</div></div>
-    <div class="kpi"><div class="lbl">Open P&amp;L</div>
-      <div class="val ${sgn(bnPL)}">${bnPL>=0?"+":""}${usd(bnPL)}</div>
-      <div class="chg">${bnPos.length} live position(s)</div></div>
-    <div class="kpi"><div class="lbl">Deployed</div>
-      <div class="val">${ba.deployed_pct!=null?ba.deployed_pct+"%":"—"}</div>
-      <div class="chg">fee buffer ${usd(ba.bnb_usd||0)} BNB</div></div>
-    <div class="kpi"><div class="lbl">Regime Gate</div>
-      <div class="val" style="font-size:15px;color:${(d.regime||{}).state==="accumulation"?"var(--up)":(d.regime||{}).state==="distribution"?"var(--dn)":"var(--mut)"}">
-        ${((d.regime||{}).state||"—").toUpperCase()}</div>
-      <div class="chg">multiplier ×${(d.regime||{}).multiplier ?? "—"}</div></div>`;
+      <div class="chg">real money on Binance</div></div>
+    <div class="kpi"><div class="lbl">P&amp;L — Since Start</div>
+      <div class="val ${sg(bnPL)}">${bnPL>=0?"+":""}${usd(bnPL)}</div>
+      <div class="chg">realised ${usd(L.realized_pnl??0)} · open ${usd(L.unrealized_pnl??0)}</div></div>
+    <div class="kpi"><div class="lbl">Signals — 24h</div>
+      <div class="val">${sig24}</div>
+      <div class="chg">autopilot · ${sigs.filter(s=>s.status==="pending").length?"pending":"queue clear"}</div></div>
+    <div class="kpi"><div class="lbl">Trades Made</div>
+      <div class="val">${L.trade_count??0}<span style="font-size:13px;color:var(--dim)"> closed</span></div>
+      <div class="chg">${(L.open_lots||[]).length} open${L.win_rate!=null?` · ${L.win_rate}% win`:""}</div></div>
+    <div class="kpi"><div class="lbl">Watchlist Scored</div>
+      <div class="val">${(d.cryptology||[]).length}<span style="font-size:13px;color:var(--dim)"> coins</span></div>
+      <div class="chg">3-layer confluence</div></div>`;
 
-  // ---- Binance positions ----
-  $("bnPos").innerHTML = bnPos.length ? bnPos.map(p=>`<tr>
-      <td class="tk">${p.asset}</td>
-      <td class="r num">${p.qty}</td>
-      <td class="r num">${p.entry?usd(p.entry,4):"—"}</td>
-      <td class="r num">${usd(p.price,4)}</td>
-      <td class="r num">${usd(p.value)}</td>
-      <td class="r num ${p.pl!=null?sgn(p.pl):""}">${p.pl!=null?`${p.pl>=0?"+":""}${usd(p.pl)} (${pct(p.plpc)})`:"—"}</td>
-    </tr>`).join("") : `<tr><td colspan="6" class="empty">no open positions</td></tr>`;
+  // ── EQUITIES KPIs (5)
+  const dp=acct.day_pl||0, eqPos=(d.positions||[]).filter(p=>!/BTC|ETH|SOL|AVAX|LINK|LTC/.test(p.symbol));
+  $("kE").innerHTML=`
+    <div class="kpi"><div class="lbl">Portfolio Value</div>
+      <div class="val tagpaper">${acct.equity!=null?usd(acct.equity,0):"—"}</div>
+      <div class="chg ${sg(dp)}">${dp>=0?"▲":"▼"} ${usd(Math.abs(dp))} · ${acct.last_equity?pct(dp/acct.last_equity*100):""} today</div></div>
+    <div class="kpi"><div class="lbl">P&amp;L — Since Start</div>
+      <div class="val ${sg(eqPL)}">${eqPL>=0?"+":""}${usd(eqPL,0)}</div>
+      <div class="chg">from $100,000 simulated</div></div>
+    <div class="kpi"><div class="lbl">Signals — 24h</div>
+      <div class="val">${sig24}</div><div class="chg">autopilot · queue clear</div></div>
+    <div class="kpi"><div class="lbl">Trades Made</div>
+      <div class="val">${eqPos.length}</div><div class="chg">open equity positions</div></div>
+    <div class="kpi"><div class="lbl">Watchlist Scored</div>
+      <div class="val">${(d.verdicts||[]).length}</div><div class="chg">7-gate results</div></div>`;
 
-  // ---- Binance fills ----
-  const fills = d.binance_fills || [];
-  $("bnFills").innerHTML = fills.length ? fills.map(f=>`<tr>
-      <td class="num" style="color:var(--dim)">${(f.time||"").slice(5,16).replace("T"," ")}</td>
-      <td><span class="${f.side==="buy"?"pos":"neg"}" style="font-family:var(--mono);font-weight:700">${f.side.toUpperCase()}</span></td>
-      <td class="tk">${f.asset}</td>
-      <td class="r num">${f.amount}</td>
-      <td class="r num">${usd(f.price,4)}</td>
-      <td class="r num">${usd(f.cost)}</td></tr>`).join("")
-    : `<tr><td colspan="6" class="empty">no fills yet</td></tr>`;
+  // ── ACTIVITY (both books)
+  const acts=d.activity||[];
+  const actHTML=acts.length?acts.map(a=>{
+    const c=a.status==="executed"||a.status==="auto_approved"?"var(--up)"
+           :a.status==="pending"?"var(--pend)":"var(--dn)";
+    return `<div class="act"><time>${(a.time||"").slice(5,16).replace("T"," ")}</time>
+      <span class="bd" style="background:${c}"></span>
+      <span class="tx"><b style="color:${c}">${a.text}</b><span>${a.detail||""}</span></span></div>`;
+  }).join(""):`<div class="empty">no activity yet</div>`;
+  $("actC").innerHTML=actHTML; $("actE").innerHTML=actHTML;
 
-  // ---- Cryptology engine ----
-  const rg = d.regime || {};
-  const rcol = rg.state==="accumulation"?"var(--up)":rg.state==="distribution"?"var(--dn)":"var(--mut)";
-  $("regime").innerHTML = `<span class="st" style="color:${rcol}">L0 ${(rg.state||"?").toUpperCase()}</span>
-    <span class="ml">×${rg.multiplier ?? "?"}${rg.veto_longs?" · VETO LONGS":""}</span>`;
-  const cry = d.cryptology || [];
-  $("cryEngine").innerHTML = cry.length ? cry.map(c=>{
-    const col = c.final>=55?"var(--up)":c.final>=45?"var(--pend)":"var(--dn)";
+  // ── TRADES: bought / sold / made
+  const closed=L.closed_trades||[], open=L.open_lots||[];
+  $("tN").textContent=`${closed.length} closed · ${open.length} open`;
+  let tHTML="";
+  open.forEach(o=>{
+    const u=o.unrealized??0;
+    tHTML+=`<div class="trade open"><div class="top">
+      <span class="as">${o.asset}</span><span class="chip o">HOLDING</span>
+      <span class="rs ${sg(u)}">${u>=0?"+":""}${usd(u)}${o.unrealized_pct!=null?` (${pct(o.unrealized_pct)})`:""}</span></div>
+      <div class="legs">
+        ▸ <b>BOUGHT ${o.amount} ${o.asset}</b> @ ${usd(o.entry,4)} = ${usd(o.cost)}<br>
+        ▸ NOT SOLD YET · now ${o.current?usd(o.current,4):"—"} = ${o.value?usd(o.value):"—"}<br>
+        ▸ <b class="${sg(u)}">${u>=0?"UP":"DOWN"} ${usd(Math.abs(u))}</b> unrealised
+      </div></div>`;
+  });
+  closed.forEach(t=>{
+    const w=t.pnl>=0;
+    tHTML+=`<div class="trade ${w?"win":"loss"}"><div class="top">
+      <span class="as">${t.asset}</span><span class="chip ${w?"w":"l"}">${w?"WIN":"LOSS"}</span>
+      <span class="rs ${sg(t.pnl)}">${w?"+":""}${usd(t.pnl)} (${pct(t.pnl_pct)})</span></div>
+      <div class="legs">
+        ▸ <b>BOUGHT ${t.bought_amount} ${t.asset}</b> @ ${usd(t.bought_price,4)} = ${usd(t.cost)}<br>
+        ▸ <b>SOLD ${t.sold_amount} ${t.asset}</b> @ ${usd(t.sold_price,4)} = ${usd(t.proceeds)}<br>
+        ▸ <b class="${sg(t.pnl)}">${w?"MADE":"LOST"} ${usd(Math.abs(t.pnl))}</b> after ${usd(t.fees,4)} fees
+      </div></div>`;
+  });
+  $("trades").innerHTML=tHTML||`<div class="empty">no trades yet</div>`;
+
+  // ── CRYPTO HOLDINGS
+  const bp=d.binance_positions||[];
+  $("holdC").innerHTML=bp.length?bp.map(p=>`<div class="rowline">
+      <span class="tk" style="color:${CC[p.asset]||"var(--ink)"}">${p.asset}</span>
+      <span class="nm">${p.qty} @ ${usd(p.price,4)}</span>
+      <span class="pl">${usd(p.value)} ${p.plpc!=null?`<span class="${sg(p.plpc)}">${pct(p.plpc)}</span>`:""}</span>
+    </div>`).join(""):`<div class="empty">no crypto held</div>`;
+
+  // ── ALLOCATION: coins + USDT only
+  const slices=bp.map(p=>({k:p.asset,v:p.value}));
+  if(ba.usdt_free) slices.push({k:"USDT",v:ba.usdt_free});
+  const tot=slices.reduce((a,s)=>a+s.v,0);
+  let off=25, ring="";
+  slices.forEach(s=>{const p=tot?s.v/tot*100:0;
+    ring+=`<circle cx="21" cy="21" r="15.9" fill="none" stroke="${CC[s.k]||"#8291A8"}"
+      stroke-width="5" stroke-dasharray="${p.toFixed(1)} ${(100-p).toFixed(1)}"
+      stroke-dashoffset="${off}"></circle>`; off-=p;});
+  $("donut").innerHTML=`<circle cx="21" cy="21" r="15.9" fill="none" stroke="#1A2331" stroke-width="5"/>`+ring;
+  $("legend").innerHTML=slices.length?slices.map(s=>`<div><i style="background:${CC[s.k]||"#8291A8"}"></i>${s.k}
+    <b>${tot?(s.v/tot*100).toFixed(0):0}%</b></div>`).join(""):`<div>no allocation</div>`;
+
+  // ── CRYPTOLOGY
+  const rg=d.regime||{}, rc=rg.state==="accumulation"?"var(--up)":rg.state==="distribution"?"var(--dn)":"var(--mut)";
+  $("regime").innerHTML=`<span class="st" style="color:${rc}">L0 ${(rg.state||"?").toUpperCase()}</span>
+    <span class="ml">×${rg.multiplier??"?"}${rg.veto_longs?" · VETO":""}</span>`;
+  $("cryE").innerHTML=(d.cryptology||[]).map(c=>{
+    const col=c.final>=55?"var(--up)":c.final>=45?"var(--pend)":"var(--dn)";
     return `<div class="rowline"><span class="tk">${c.asset}</span>
-      <span class="nm">L1 ${c.positioning} · L2 ${c.flow}<br>
-        <span style="color:var(--dim)">${c.liq_state||""} / ${c.netflow_state||""}</span></span>
+      <span class="nm">L1 ${c.positioning} · L2 ${c.flow}</span>
       <span class="pl" style="color:${col};font-weight:700">${c.final}
         <span class="bar"><i style="width:${Math.min(100,c.final)}%;background:${col}"></i></span></span></div>`;
-  }).join("") : `<div class="empty">engine warming…</div>`;
+  }).join("")||`<div class="empty">warming…</div>`;
 
-  // ---- flow radar ----
-  const radar = d.crypto_radar || [];
-  $("radar").innerHTML = radar.length ? radar.map(c=>{
-    const f=c.flow, col=f>=60?"var(--up)":f>=45?"var(--pend)":"var(--dn)";
-    const crowd = c.long_short>2.0 ? " ⚠crowded" : "";
-    return `<div class="rowline"><span class="tk">${c.symbol}</span>
-      <span class="nm">flow ${f!=null?f.toFixed(0):"—"}${crowd}</span>
-      <span class="pl" style="color:${col}">${c.funding!=null?(c.funding*100).toFixed(3)+"%":""}</span></div>`;
-  }).join("") : `<div class="empty">radar loading…</div>`;
+  // ── SIGNAL QUEUES
+  const sigHTML=s=>s.length?s.slice(0,7).map(x=>{
+    const c=/executed|approved/.test(x.status)?"var(--up)":x.status==="pending"?"var(--pend)":"var(--dn)";
+    return `<div class="rowline"><span class="tk">${x.symbol}</span>
+      <span class="nm">${x.side.toUpperCase()} ${usd(x.notional,0)} · ${x.status}</span>
+      <span class="pl" style="color:${c}">${x.composite?Math.round(x.composite):""}</span></div>`;
+  }).join(""):`<div class="empty">queue clear</div>`;
+  const cr=/BTC|ETH|SOL|AVAX|LINK|LTC|TRX/;
+  $("sigC").innerHTML=sigHTML(sigs.filter(s=>cr.test(s.symbol)));
+  $("sigE").innerHTML=sigHTML(sigs.filter(s=>!cr.test(s.symbol)));
 
-  // ---- EQUITIES (paper) ----
-  const dayPl = acct.day_pl||0;
-  $("eqKpis").innerHTML = `
-    <div class="kpi"><div class="lbl">Paper Equity</div>
-      <div class="val tagpaper">${acct.equity!=null?usd(acct.equity,0):"—"}</div>
-      <div class="chg ${sgn(dayPl)}">${dayPl>=0?"+":""}${usd(dayPl)} today</div></div>
-    <div class="kpi"><div class="lbl">Since Start</div>
-      <div class="val ${sgn(eqPL)}">${eqPL>=0?"+":""}${usd(eqPL,0)}</div>
-      <div class="chg">from $100,000 simulated</div></div>
-    <div class="kpi"><div class="lbl">Positions</div>
-      <div class="val">${(d.positions||[]).length}</div>
-      <div class="chg">cash ${usd(acct.cash||0,0)}</div></div>
-    <div class="kpi"><div class="lbl">Watchlist Scored</div>
-      <div class="val">${(d.verdicts||[]).length}</div>
-      <div class="chg">7-gate results</div></div>`;
-
-  const eq = (d.positions||[]).filter(p=>!/BTC|ETH|SOL|AVAX|LINK|LTC/.test(p.symbol));
-  $("eqPos").innerHTML = eq.length ? eq.sort((a,b)=>b.unrealized_pl-a.unrealized_pl).map(p=>`<tr>
-      <td class="tk">${p.symbol}</td><td class="r num">${Number(p.qty).toFixed(2)}</td>
-      <td class="r num">${usd(p.market_value,0)}</td>
-      <td class="r num ${sgn(p.unrealized_plpc)}">${pct(p.unrealized_plpc)}</td></tr>`).join("")
-    : `<tr><td colspan="4" class="empty">no equity positions</td></tr>`;
-
-  const wl = (d.verdicts||[]).slice(0,12);
-  $("wlN").textContent = wl.length ? "top " + wl.length : "";
-  $("watchlist").innerHTML = wl.length ? wl.map(v=>{
-    const c = v.score>=85?"var(--up)":v.score>=70?"var(--info)":"var(--pend)";
+  // ── EQUITY HOLDINGS + WATCHLIST
+  $("holdE").innerHTML=eqPos.length?eqPos.sort((a,b)=>b.unrealized_pl-a.unrealized_pl).map(p=>`
+    <div class="rowline"><span class="tk">${p.symbol}</span>
+      <span class="nm">${Number(p.qty).toFixed(2)} sh</span>
+      <span class="pl">${usd(p.market_value,0)} <span class="${sg(p.unrealized_plpc)}">${pct(p.unrealized_plpc)}</span></span>
+    </div>`).join(""):`<div class="empty">none</div>`;
+  const wl=(d.verdicts||[]).slice(0,12);
+  $("wlN").textContent=wl.length?`top ${wl.length}`:"";
+  $("wl").innerHTML=wl.length?wl.map(v=>{
+    const c=v.score>=85?"var(--up)":v.score>=70?"var(--info)":"var(--pend)";
     return `<tr><td class="tk">${v.ticker}</td>
       <td class="r num">${v.score}<span class="bar"><i style="width:${Math.min(100,v.score)}%;background:${c}"></i></span></td>
       <td style="color:${c};font-family:var(--mono);font-size:10px;font-weight:700">${(v.verdict||"").toUpperCase()}</td>
-      <td style="color:var(--dim)">${v.date||""}</td></tr>`;
-  }).join("") : `<tr><td colspan="4" class="empty">no scores yet</td></tr>`;
+      <td style="color:var(--dim)">${v.date||""}</td></tr>`;}).join(""):`<tr><td colspan="4" class="empty">no scores</td></tr>`;
 
-  const sigs = (d.signals||[]).slice(0,8);
-  const pend = sigs.filter(s=>s.status==="pending");
-  $("sqN").textContent = pend.length ? pend.length+" pending" : "autopilot";
-  $("signals").innerHTML = sigs.length ? sigs.map(s=>{
-    const col = s.status==="executed"||s.status==="auto_approved" ? "var(--up)"
-              : s.status==="pending" ? "var(--pend)" : "var(--dn)";
-    return `<div class="rowline"><span class="tk">${s.symbol}</span>
-      <span class="nm">${s.side.toUpperCase()} ${usd(s.notional,0)} · ${s.status}</span>
-      <span class="pl" style="color:${col}">${s.composite?Math.round(s.composite):""}</span></div>`;
-  }).join("") : `<div class="empty">queue clear</div>`;
-
-  // ---- audit ----
-  const au = d.audit||{}, ck = au.checks||[];
-  const ic = s => s==="PASS"?"✅":s==="WARN"?"⚠️":"❌";
-  const cc = s => s==="PASS"?"var(--up)":s==="WARN"?"var(--pend)":"var(--dn)";
-  $("audit").innerHTML = ck.length ? (
-    `<div class="rowline" style="font-weight:700">
-       <span style="color:${au.healthy?"var(--up)":"var(--dn)"}">${au.healthy?"🟢 HEALTHY":"🔴 ISSUES"}</span>
-       <span class="nm" style="text-align:right">${au.passed}✓ ${au.warned}⚠ ${au.failed}✕</span></div>` +
+  // ── AUDIT
+  const au=d.audit||{}, ck=au.checks||[];
+  const ic=s=>s==="PASS"?"✅":s==="WARN"?"⚠️":"❌", cc=s=>s==="PASS"?"var(--up)":s==="WARN"?"var(--pend)":"var(--dn)";
+  $("audit").innerHTML=ck.length?(`<div class="rowline" style="font-weight:700">
+      <span style="color:${au.healthy?"var(--up)":"var(--dn)"}">${au.healthy?"🟢 HEALTHY":"🔴 ISSUES"}</span>
+      <span class="nm" style="text-align:right">${au.passed}✓ ${au.warned}⚠ ${au.failed}✕</span></div>`+
     ck.map(c=>`<div class="rowline"><span style="color:${cc(c.status)}">${ic(c.status)}</span>
-       <span class="nm"><b>${c.check}</b> — ${c.detail}</span></div>`).join("")
-  ) : `<div class="empty">audit pending…</div>`;
+      <span class="nm"><b>${c.check}</b> — ${c.detail}</span></div>`).join("")):`<div class="empty">pending…</div>`;
 }
-
-async function load(){
-  try{ render(await (await fetch("data.json?t="+Date.now())).json()); }
-  catch(e){ $("statusline").textContent="cannot load data.json"; $("dot").className="dot err"; }
-}
-setMode(MODE); load(); setInterval(load, 30000);
-if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+async function load(){try{render(await(await fetch("data.json?t="+Date.now())).json());}
+  catch(e){$("statusline").textContent="cannot load data.json";$("dot").className="dot err";}}
+setBook(BOOK);load();setInterval(load,30000);
+if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");
 </script>
 </body>
 </html>

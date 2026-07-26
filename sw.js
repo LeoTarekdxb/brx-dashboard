@@ -1,5 +1,5 @@
 // Minimal service worker: cache the shell, always fetch fresh data.json.
-const SHELL = "brx-terminal-v4"; // v2: BRX Terminal redesign
+const SHELL = "brx-terminal-v5"; // v2: BRX Terminal redesign
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(SHELL).then(c =>
     c.addAll(["./", "index.html", "manifest.webmanifest", "icon-192.png"])));
