@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-26T13:00:00.496667+00:00",
+ "generated_at": "2026-07-26T13:05:00.249107+00:00",
  "mode": "PAPER TRADING",
  "account": {
   "equity": 99617.98,
@@ -720,7 +720,7 @@
  ],
  "error": null,
  "audit": {
-  "ts": "2026-07-26T13:00:06.016082+00:00",
+  "ts": "2026-07-26T13:05:05.577820+00:00",
   "checks": [
    {
     "check": "agent process",
@@ -834,25 +834,25 @@
   {
    "asset": "LINK",
    "qty": 2.66,
-   "price": 8.443,
-   "value": 22.46,
+   "price": 8.436,
+   "value": 22.44,
    "entry": 8.456,
-   "pl": -0.03,
-   "plpc": -0.15
+   "pl": -0.05,
+   "plpc": -0.24
   },
   {
    "asset": "AVAX",
    "qty": 3.34,
-   "price": 6.699,
-   "value": 22.37,
+   "price": 6.686,
+   "value": 22.33,
    "entry": 6.721,
-   "pl": -0.07,
-   "plpc": -0.33
+   "pl": -0.12,
+   "plpc": -0.52
   },
   {
    "asset": "BTC",
    "qty": 5.274e-05,
-   "price": 64466.68,
+   "price": 64424.64,
    "value": 3.4,
    "entry": null,
    "pl": null,
@@ -863,8 +863,8 @@
   "mode": "LIVE",
   "usdt_free": 1.0,
   "bnb_usd": 5.82,
-  "positions_usd": 48.23,
-  "total_usd": 55.05,
+  "positions_usd": 48.17,
+  "total_usd": 54.98,
   "deployed_pct": 87.6
  },
  "binance_fills": [
@@ -914,16 +914,16 @@
   "multiplier": 1.2,
   "veto_longs": false,
   "range_position": 0.088,
-  "vs_200ma": -0.1067,
+  "vs_200ma": -0.1073,
   "proxy": true,
   "note": "MVRV/SOPR/NUPL unavailable \u2014 range+trend cycle proxy"
  },
  "cryptology": [
   {
    "asset": "BTC",
-   "final": 59.0,
-   "positioning": 52.5,
-   "flow": 45.1,
+   "final": 57.2,
+   "positioning": 52.8,
+   "flow": 41.4,
    "confidence": "low",
    "liq_state": "sweep_candidate",
    "oi_state": "short_covering",
@@ -931,9 +931,9 @@
   },
   {
    "asset": "ETH",
-   "final": 74.9,
-   "positioning": 64.7,
-   "flow": 59.6,
+   "final": 72.5,
+   "positioning": 65.3,
+   "flow": 54.5,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "neutral",
@@ -941,9 +941,9 @@
   },
   {
    "asset": "SOL",
-   "final": 75.4,
-   "positioning": 61.6,
-   "flow": 64.4,
+   "final": 72.9,
+   "positioning": 61.7,
+   "flow": 59.5,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "short_covering",
@@ -951,17 +951,17 @@
   },
   {
    "asset": "LINK",
-   "final": 67.0,
-   "positioning": 68.4,
-   "flow": 40.4,
+   "final": 60,
+   "positioning": 70.2,
+   "flow": 45.4,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
-   "oi_state": "neutral",
-   "netflow_state": "distribution"
+   "oi_state": "short_covering",
+   "netflow_state": "balanced"
   },
   {
    "asset": "AVAX",
-   "final": 78.7,
+   "final": 78.6,
    "positioning": 67.8,
    "flow": 62.8,
    "confidence": "medium",
@@ -973,52 +973,52 @@
  "crypto_radar": [
   {
    "symbol": "BTC",
-   "flow": 54.8,
-   "funding": 8.688e-05,
-   "long_short": 1.742,
-   "taker": 0.8274
+   "flow": 62.2,
+   "funding": 8.525e-05,
+   "long_short": 1.739,
+   "taker": 0.9989
   },
   {
    "symbol": "ETH",
-   "flow": 46.0,
-   "funding": 1.587e-05,
-   "long_short": 2.2605,
-   "taker": 0.8432
+   "flow": 67.2,
+   "funding": 1.232e-05,
+   "long_short": 2.252,
+   "taker": 1.2251
   },
   {
    "symbol": "SOL",
    "flow": 39.8,
-   "funding": 4.681e-05,
-   "long_short": 2.7552,
-   "taker": 0.611
+   "funding": 4.529e-05,
+   "long_short": 2.7397,
+   "taker": 0.8549
   },
   {
    "symbol": "AVAX",
    "flow": 68.5,
    "funding": 0.0001,
-   "long_short": 1.6525,
-   "taker": 1.1526
+   "long_short": 1.7533,
+   "taker": 1.1704
   },
   {
    "symbol": "LINK",
-   "flow": 75.8,
-   "funding": -2.143e-05,
+   "flow": 82.0,
+   "funding": -2.323e-05,
    "long_short": 1.8694,
-   "taker": 1.0725
+   "taker": 1.4436
   },
   {
    "symbol": "LTC",
-   "flow": 46.0,
-   "funding": 2.335e-05,
+   "flow": 67.2,
+   "funding": 2.396e-05,
    "long_short": 2.0312,
-   "taker": 0.7855
+   "taker": 1.3963
   },
   {
    "symbol": "TRX",
    "flow": 76.0,
-   "funding": 1.953e-05,
-   "long_short": 1.733,
-   "taker": 1.1138
+   "funding": 2.234e-05,
+   "long_short": 1.7196,
+   "taker": 2.2719
   }
  ],
  "signals": [
