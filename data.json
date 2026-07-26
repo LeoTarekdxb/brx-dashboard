@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-26T12:49:40.993492+00:00",
+ "generated_at": "2026-07-26T12:50:00.338523+00:00",
  "mode": "PAPER TRADING",
  "account": {
   "equity": 99575.16,
@@ -720,7 +720,7 @@
  ],
  "error": null,
  "audit": {
-  "ts": "2026-07-26T12:49:49.231591+00:00",
+  "ts": "2026-07-26T12:50:06.946993+00:00",
   "checks": [
    {
     "check": "agent process",
@@ -843,16 +843,16 @@
   {
    "asset": "AVAX",
    "qty": 3.34,
-   "price": 6.702,
+   "price": 6.7,
    "value": 22.38,
    "entry": 6.721,
-   "pl": -0.06,
-   "plpc": -0.28
+   "pl": -0.07,
+   "plpc": -0.31
   },
   {
    "asset": "BTC",
    "qty": 5.274e-05,
-   "price": 64460.0,
+   "price": 64456.01,
    "value": 3.4,
    "entry": null,
    "pl": null,
@@ -864,7 +864,7 @@
   "usdt_free": 1.0,
   "bnb_usd": 5.82,
   "positions_usd": 48.26,
-  "total_usd": 55.08,
+  "total_usd": 55.07,
   "deployed_pct": 87.6
  },
  "binance_fills": [
@@ -914,7 +914,7 @@
   "multiplier": 1.2,
   "veto_longs": false,
   "range_position": 0.088,
-  "vs_200ma": -0.1068,
+  "vs_200ma": -0.1069,
   "proxy": true,
   "note": "MVRV/SOPR/NUPL unavailable \u2014 range+trend cycle proxy"
  },
@@ -931,9 +931,9 @@
   },
   {
    "asset": "ETH",
-   "final": 69.7,
+   "final": 69.6,
    "positioning": 64.4,
-   "flow": 50.3,
+   "flow": 50.2,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "neutral",
