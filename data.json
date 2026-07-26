@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-26T12:15:00.407854+00:00",
+ "generated_at": "2026-07-26T12:19:03.062935+00:00",
  "mode": "PAPER TRADING",
  "account": {
   "equity": 99616.21,
@@ -240,7 +240,7 @@
    "notional": "7481.46",
    "qty": null,
    "status": "filled",
-   "submitted_at": "2026-07-26T12:08:53.552767537Z"
+   "submitted_at": "2026-07-26T12:08:53.552768Z"
   },
   {
    "symbol": "LINK/USD",
@@ -720,12 +720,12 @@
  ],
  "error": null,
  "audit": {
-  "ts": "2026-07-26T12:15:09.611105+00:00",
+  "ts": "2026-07-26T12:19:08.070525+00:00",
   "checks": [
    {
     "check": "agent process",
     "status": "PASS",
-    "detail": "pid 33180",
+    "detail": "pid 35992",
     "fix": null
    },
    {
@@ -743,7 +743,7 @@
    {
     "check": "dashboard",
     "status": "PASS",
-    "detail": "10m old",
+    "detail": "4m old",
     "fix": null
    },
    {
@@ -830,25 +830,86 @@
    }
   ]
  },
+ "regime": {
+  "state": "accumulation",
+  "multiplier": 1.2,
+  "veto_longs": false,
+  "range_position": 0.09,
+  "vs_200ma": -0.1054,
+  "proxy": true,
+  "note": "MVRV/SOPR/NUPL unavailable \u2014 range+trend cycle proxy"
+ },
+ "cryptology": [
+  {
+   "asset": "BTC",
+   "final": 67.8,
+   "positioning": 57.4,
+   "flow": 55.4,
+   "confidence": "low",
+   "liq_state": "sweep_candidate",
+   "oi_state": "short_covering",
+   "netflow_state": "balanced"
+  },
+  {
+   "asset": "ETH",
+   "final": 69.3,
+   "positioning": 62.7,
+   "flow": 51.7,
+   "confidence": "medium",
+   "liq_state": "sweep_candidate",
+   "oi_state": "neutral",
+   "netflow_state": "accumulation"
+  },
+  {
+   "asset": "SOL",
+   "final": 72.2,
+   "positioning": 60.3,
+   "flow": 60.0,
+   "confidence": "medium",
+   "liq_state": "sweep_candidate",
+   "oi_state": "short_covering",
+   "netflow_state": "accumulation"
+  },
+  {
+   "asset": "LINK",
+   "final": 79.8,
+   "positioning": 72.6,
+   "flow": 59.0,
+   "confidence": "medium",
+   "liq_state": "sweep_candidate",
+   "oi_state": "neutral",
+   "netflow_state": "balanced"
+  },
+  {
+   "asset": "AVAX",
+   "final": 83.0,
+   "positioning": 67.8,
+   "flow": 70.9,
+   "confidence": "medium",
+   "liq_state": "sweep_candidate",
+   "oi_state": "real_trend_confirm",
+   "netflow_state": "accumulation"
+  }
+ ],
  "crypto_radar": [
   {
    "symbol": "BTC",
    "flow": 54.8,
-   "funding": 9.275e-05,
+   "funding": 9.236e-05,
    "long_short": 1.742,
    "taker": 0.8274
   },
   {
    "symbol": "ETH",
    "flow": 46.0,
-   "funding": 2.931e-05,
+   "funding": 2.665e-05,
    "long_short": 2.2605,
    "taker": 0.8432
   },
   {
    "symbol": "SOL",
    "flow": 39.8,
-   "funding": 5.897e-05,
+   "funding": 5.787e-05,
    "long_short": 2.7552,
    "taker": 0.611
   },
@@ -862,21 +923,21 @@
   {
    "symbol": "LINK",
    "flow": 75.8,
-   "funding": -9.74e-06,
+   "funding": -9.75e-06,
    "long_short": 1.8711,
    "taker": 1.0725
   },
   {
    "symbol": "LTC",
    "flow": 52.0,
-   "funding": -8.37e-06,
+   "funding": -6.22e-06,
    "long_short": 2.0166,
    "taker": 0.7855
   },
   {
    "symbol": "TRX",
    "flow": 82.0,
-   "funding": -6.55e-06,
+   "funding": -4.32e-06,
    "long_short": 1.733,
    "taker": 1.1138
   }
