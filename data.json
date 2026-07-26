@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-07-26T22:30:00.266636+00:00",
+ "generated_at": "2026-07-26T22:35:00.236570+00:00",
  "mode": "PAPER TRADING",
  "account": {
-  "equity": 99481.08,
+  "equity": 99558.29,
   "cash": -31990.34,
   "buying_power": 137347.07,
   "last_equity": 99753.07917064207,
-  "day_pl": -272.0,
-  "total_pl": -518.92
+  "day_pl": -194.79,
+  "total_pl": -441.71
  },
  "positions": [
   {
@@ -31,11 +31,11 @@
   {
    "symbol": "BTCUSD",
    "qty": 0.224024087,
-   "market_value": 14606.77,
+   "market_value": 14627.4,
    "avg_entry": 65190.269377331,
-   "current": 65201.8,
-   "unrealized_pl": 2.58,
-   "unrealized_plpc": 0.02
+   "current": 65293.857,
+   "unrealized_pl": 23.21,
+   "unrealized_plpc": 0.16
   },
   {
    "symbol": "GOOGL",
@@ -58,11 +58,11 @@
   {
    "symbol": "LINKUSD",
    "qty": 865.23507499,
-   "market_value": 7524.6,
+   "market_value": 7581.19,
    "avg_entry": 8.488248028,
-   "current": 8.6966,
-   "unrealized_pl": 180.27,
-   "unrealized_plpc": 2.46
+   "current": 8.762,
+   "unrealized_pl": 236.86,
+   "unrealized_plpc": 3.23
   },
   {
    "symbol": "LTCUSD",
@@ -849,7 +849,7 @@
  ],
  "error": null,
  "audit": {
-  "ts": "2026-07-26T22:30:07.059531+00:00",
+  "ts": "2026-07-26T22:35:06.105615+00:00",
   "checks": [
    {
     "check": "agent process",
@@ -860,7 +860,7 @@
    {
     "check": "alpaca (PAPER)",
     "status": "PASS",
-    "detail": "equity $99,481.08",
+    "detail": "equity $99,562.78",
     "fix": null
    },
    {
@@ -959,46 +959,46 @@
   {
    "asset": "BTC",
    "qty": 0.00016274,
-   "price": 65245.97,
-   "value": 10.62,
+   "price": 65409.49,
+   "value": 10.64,
    "entry": 65216.008182,
-   "pl": 0.0,
-   "plpc": 0.05
+   "pl": 0.03,
+   "plpc": 0.3
   },
   {
    "asset": "LINK",
    "qty": 2.66,
-   "price": 8.741,
-   "value": 23.25,
+   "price": 8.769,
+   "value": 23.33,
    "entry": 8.456,
-   "pl": 0.76,
-   "plpc": 3.37
+   "pl": 0.83,
+   "plpc": 3.7
   },
   {
    "asset": "LTC",
    "qty": 0.485,
-   "price": 48.19,
-   "value": 23.37,
+   "price": 48.25,
+   "value": 23.4,
    "entry": 47.9,
-   "pl": 0.14,
-   "plpc": 0.61
+   "pl": 0.17,
+   "plpc": 0.73
   },
   {
    "asset": "TRX",
    "qty": 21.0,
-   "price": 0.3323,
+   "price": 0.3322,
    "value": 6.98,
    "entry": 0.3321,
    "pl": 0.0,
-   "plpc": 0.06
+   "plpc": 0.03
   }
  ],
  "binance_account": {
   "mode": "LIVE",
   "usdt_free": 0.25,
-  "bnb_usd": 6.11,
-  "positions_usd": 64.22,
-  "total_usd": 70.58,
+  "bnb_usd": 6.12,
+  "positions_usd": 64.35,
+  "total_usd": 70.71,
   "deployed_pct": 91.0
  },
  "binance_fills": [
@@ -1166,61 +1166,61 @@
     "asset": "BTC",
     "amount": 6e-05,
     "entry": 65216.0,
-    "current": 65255.17,
+    "current": 65406.88,
     "cost": 3.91,
     "value": 3.92,
-    "unrealized": 0.0,
-    "unrealized_pct": 0.06,
+    "unrealized": 0.01,
+    "unrealized_pct": 0.29,
     "bought_at": "2026-07-26T22:10:49.497Z",
-    "story": "holding 6e-05 BTC bought @ $65,216.0000 \u00b7 now $65,255.1700 \u00b7 up $0.00"
+    "story": "holding 6e-05 BTC bought @ $65,216.0000 \u00b7 now $65,406.8800 \u00b7 up $0.01"
    },
    {
     "asset": "BTC",
     "amount": 5e-05,
     "entry": 65216.0,
-    "current": 65255.17,
+    "current": 65406.88,
     "cost": 3.26,
-    "value": 3.26,
-    "unrealized": 0.0,
-    "unrealized_pct": 0.06,
+    "value": 3.27,
+    "unrealized": 0.01,
+    "unrealized_pct": 0.29,
     "bought_at": "2026-07-26T22:10:49.497Z",
-    "story": "holding 5e-05 BTC bought @ $65,216.0000 \u00b7 now $65,255.1700 \u00b7 up $0.00"
+    "story": "holding 5e-05 BTC bought @ $65,216.0000 \u00b7 now $65,406.8800 \u00b7 up $0.01"
    },
    {
     "asset": "LINK",
     "amount": 0.61,
     "entry": 8.456,
-    "current": 8.745,
+    "current": 8.767,
     "cost": 5.16,
-    "value": 5.33,
-    "unrealized": 0.18,
-    "unrealized_pct": 3.42,
+    "value": 5.35,
+    "unrealized": 0.19,
+    "unrealized_pct": 3.68,
     "bought_at": "2026-07-26T12:08:52.896Z",
-    "story": "holding 0.61 LINK bought @ $8.4560 \u00b7 now $8.7450 \u00b7 up $0.18"
+    "story": "holding 0.61 LINK bought @ $8.4560 \u00b7 now $8.7670 \u00b7 up $0.19"
    },
    {
     "asset": "LINK",
     "amount": 2.05,
     "entry": 8.456,
-    "current": 8.743,
+    "current": 8.767,
     "cost": 17.33,
-    "value": 17.92,
-    "unrealized": 0.59,
-    "unrealized_pct": 3.39,
+    "value": 17.97,
+    "unrealized": 0.64,
+    "unrealized_pct": 3.68,
     "bought_at": "2026-07-26T12:08:52.896Z",
-    "story": "holding 2.05 LINK bought @ $8.4560 \u00b7 now $8.7430 \u00b7 up $0.59"
+    "story": "holding 2.05 LINK bought @ $8.4560 \u00b7 now $8.7670 \u00b7 up $0.64"
    },
    {
     "asset": "LTC",
     "amount": 0.485,
     "entry": 47.9,
-    "current": 48.18,
+    "current": 48.25,
     "cost": 23.23,
-    "value": 23.37,
-    "unrealized": 0.14,
-    "unrealized_pct": 0.58,
+    "value": 23.4,
+    "unrealized": 0.17,
+    "unrealized_pct": 0.73,
     "bought_at": "2026-07-26T19:10:48.837Z",
-    "story": "holding 0.485 LTC bought @ $47.9000 \u00b7 now $48.1800 \u00b7 up $0.14"
+    "story": "holding 0.485 LTC bought @ $47.9000 \u00b7 now $48.2500 \u00b7 up $0.17"
    },
    {
     "asset": "TRX",
@@ -1236,8 +1236,8 @@
    }
   ],
   "realized_pnl": -0.17,
-  "unrealized_pnl": 0.91,
-  "total_pnl": 0.74,
+  "unrealized_pnl": 1.02,
+  "total_pnl": 0.85,
   "trade_count": 5,
   "win_count": 0,
   "win_rate": 0.0,
@@ -1268,17 +1268,17 @@
   "state": "accumulation",
   "multiplier": 1.2,
   "veto_longs": false,
-  "range_position": 0.1,
-  "vs_200ma": -0.0958,
+  "range_position": 0.103,
+  "vs_200ma": -0.0938,
   "proxy": true,
   "note": "MVRV/SOPR/NUPL unavailable \u2014 range+trend cycle proxy"
  },
  "cryptology": [
   {
    "asset": "BTC",
-   "final": 68.2,
-   "positioning": 67.2,
-   "flow": 44.2,
+   "final": 78.6,
+   "positioning": 67.0,
+   "flow": 63.7,
    "confidence": "low",
    "liq_state": "sweep_candidate",
    "oi_state": "short_covering",
@@ -1286,28 +1286,8 @@
   },
   {
    "asset": "ETH",
-   "final": 61.2,
-   "positioning": 52.3,
-   "flow": 49.3,
-   "confidence": "medium",
-   "liq_state": "sweep_candidate",
-   "oi_state": "neutral",
-   "netflow_state": "accumulation"
-  },
-  {
-   "asset": "SOL",
-   "final": 74.5,
-   "positioning": 62.7,
-   "flow": 61.3,
-   "confidence": "medium",
-   "liq_state": "sweep_candidate",
-   "oi_state": "short_covering",
-   "netflow_state": "accumulation"
-  },
-  {
-   "asset": "LINK",
-   "final": 65.2,
-   "positioning": 49.8,
+   "final": 66.7,
+   "positioning": 51.9,
    "flow": 60.0,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
@@ -1315,10 +1295,30 @@
    "netflow_state": "balanced"
   },
   {
+   "asset": "SOL",
+   "final": 80.1,
+   "positioning": 62.4,
+   "flow": 72.1,
+   "confidence": "medium",
+   "liq_state": "sweep_candidate",
+   "oi_state": "short_covering",
+   "netflow_state": "accumulation"
+  },
+  {
+   "asset": "LINK",
+   "final": 59.4,
+   "positioning": 49.8,
+   "flow": 49.2,
+   "confidence": "medium",
+   "liq_state": "sweep_candidate",
+   "oi_state": "neutral",
+   "netflow_state": "balanced"
+  },
+  {
    "asset": "AVAX",
-   "final": 67.0,
+   "final": 75.5,
    "positioning": 55.9,
-   "flow": 55.8,
+   "flow": 71.5,
    "confidence": "medium",
    "liq_state": "no_sweep",
    "oi_state": "capitulation_flush",
@@ -1329,21 +1329,21 @@
   {
    "symbol": "BTC",
    "flow": 76.0,
-   "funding": 4.304e-05,
+   "funding": 4.436e-05,
    "long_short": 1.6853,
    "taker": 1.5125
   },
   {
    "symbol": "ETH",
    "flow": 67.2,
-   "funding": 8.26e-05,
+   "funding": 8.454e-05,
    "long_short": 2.059,
    "taker": 1.7265
   },
   {
    "symbol": "SOL",
    "flow": 61.0,
-   "funding": 3.736e-05,
+   "funding": 4.014e-05,
    "long_short": 2.635,
    "taker": 1.295
   },
@@ -1364,14 +1364,14 @@
   {
    "symbol": "LTC",
    "flow": 62.2,
-   "funding": 9.93e-06,
+   "funding": 1.133e-05,
    "long_short": 1.9753,
    "taker": 0.942
   },
   {
    "symbol": "TRX",
    "flow": 68.2,
-   "funding": -5.599e-05,
+   "funding": -5.52e-05,
    "long_short": 1.7115,
    "taker": 0.9931
   }
