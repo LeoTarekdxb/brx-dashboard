@@ -89,6 +89,7 @@
   .chip.o{background:rgba(245,168,60,.15);color:var(--pend)}
 
   /* ── ACTIVITY (prominent) ── */
+  .actbox{max-height:290px;overflow-y:auto}
   .act{display:flex;gap:10px;padding:9px 14px;font-size:11.5px;border-bottom:1px solid var(--soft);align-items:flex-start}
   .act:last-child{border-bottom:0}
   .act time{font-family:var(--mono);color:var(--dim);font-size:10px;width:74px;flex:none;padding-top:1px}
@@ -143,8 +144,9 @@
   <div class="kpis" id="kC"></div>
 
   <section class="panel">
-    <div class="phead"><h2>⚡ Agent Activity</h2><span class="hint">what the agent did, newest first</span></div>
-    <div id="actC"></div>
+    <div class="phead"><h2>⚡ Agent Activity</h2><span class="n" id="actCn"></span>
+      <span class="hint">crypto decisions · newest first</span></div>
+    <div class="actbox" id="actC"></div>
   </section>
 
   <div class="grid">
@@ -182,8 +184,9 @@
   <div class="kpis" id="kE"></div>
 
   <section class="panel">
-    <div class="phead"><h2>⚡ Agent Activity</h2><span class="hint">equity decisions</span></div>
-    <div id="actE"></div>
+    <div class="phead"><h2>⚡ Agent Activity</h2><span class="n" id="actEn"></span>
+      <span class="hint">equity decisions · newest first</span></div>
+    <div class="actbox" id="actE"></div>
   </section>
 
   <div class="grid">
@@ -225,6 +228,10 @@ const $=id=>document.getElementById(id);
 const usd=(v,d=2)=>"$"+Number(v).toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});
 const pct=v=>(v>=0?"+":"")+Number(v).toFixed(2)+"%";
 const sg=v=>v>=0?"pos":"neg";
+// signed money: -0.001 must read "$0.00", never "+$-0.00"
+const smoney=(v,d=2)=>{const n=Number(v),r=Math.abs(n)<0.005?0:n;
+  return (r>0?"+":r<0?"-":"")+usd(Math.abs(r),d);};
+const CRYRE=/^(BTC|ETH|SOL|AVAX|LINK|LTC|TRX)/;
 const CC={LINK:"#2A5ADA",AVAX:"#E84142",BTC:"#F7931A",ETH:"#627EEA",SOL:"#14F195",
           LTC:"#BFBBBB",BNB:"#F0B90B",USDT:"#26A17B"};
 let BOOK=localStorage.getItem("brxBook")||"crypto";
@@ -242,10 +249,10 @@ function render(d){
   // ── book headlines
   const bnPL=L.total_pnl ?? 0;
   $("bCv").textContent=ba.total_usd!=null?usd(ba.total_usd):"—";
-  $("bCs").innerHTML=`<span class="${sg(bnPL)}">${bnPL>=0?"+":""}${usd(bnPL)}</span> total · ${ba.deployed_pct??0}% deployed`;
+  $("bCs").innerHTML=`<span class="${sg(bnPL)}">${smoney(bnPL)}</span> total · ${ba.deployed_pct??0}% deployed`;
   const eqPL=(acct.equity||0)-100000;
   $("bEv").textContent=acct.equity!=null?usd(acct.equity,0):"—";
-  $("bEs").innerHTML=`<span class="${sg(eqPL)}">${eqPL>=0?"+":""}${usd(eqPL,0)}</span> since start`;
+  $("bEs").innerHTML=`<span class="${sg(eqPL)}">${smoney(eqPL,0)}</span> since start`;
 
   // ── CRYPTO KPIs (5)
   const sigs=d.signals||[], sig24=sigs.length;
@@ -254,7 +261,7 @@ function render(d){
       <div class="val tagreal">${ba.total_usd!=null?usd(ba.total_usd):"—"}</div>
       <div class="chg">real money on Binance</div></div>
     <div class="kpi"><div class="lbl">P&amp;L — Since Start</div>
-      <div class="val ${sg(bnPL)}">${bnPL>=0?"+":""}${usd(bnPL)}</div>
+      <div class="val ${sg(bnPL)}">${smoney(bnPL)}</div>
       <div class="chg">realised ${usd(L.realized_pnl??0)} · open ${usd(L.unrealized_pnl??0)}</div></div>
     <div class="kpi"><div class="lbl">Signals — 24h</div>
       <div class="val">${sig24}</div>
@@ -273,7 +280,7 @@ function render(d){
       <div class="val tagpaper">${acct.equity!=null?usd(acct.equity,0):"—"}</div>
       <div class="chg ${sg(dp)}">${dp>=0?"▲":"▼"} ${usd(Math.abs(dp))} · ${acct.last_equity?pct(dp/acct.last_equity*100):""} today</div></div>
     <div class="kpi"><div class="lbl">P&amp;L — Since Start</div>
-      <div class="val ${sg(eqPL)}">${eqPL>=0?"+":""}${usd(eqPL,0)}</div>
+      <div class="val ${sg(eqPL)}">${smoney(eqPL,0)}</div>
       <div class="chg">from $100,000 simulated</div></div>
     <div class="kpi"><div class="lbl">Signals — 24h</div>
       <div class="val">${sig24}</div><div class="chg">autopilot · queue clear</div></div>
@@ -282,16 +289,31 @@ function render(d){
     <div class="kpi"><div class="lbl">Watchlist Scored</div>
       <div class="val">${(d.verdicts||[]).length}</div><div class="chg">7-gate results</div></div>`;
 
-  // ── ACTIVITY (both books)
+  // ── ACTIVITY — split per book. The crypto feed is built from REAL Binance
+  // fills (authoritative), not the paper slot sizes, so a $5 real buy never
+  // renders as "$4,981" just because the paper sleeve sized it that way.
   const acts=d.activity||[];
-  const actHTML=acts.length?acts.map(a=>{
-    const c=a.status==="executed"||a.status==="auto_approved"?"var(--up)"
-           :a.status==="pending"?"var(--pend)":"var(--dn)";
-    return `<div class="act"><time>${(a.time||"").slice(5,16).replace("T"," ")}</time>
+  const row=(t,c,txt,det)=>`<div class="act"><time>${(t||"").slice(5,16).replace("T"," ")}</time>
       <span class="bd" style="background:${c}"></span>
-      <span class="tx"><b style="color:${c}">${a.text}</b><span>${a.detail||""}</span></span></div>`;
-  }).join(""):`<div class="empty">no activity yet</div>`;
-  $("actC").innerHTML=actHTML; $("actE").innerHTML=actHTML;
+      <span class="tx"><b style="color:${c}">${txt}</b><span>${det||""}</span></span></div>`;
+
+  const cryActs=(d.binance_fills||[]).map(f=>({
+    time:f.time, c:f.side==="buy"?"var(--info)":"var(--up)",
+    txt:`${f.side.toUpperCase()==="BUY"?"BOUGHT":"SOLD"} ${f.amount} ${f.asset} @ ${usd(f.price,4)} = ${usd(f.cost)}`,
+    det:"filled on Binance · real money"}))
+   .concat(acts.filter(a=>CRYRE.test((a.text.match(/\b([A-Z]{2,5})USD\b/)||[])[1]||"") && a.status!=="executed")
+     .map(a=>({time:a.time, c:a.status==="pending"?"var(--pend)":"var(--dn)",
+               txt:a.text.replace(/\s\$[\d,]+/,""), det:a.detail||""})))
+   .sort((a,b)=>new Date(b.time)-new Date(a.time));
+  $("actCn").textContent=`${cryActs.length} events`;
+  $("actC").innerHTML=cryActs.length?cryActs.map(a=>row(a.time,a.c,a.txt,a.det)).join("")
+    :`<div class="empty">no crypto activity yet</div>`;
+
+  const eqActs=acts.filter(a=>!CRYRE.test((a.text.match(/\b([A-Z]{2,5})USD\b/)||[])[1]||""));
+  $("actEn").textContent=`${eqActs.length} events`;
+  $("actE").innerHTML=eqActs.length?eqActs.map(a=>row(a.time,
+      /executed|approved/.test(a.status)?"var(--up)":a.status==="pending"?"var(--pend)":"var(--dn)",
+      a.text,a.detail)).join(""):`<div class="empty">no equity activity yet</div>`;
 
   // ── TRADES: bought / sold / made
   const closed=L.closed_trades||[], open=L.open_lots||[];
@@ -301,7 +323,7 @@ function render(d){
     const u=o.unrealized??0;
     tHTML+=`<div class="trade open"><div class="top">
       <span class="as">${o.asset}</span><span class="chip o">HOLDING</span>
-      <span class="rs ${sg(u)}">${u>=0?"+":""}${usd(u)}${o.unrealized_pct!=null?` (${pct(o.unrealized_pct)})`:""}</span></div>
+      <span class="rs ${sg(u)}">${smoney(u)}${o.unrealized_pct!=null?` (${pct(o.unrealized_pct)})`:""}</span></div>
       <div class="legs">
         ▸ <b>BOUGHT ${o.amount} ${o.asset}</b> @ ${usd(o.entry,4)} = ${usd(o.cost)}<br>
         ▸ NOT SOLD YET · now ${o.current?usd(o.current,4):"—"} = ${o.value?usd(o.value):"—"}<br>
@@ -309,14 +331,15 @@ function render(d){
       </div></div>`;
   });
   closed.forEach(t=>{
-    const w=t.pnl>=0;
-    tHTML+=`<div class="trade ${w?"win":"loss"}"><div class="top">
-      <span class="as">${t.asset}</span><span class="chip ${w?"w":"l"}">${w?"WIN":"LOSS"}</span>
-      <span class="rs ${sg(t.pnl)}">${w?"+":""}${usd(t.pnl)} (${pct(t.pnl_pct)})</span></div>
+    const flat=Math.abs(t.pnl)<0.005, w=t.pnl>0;
+    tHTML+=`<div class="trade ${flat?"":w?"win":"loss"}"><div class="top">
+      <span class="as">${t.asset}</span>
+      <span class="chip ${flat?"o":w?"w":"l"}">${flat?"BREAK EVEN":w?"WIN":"LOSS"}</span>
+      <span class="rs ${sg(t.pnl)}">${smoney(t.pnl)} (${pct(t.pnl_pct)})</span></div>
       <div class="legs">
         ▸ <b>BOUGHT ${t.bought_amount} ${t.asset}</b> @ ${usd(t.bought_price,4)} = ${usd(t.cost)}<br>
         ▸ <b>SOLD ${t.sold_amount} ${t.asset}</b> @ ${usd(t.sold_price,4)} = ${usd(t.proceeds)}<br>
-        ▸ <b class="${sg(t.pnl)}">${w?"MADE":"LOST"} ${usd(Math.abs(t.pnl))}</b> after ${usd(t.fees,4)} fees
+        ▸ <b class="${sg(t.pnl)}">${flat?"BROKE EVEN —":w?"MADE":"LOST"} ${usd(Math.abs(t.pnl))}</b> after ${usd(t.fees,4)} fees
       </div></div>`;
   });
   $("trades").innerHTML=tHTML||`<div class="empty">no trades yet</div>`;
