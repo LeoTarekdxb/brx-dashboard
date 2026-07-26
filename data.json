@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-07-26T22:35:00.236570+00:00",
+ "generated_at": "2026-07-26T22:40:00.573296+00:00",
  "mode": "PAPER TRADING",
  "account": {
-  "equity": 99558.29,
+  "equity": 99581.42,
   "cash": -31990.34,
   "buying_power": 137347.07,
   "last_equity": 99753.07917064207,
-  "day_pl": -194.79,
-  "total_pl": -441.71
+  "day_pl": -171.66,
+  "total_pl": -418.58
  },
  "positions": [
   {
@@ -31,11 +31,11 @@
   {
    "symbol": "BTCUSD",
    "qty": 0.224024087,
-   "market_value": 14627.4,
+   "market_value": 14650.53,
    "avg_entry": 65190.269377331,
-   "current": 65293.857,
-   "unrealized_pl": 23.21,
-   "unrealized_plpc": 0.16
+   "current": 65397.1,
+   "unrealized_pl": 46.34,
+   "unrealized_plpc": 0.32
   },
   {
    "symbol": "GOOGL",
@@ -849,7 +849,7 @@
  ],
  "error": null,
  "audit": {
-  "ts": "2026-07-26T22:35:06.105615+00:00",
+  "ts": "2026-07-26T22:40:06.740244+00:00",
   "checks": [
    {
     "check": "agent process",
@@ -860,7 +860,7 @@
    {
     "check": "alpaca (PAPER)",
     "status": "PASS",
-    "detail": "equity $99,562.78",
+    "detail": "equity $99,581.42",
     "fix": null
    },
    {
@@ -959,46 +959,46 @@
   {
    "asset": "BTC",
    "qty": 0.00016274,
-   "price": 65409.49,
-   "value": 10.64,
+   "price": 65450.86,
+   "value": 10.65,
    "entry": 65216.008182,
-   "pl": 0.03,
-   "plpc": 0.3
+   "pl": 0.04,
+   "plpc": 0.36
   },
   {
    "asset": "LINK",
    "qty": 2.66,
-   "price": 8.769,
-   "value": 23.33,
+   "price": 8.758,
+   "value": 23.3,
    "entry": 8.456,
-   "pl": 0.83,
-   "plpc": 3.7
+   "pl": 0.8,
+   "plpc": 3.57
   },
   {
    "asset": "LTC",
    "qty": 0.485,
-   "price": 48.25,
-   "value": 23.4,
+   "price": 48.12,
+   "value": 23.34,
    "entry": 47.9,
-   "pl": 0.17,
-   "plpc": 0.73
+   "pl": 0.11,
+   "plpc": 0.46
   },
   {
    "asset": "TRX",
    "qty": 21.0,
-   "price": 0.3322,
+   "price": 0.3323,
    "value": 6.98,
    "entry": 0.3321,
    "pl": 0.0,
-   "plpc": 0.03
+   "plpc": 0.06
   }
  ],
  "binance_account": {
   "mode": "LIVE",
   "usdt_free": 0.25,
   "bnb_usd": 6.12,
-  "positions_usd": 64.35,
-  "total_usd": 70.71,
+  "positions_usd": 64.26,
+  "total_usd": 70.64,
   "deployed_pct": 91.0
  },
  "binance_fills": [
@@ -1166,78 +1166,78 @@
     "asset": "BTC",
     "amount": 6e-05,
     "entry": 65216.0,
-    "current": 65406.88,
+    "current": 65480.12,
     "cost": 3.91,
-    "value": 3.92,
-    "unrealized": 0.01,
-    "unrealized_pct": 0.29,
+    "value": 3.93,
+    "unrealized": 0.02,
+    "unrealized_pct": 0.4,
     "bought_at": "2026-07-26T22:10:49.497Z",
-    "story": "holding 6e-05 BTC bought @ $65,216.0000 \u00b7 now $65,406.8800 \u00b7 up $0.01"
+    "story": "holding 6e-05 BTC bought @ $65,216.0000 \u00b7 now $65,480.1200 \u00b7 up $0.02"
    },
    {
     "asset": "BTC",
     "amount": 5e-05,
     "entry": 65216.0,
-    "current": 65406.88,
+    "current": 65480.13,
     "cost": 3.26,
     "value": 3.27,
     "unrealized": 0.01,
-    "unrealized_pct": 0.29,
+    "unrealized_pct": 0.41,
     "bought_at": "2026-07-26T22:10:49.497Z",
-    "story": "holding 5e-05 BTC bought @ $65,216.0000 \u00b7 now $65,406.8800 \u00b7 up $0.01"
+    "story": "holding 5e-05 BTC bought @ $65,216.0000 \u00b7 now $65,480.1300 \u00b7 up $0.01"
    },
    {
     "asset": "LINK",
     "amount": 0.61,
     "entry": 8.456,
-    "current": 8.767,
+    "current": 8.761,
     "cost": 5.16,
-    "value": 5.35,
+    "value": 5.34,
     "unrealized": 0.19,
-    "unrealized_pct": 3.68,
+    "unrealized_pct": 3.61,
     "bought_at": "2026-07-26T12:08:52.896Z",
-    "story": "holding 0.61 LINK bought @ $8.4560 \u00b7 now $8.7670 \u00b7 up $0.19"
+    "story": "holding 0.61 LINK bought @ $8.4560 \u00b7 now $8.7610 \u00b7 up $0.19"
    },
    {
     "asset": "LINK",
     "amount": 2.05,
     "entry": 8.456,
-    "current": 8.767,
+    "current": 8.761,
     "cost": 17.33,
-    "value": 17.97,
-    "unrealized": 0.64,
-    "unrealized_pct": 3.68,
+    "value": 17.96,
+    "unrealized": 0.63,
+    "unrealized_pct": 3.61,
     "bought_at": "2026-07-26T12:08:52.896Z",
-    "story": "holding 2.05 LINK bought @ $8.4560 \u00b7 now $8.7670 \u00b7 up $0.64"
+    "story": "holding 2.05 LINK bought @ $8.4560 \u00b7 now $8.7610 \u00b7 up $0.63"
    },
    {
     "asset": "LTC",
     "amount": 0.485,
     "entry": 47.9,
-    "current": 48.25,
+    "current": 48.13,
     "cost": 23.23,
-    "value": 23.4,
-    "unrealized": 0.17,
-    "unrealized_pct": 0.73,
+    "value": 23.34,
+    "unrealized": 0.11,
+    "unrealized_pct": 0.48,
     "bought_at": "2026-07-26T19:10:48.837Z",
-    "story": "holding 0.485 LTC bought @ $47.9000 \u00b7 now $48.2500 \u00b7 up $0.17"
+    "story": "holding 0.485 LTC bought @ $47.9000 \u00b7 now $48.1300 \u00b7 up $0.11"
    },
    {
     "asset": "TRX",
     "amount": 21.0,
     "entry": 0.3321,
-    "current": 0.3322,
+    "current": 0.3323,
     "cost": 6.97,
     "value": 6.98,
     "unrealized": 0.0,
-    "unrealized_pct": 0.03,
+    "unrealized_pct": 0.06,
     "bought_at": "2026-07-26T21:58:26.867Z",
-    "story": "holding 21 TRX bought @ $0.3321 \u00b7 now $0.3322 \u00b7 up $0.00"
+    "story": "holding 21 TRX bought @ $0.3321 \u00b7 now $0.3323 \u00b7 up $0.00"
    }
   ],
   "realized_pnl": -0.17,
-  "unrealized_pnl": 1.02,
-  "total_pnl": 0.85,
+  "unrealized_pnl": 0.96,
+  "total_pnl": 0.79,
   "trade_count": 5,
   "win_count": 0,
   "win_rate": 0.0,
@@ -1268,8 +1268,8 @@
   "state": "accumulation",
   "multiplier": 1.2,
   "veto_longs": false,
-  "range_position": 0.103,
-  "vs_200ma": -0.0938,
+  "range_position": 0.104,
+  "vs_200ma": -0.0928,
   "proxy": true,
   "note": "MVRV/SOPR/NUPL unavailable \u2014 range+trend cycle proxy"
  },
@@ -1277,8 +1277,8 @@
   {
    "asset": "BTC",
    "final": 78.6,
-   "positioning": 67.0,
-   "flow": 63.7,
+   "positioning": 66.6,
+   "flow": 64.1,
    "confidence": "low",
    "liq_state": "sweep_candidate",
    "oi_state": "short_covering",
@@ -1286,9 +1286,9 @@
   },
   {
    "asset": "ETH",
-   "final": 66.7,
-   "positioning": 51.9,
-   "flow": 60.0,
+   "final": 61.0,
+   "positioning": 52.0,
+   "flow": 49.5,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "neutral",
@@ -1296,9 +1296,9 @@
   },
   {
    "asset": "SOL",
-   "final": 80.1,
-   "positioning": 62.4,
-   "flow": 72.1,
+   "final": 76.3,
+   "positioning": 62.0,
+   "flow": 65.5,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "short_covering",
@@ -1306,9 +1306,9 @@
   },
   {
    "asset": "LINK",
-   "final": 59.4,
+   "final": 61.1,
    "positioning": 49.8,
-   "flow": 49.2,
+   "flow": 52.4,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "neutral",
@@ -1329,21 +1329,21 @@
   {
    "symbol": "BTC",
    "flow": 76.0,
-   "funding": 4.436e-05,
+   "funding": 4.603e-05,
    "long_short": 1.6853,
    "taker": 1.5125
   },
   {
    "symbol": "ETH",
    "flow": 67.2,
-   "funding": 8.454e-05,
+   "funding": 8.446e-05,
    "long_short": 2.059,
    "taker": 1.7265
   },
   {
    "symbol": "SOL",
    "flow": 61.0,
-   "funding": 4.014e-05,
+   "funding": 4.335e-05,
    "long_short": 2.635,
    "taker": 1.295
   },
@@ -1364,14 +1364,14 @@
   {
    "symbol": "LTC",
    "flow": 62.2,
-   "funding": 1.133e-05,
+   "funding": 8.78e-06,
    "long_short": 1.9753,
    "taker": 0.942
   },
   {
    "symbol": "TRX",
    "flow": 68.2,
-   "funding": -5.52e-05,
+   "funding": -5.313e-05,
    "long_short": 1.7115,
    "taker": 0.9931
   }
