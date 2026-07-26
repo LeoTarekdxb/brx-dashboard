@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-26T20:10:01.006676+00:00",
+ "generated_at": "2026-07-26T20:15:00.698939+00:00",
  "mode": "PAPER TRADING",
  "account": {
   "equity": 99412.59,
@@ -832,7 +832,7 @@
  ],
  "error": null,
  "audit": {
-  "ts": "2026-07-26T20:10:06.963985+00:00",
+  "ts": "2026-07-26T20:15:06.969435+00:00",
   "checks": [
    {
     "check": "agent process",
@@ -958,7 +958,7 @@
   {
    "asset": "BTC",
    "qty": 5.274e-05,
-   "price": 64703.35,
+   "price": 64691.71,
    "value": 3.41,
    "entry": null,
    "pl": null,
@@ -967,28 +967,28 @@
   {
    "asset": "LINK",
    "qty": 2.66,
-   "price": 8.587,
-   "value": 22.84,
+   "price": 8.584,
+   "value": 22.83,
    "entry": 8.456,
-   "pl": 0.35,
-   "plpc": 1.55
+   "pl": 0.34,
+   "plpc": 1.51
   },
   {
    "asset": "LTC",
    "qty": 0.485,
-   "price": 47.91,
-   "value": 23.24,
+   "price": 47.86,
+   "value": 23.21,
    "entry": 47.9,
-   "pl": 0.0,
-   "plpc": 0.02
+   "pl": -0.02,
+   "plpc": -0.08
   }
  ],
  "binance_account": {
   "mode": "LIVE",
   "usdt_free": 0.04,
   "bnb_usd": 5.81,
-  "positions_usd": 49.49,
-  "total_usd": 55.34,
+  "positions_usd": 49.46,
+  "total_usd": 55.3,
   "deployed_pct": 89.4
  },
  "binance_fills": [
@@ -1180,18 +1180,18 @@
     "asset": "LTC",
     "amount": 0.485,
     "entry": 47.9,
-    "current": 47.91,
+    "current": 47.86,
     "cost": 23.23,
-    "value": 23.24,
-    "unrealized": 0.0,
-    "unrealized_pct": 0.02,
+    "value": 23.21,
+    "unrealized": -0.02,
+    "unrealized_pct": -0.08,
     "bought_at": "2026-07-26T19:10:48.837Z",
-    "story": "holding 0.485 LTC bought @ $47.9000 \u00b7 now $47.9100 \u00b7 up $0.00"
+    "story": "holding 0.485 LTC bought @ $47.9000 \u00b7 now $47.8600 \u00b7 down $0.02"
    }
   ],
   "realized_pnl": -0.17,
-  "unrealized_pnl": 0.34,
-  "total_pnl": 0.17,
+  "unrealized_pnl": 0.32,
+  "total_pnl": 0.15,
   "trade_count": 5,
   "win_count": 0,
   "win_rate": 0.0,
@@ -1219,16 +1219,16 @@
   "multiplier": 1.2,
   "veto_longs": false,
   "range_position": 0.092,
-  "vs_200ma": -0.1035,
+  "vs_200ma": -0.1036,
   "proxy": true,
   "note": "MVRV/SOPR/NUPL unavailable \u2014 range+trend cycle proxy"
  },
  "cryptology": [
   {
    "asset": "BTC",
-   "final": 77.2,
-   "positioning": 69.1,
-   "flow": 58.6,
+   "final": 72.9,
+   "positioning": 69.0,
+   "flow": 50.6,
    "confidence": "low",
    "liq_state": "sweep_candidate",
    "oi_state": "short_covering",
@@ -1236,29 +1236,29 @@
   },
   {
    "asset": "ETH",
-   "final": 68.4,
-   "positioning": 48.0,
-   "flow": 68.1,
+   "final": 65.9,
+   "positioning": 53.9,
+   "flow": 56.2,
    "confidence": "medium",
-   "liq_state": "no_sweep",
+   "liq_state": "sweep_candidate",
    "oi_state": "neutral",
    "netflow_state": "balanced"
   },
   {
    "asset": "SOL",
-   "final": 69.7,
-   "positioning": 60.9,
-   "flow": 54.6,
+   "final": 75.3,
+   "positioning": 66.9,
+   "flow": 57.7,
    "confidence": "medium",
-   "liq_state": "no_sweep",
+   "liq_state": "sweep_candidate",
    "oi_state": "short_covering",
    "netflow_state": "balanced"
   },
   {
    "asset": "LINK",
-   "final": 59.3,
+   "final": 58.7,
    "positioning": 49.8,
-   "flow": 48.9,
+   "flow": 47.8,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "neutral",
@@ -1279,21 +1279,21 @@
   {
    "symbol": "BTC",
    "flow": 76.0,
-   "funding": 3.386e-05,
+   "funding": 3.43e-05,
    "long_short": 1.6853,
    "taker": 1.1491
   },
   {
    "symbol": "ETH",
    "flow": 53.5,
-   "funding": 7.359e-05,
+   "funding": 7.424e-05,
    "long_short": 2.0553,
    "taker": 0.948
   },
   {
    "symbol": "SOL",
-   "flow": 47.2,
-   "funding": 1.6e-07,
+   "flow": 53.2,
+   "funding": -1.2e-07,
    "long_short": 2.6443,
    "taker": 0.9126
   },
@@ -1313,15 +1313,15 @@
   },
   {
    "symbol": "LTC",
-   "flow": 50.8,
-   "funding": 8.4e-07,
+   "flow": 56.8,
+   "funding": -2.47e-06,
    "long_short": 1.9197,
    "taker": 0.877
   },
   {
    "symbol": "TRX",
    "flow": 60.8,
-   "funding": -4.534e-05,
+   "funding": -4.627e-05,
    "long_short": 1.7345,
    "taker": 0.4537
   }
