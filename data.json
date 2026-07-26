@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-26T20:25:00.274436+00:00",
+ "generated_at": "2026-07-26T20:30:00.237285+00:00",
  "mode": "PAPER TRADING",
  "account": {
   "equity": 99412.59,
@@ -832,12 +832,12 @@
  ],
  "error": null,
  "audit": {
-  "ts": "2026-07-26T20:25:06.023768+00:00",
+  "ts": "2026-07-26T20:30:06.101748+00:00",
   "checks": [
    {
     "check": "agent process",
     "status": "PASS",
-    "detail": "pid 12114",
+    "detail": "pid 14932",
     "fix": null
    },
    {
@@ -958,7 +958,7 @@
   {
    "asset": "BTC",
    "qty": 5.274e-05,
-   "price": 64647.98,
+   "price": 64650.0,
    "value": 3.41,
    "entry": null,
    "pl": null,
@@ -967,20 +967,20 @@
   {
    "asset": "LINK",
    "qty": 2.66,
-   "price": 8.575,
-   "value": 22.81,
+   "price": 8.578,
+   "value": 22.82,
    "entry": 8.456,
    "pl": 0.32,
-   "plpc": 1.41
+   "plpc": 1.44
   },
   {
    "asset": "LTC",
    "qty": 0.485,
-   "price": 47.82,
-   "value": 23.19,
+   "price": 47.79,
+   "value": 23.18,
    "entry": 47.9,
-   "pl": -0.04,
-   "plpc": -0.17
+   "pl": -0.05,
+   "plpc": -0.23
   }
  ],
  "binance_account": {
@@ -988,7 +988,7 @@
   "usdt_free": 0.04,
   "bnb_usd": 5.81,
   "positions_usd": 49.41,
-  "total_usd": 55.26,
+  "total_usd": 55.25,
   "deployed_pct": 89.4
  },
  "binance_fills": [
@@ -1156,37 +1156,37 @@
     "asset": "LINK",
     "amount": 0.61,
     "entry": 8.456,
-    "current": 8.575,
+    "current": 8.578,
     "cost": 5.16,
     "value": 5.23,
     "unrealized": 0.07,
-    "unrealized_pct": 1.41,
+    "unrealized_pct": 1.44,
     "bought_at": "2026-07-26T12:08:52.896Z",
-    "story": "holding 0.61 LINK bought @ $8.4560 \u00b7 now $8.5750 \u00b7 up $0.07"
+    "story": "holding 0.61 LINK bought @ $8.4560 \u00b7 now $8.5780 \u00b7 up $0.07"
    },
    {
     "asset": "LINK",
     "amount": 2.05,
     "entry": 8.456,
-    "current": 8.575,
+    "current": 8.578,
     "cost": 17.33,
     "value": 17.58,
-    "unrealized": 0.24,
-    "unrealized_pct": 1.41,
+    "unrealized": 0.25,
+    "unrealized_pct": 1.44,
     "bought_at": "2026-07-26T12:08:52.896Z",
-    "story": "holding 2.05 LINK bought @ $8.4560 \u00b7 now $8.5750 \u00b7 up $0.24"
+    "story": "holding 2.05 LINK bought @ $8.4560 \u00b7 now $8.5780 \u00b7 up $0.25"
    },
    {
     "asset": "LTC",
     "amount": 0.485,
     "entry": 47.9,
-    "current": 47.82,
+    "current": 47.79,
     "cost": 23.23,
-    "value": 23.19,
-    "unrealized": -0.04,
-    "unrealized_pct": -0.17,
+    "value": 23.18,
+    "unrealized": -0.05,
+    "unrealized_pct": -0.23,
     "bought_at": "2026-07-26T19:10:48.837Z",
-    "story": "holding 0.485 LTC bought @ $47.9000 \u00b7 now $47.8200 \u00b7 down $0.04"
+    "story": "holding 0.485 LTC bought @ $47.9000 \u00b7 now $47.7900 \u00b7 down $0.05"
    }
   ],
   "realized_pnl": -0.17,
@@ -1226,9 +1226,9 @@
  "cryptology": [
   {
    "asset": "BTC",
-   "final": 74.5,
-   "positioning": 69.0,
-   "flow": 53.7,
+   "final": 69.2,
+   "positioning": 69.1,
+   "flow": 43.6,
    "confidence": "low",
    "liq_state": "sweep_candidate",
    "oi_state": "short_covering",
@@ -1236,9 +1236,9 @@
   },
   {
    "asset": "ETH",
-   "final": 73.0,
-   "positioning": 53.9,
-   "flow": 69.3,
+   "final": 70.9,
+   "positioning": 53.7,
+   "flow": 65.6,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "neutral",
@@ -1246,19 +1246,19 @@
   },
   {
    "asset": "SOL",
-   "final": 74.9,
-   "positioning": 66.9,
-   "flow": 57.0,
+   "final": 74.6,
+   "positioning": 61.0,
+   "flow": 63.5,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "short_covering",
-   "netflow_state": "balanced"
+   "netflow_state": "accumulation"
   },
   {
    "asset": "LINK",
-   "final": 58.1,
+   "final": 58.4,
    "positioning": 49.8,
-   "flow": 46.8,
+   "flow": 47.4,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "neutral",
@@ -1266,8 +1266,8 @@
   },
   {
    "asset": "AVAX",
-   "final": 63.6,
-   "positioning": 49.9,
+   "final": 67.6,
+   "positioning": 55.9,
    "flow": 56.9,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
@@ -1279,21 +1279,21 @@
   {
    "symbol": "BTC",
    "flow": 76.0,
-   "funding": 3.428e-05,
+   "funding": 3.381e-05,
    "long_short": 1.6853,
    "taker": 1.1491
   },
   {
    "symbol": "ETH",
    "flow": 53.5,
-   "funding": 7.379e-05,
+   "funding": 7.492e-05,
    "long_short": 2.0553,
    "taker": 0.948
   },
   {
    "symbol": "SOL",
    "flow": 53.2,
-   "funding": -5.4e-07,
+   "funding": -1.57e-06,
    "long_short": 2.6443,
    "taker": 0.9126
   },
@@ -1314,19 +1314,40 @@
   {
    "symbol": "LTC",
    "flow": 56.8,
-   "funding": -6.34e-06,
+   "funding": -8.77e-06,
    "long_short": 1.9197,
    "taker": 0.877
   },
   {
    "symbol": "TRX",
    "flow": 60.8,
-   "funding": -5.381e-05,
+   "funding": -5.744e-05,
    "long_short": 1.7345,
    "taker": 0.4537
   }
  ],
  "activity": [
+  {
+   "time": "2026-07-26T20:26:43.736579",
+   "kind": "buy",
+   "text": "REJECTED BUY BTCUSD $14,925 \u00b7 Tier A",
+   "detail": "24/7 sleeve: tech score 57, slot $14,925 of 15% cap",
+   "status": "rejected"
+  },
+  {
+   "time": "2026-07-26T20:26:43.734927",
+   "kind": "sell",
+   "text": "EXECUTED SELL LINKUSD $20 \u00b7 Tier A",
+   "detail": "tech score 50 < 999",
+   "status": "executed"
+  },
+  {
+   "time": "2026-07-26T20:25:51.305463",
+   "kind": "buy",
+   "text": "REJECTED BUY BTCUSD $14,925 \u00b7 Tier A",
+   "detail": "24/7 sleeve: tech score 57, slot $14,925 of 15% cap",
+   "status": "rejected"
+  },
   {
    "time": "2026-07-26T19:10:47.487217",
    "kind": "buy",
@@ -1403,30 +1424,54 @@
    "text": "EXECUTED BUY AAPL $11,875 \u00b7 Tier A",
    "detail": "equal-weight target $11,875, held $0",
    "status": "executed"
-  },
-  {
-   "time": "2026-07-24T10:46:47.890644",
-   "kind": "buy",
-   "text": "EXECUTED BUY TSM $11,875 \u00b7 Tier A",
-   "detail": "equal-weight target $11,875, held $0",
-   "status": "executed"
-  },
-  {
-   "time": "2026-07-24T10:46:46.498834",
-   "kind": "buy",
-   "text": "EXECUTED BUY JNJ $11,875 \u00b7 Tier A",
-   "detail": "equal-weight target $11,875, held $0",
-   "status": "executed"
-  },
-  {
-   "time": "2026-07-24T10:20:28.425416",
-   "kind": "buy",
-   "text": "EXPIRED BUY AMZN $11,875 \u00b7 Tier B",
-   "detail": "equal-weight target $11,875, held $0",
-   "status": "expired"
   }
  ],
  "signals": [
+  {
+   "id": 52,
+   "created_at": "2026-07-26T20:26:43.736579",
+   "symbol": "BTCUSD",
+   "side": "buy",
+   "notional": 14925.0,
+   "verdict": "crypto_momentum",
+   "composite": 57.144999999999996,
+   "confidence": 0.0,
+   "n_outcomes": 2,
+   "tier": "A",
+   "status": "rejected",
+   "reason": "24/7 sleeve: tech score 57, slot $14,925 of 15% cap",
+   "expires_at": "2026-07-27T20:26:43.736579"
+  },
+  {
+   "id": 51,
+   "created_at": "2026-07-26T20:26:43.734927",
+   "symbol": "LINKUSD",
+   "side": "sell",
+   "notional": 20.0,
+   "verdict": null,
+   "composite": null,
+   "confidence": null,
+   "n_outcomes": null,
+   "tier": "A",
+   "status": "executed",
+   "reason": "tech score 50 < 999",
+   "expires_at": null
+  },
+  {
+   "id": 50,
+   "created_at": "2026-07-26T20:25:51.305463",
+   "symbol": "BTCUSD",
+   "side": "buy",
+   "notional": 14925.0,
+   "verdict": "crypto_momentum",
+   "composite": 57.144999999999996,
+   "confidence": 0.0,
+   "n_outcomes": 1,
+   "tier": "A",
+   "status": "rejected",
+   "reason": "24/7 sleeve: tech score 57, slot $14,925 of 15% cap",
+   "expires_at": "2026-07-27T20:25:51.305463"
+  },
   {
    "id": 49,
    "created_at": "2026-07-26T19:10:47.487217",
@@ -1561,51 +1606,6 @@
    "status": "executed",
    "reason": "equal-weight target $11,875, held $0",
    "expires_at": "2026-07-25T10:46:51.772804"
-  },
-  {
-   "id": 12,
-   "created_at": "2026-07-24T10:46:50.556152",
-   "symbol": "GOOGL",
-   "side": "buy",
-   "notional": 11875.0,
-   "verdict": "buy",
-   "composite": 79.8,
-   "confidence": 0.0,
-   "n_outcomes": 0,
-   "tier": "A",
-   "status": "executed",
-   "reason": "equal-weight target $11,875, held $0",
-   "expires_at": "2026-07-25T10:46:50.556152"
-  },
-  {
-   "id": 11,
-   "created_at": "2026-07-24T10:46:49.340631",
-   "symbol": "AAPL",
-   "side": "buy",
-   "notional": 11875.0,
-   "verdict": "buy",
-   "composite": 81.3,
-   "confidence": 0.0,
-   "n_outcomes": 0,
-   "tier": "A",
-   "status": "executed",
-   "reason": "equal-weight target $11,875, held $0",
-   "expires_at": "2026-07-25T10:46:49.340631"
-  },
-  {
-   "id": 10,
-   "created_at": "2026-07-24T10:46:47.890644",
-   "symbol": "TSM",
-   "side": "buy",
-   "notional": 11875.0,
-   "verdict": "strong_buy",
-   "composite": 86.9,
-   "confidence": 0.0,
-   "n_outcomes": 0,
-   "tier": "A",
-   "status": "executed",
-   "reason": "equal-weight target $11,875, held $0",
-   "expires_at": "2026-07-25T10:46:47.890644"
   }
  ]
 }
