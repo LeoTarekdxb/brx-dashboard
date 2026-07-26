@@ -378,15 +378,20 @@ function render(d){
   }).join("")||`<div class="empty">warming…</div>`;
 
   // ── SIGNAL QUEUES
-  const sigHTML=s=>s.length?s.slice(0,7).map(x=>{
+  // Crypto rows hide the notional: it's the PAPER slot size, and printing
+  // "$4,981" inside a real-money book that holds $55 is actively misleading.
+  // The real amount is whatever the Binance mirror filled — shown in Trades.
+  const sigHTML=(s,crypto)=>s.length?s.slice(0,7).map(x=>{
     const c=/executed|approved/.test(x.status)?"var(--up)":x.status==="pending"?"var(--pend)":"var(--dn)";
+    const held=crypto&&(d.binance_positions||[]).some(p=>x.symbol.startsWith(p.asset));
+    const note=crypto?`${x.side.toUpperCase()} · ${x.status}${x.status==="executed"&&!held?" (paper only — real mirror skipped)":""}`
+                     :`${x.side.toUpperCase()} ${usd(x.notional,0)} · ${x.status}`;
     return `<div class="rowline"><span class="tk">${x.symbol}</span>
-      <span class="nm">${x.side.toUpperCase()} ${usd(x.notional,0)} · ${x.status}</span>
+      <span class="nm">${note}</span>
       <span class="pl" style="color:${c}">${x.composite?Math.round(x.composite):""}</span></div>`;
   }).join(""):`<div class="empty">queue clear</div>`;
-  const cr=/BTC|ETH|SOL|AVAX|LINK|LTC|TRX/;
-  $("sigC").innerHTML=sigHTML(sigs.filter(s=>cr.test(s.symbol)));
-  $("sigE").innerHTML=sigHTML(sigs.filter(s=>!cr.test(s.symbol)));
+  $("sigC").innerHTML=sigHTML(sigs.filter(s=>CRYRE.test(s.symbol)),true);
+  $("sigE").innerHTML=sigHTML(sigs.filter(s=>!CRYRE.test(s.symbol)),false);
 
   // ── EQUITY HOLDINGS + WATCHLIST
   $("holdE").innerHTML=eqPos.length?eqPos.sort((a,b)=>b.unrealized_pl-a.unrealized_pl).map(p=>`
