@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-26T12:30:00.287694+00:00",
+ "generated_at": "2026-07-26T12:35:00.267978+00:00",
  "mode": "PAPER TRADING",
  "account": {
   "equity": 99616.21,
@@ -720,7 +720,7 @@
  ],
  "error": null,
  "audit": {
-  "ts": "2026-07-26T12:30:05.463968+00:00",
+  "ts": "2026-07-26T12:35:05.285272+00:00",
   "checks": [
    {
     "check": "agent process",
@@ -835,16 +835,16 @@
   "multiplier": 1.2,
   "veto_longs": false,
   "range_position": 0.09,
-  "vs_200ma": -0.1053,
+  "vs_200ma": -0.1055,
   "proxy": true,
   "note": "MVRV/SOPR/NUPL unavailable \u2014 range+trend cycle proxy"
  },
  "cryptology": [
   {
    "asset": "BTC",
-   "final": 68.9,
+   "final": 75.4,
    "positioning": 57.2,
-   "flow": 57.8,
+   "flow": 69.7,
    "confidence": "low",
    "liq_state": "sweep_candidate",
    "oi_state": "short_covering",
@@ -852,9 +852,9 @@
   },
   {
    "asset": "ETH",
-   "final": 68.2,
-   "positioning": 63.2,
-   "flow": 49.0,
+   "final": 72.1,
+   "positioning": 63.4,
+   "flow": 56.0,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "neutral",
@@ -862,9 +862,9 @@
   },
   {
    "asset": "SOL",
-   "final": 69.8,
-   "positioning": 60.7,
-   "flow": 55.1,
+   "final": 69.7,
+   "positioning": 60.9,
+   "flow": 54.6,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "short_covering",
@@ -873,8 +873,8 @@
   {
    "asset": "LINK",
    "final": 60,
-   "positioning": 73.3,
-   "flow": 44.7,
+   "positioning": 73.6,
+   "flow": 45.0,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "neutral",
@@ -895,21 +895,21 @@
   {
    "symbol": "BTC",
    "flow": 54.8,
-   "funding": 9.339e-05,
+   "funding": 9.348e-05,
    "long_short": 1.742,
    "taker": 0.8274
   },
   {
    "symbol": "ETH",
    "flow": 46.0,
-   "funding": 2.387e-05,
+   "funding": 2.267e-05,
    "long_short": 2.2605,
    "taker": 0.8432
   },
   {
    "symbol": "SOL",
    "flow": 39.8,
-   "funding": 5.461e-05,
+   "funding": 5.269e-05,
    "long_short": 2.7552,
    "taker": 0.611
   },
@@ -923,21 +923,21 @@
   {
    "symbol": "LINK",
    "flow": 75.8,
-   "funding": -1.405e-05,
+   "funding": -1.635e-05,
    "long_short": 1.8711,
    "taker": 1.0725
   },
   {
    "symbol": "LTC",
    "flow": 46.0,
-   "funding": 6e-07,
+   "funding": 4.43e-06,
    "long_short": 2.0166,
    "taker": 0.7855
   },
   {
    "symbol": "TRX",
    "flow": 76.0,
-   "funding": 1.75e-06,
+   "funding": 5.95e-06,
    "long_short": 1.733,
    "taker": 1.1138
   }
