@@ -1,41 +1,41 @@
 {
- "generated_at": "2026-07-27T21:45:00.271868+00:00",
+ "generated_at": "2026-07-27T21:50:00.198117+00:00",
  "mode": "PAPER TRADING",
  "account": {
-  "equity": 98888.48,
+  "equity": 98932.97,
   "cash": -10325.19,
-  "buying_power": 224287.68,
+  "buying_power": 224412.25,
   "last_equity": 99753.07917064207,
-  "day_pl": -864.6,
-  "total_pl": -1111.52
+  "day_pl": -820.11,
+  "total_pl": -1067.03
  },
  "positions": [
   {
    "symbol": "AAPL",
    "qty": 36.605495553,
-   "market_value": 12316.65,
+   "market_value": 12318.48,
    "avg_entry": 324.404569,
-   "current": 336.47,
-   "unrealized_pl": 441.66,
-   "unrealized_plpc": 3.72
+   "current": 336.52,
+   "unrealized_pl": 443.49,
+   "unrealized_plpc": 3.74
   },
   {
    "symbol": "AMZN",
    "qty": 50.706648447,
-   "market_value": 11752.79,
+   "market_value": 11748.73,
    "avg_entry": 234.19,
-   "current": 231.78,
-   "unrealized_pl": -122.2,
-   "unrealized_plpc": -1.03
+   "current": 231.7,
+   "unrealized_pl": -126.26,
+   "unrealized_plpc": -1.06
   },
   {
    "symbol": "GOOGL",
    "qty": 37.157980354,
-   "market_value": 12158.37,
+   "market_value": 12168.5,
    "avg_entry": 319.581147,
-   "current": 327.2074,
-   "unrealized_pl": 283.38,
-   "unrealized_plpc": 2.39
+   "current": 327.48,
+   "unrealized_pl": 293.51,
+   "unrealized_plpc": 2.47
   },
   {
    "symbol": "JNJ",
@@ -58,38 +58,38 @@
   {
    "symbol": "META",
    "qty": 19.564193985,
-   "market_value": 11661.82,
+   "market_value": 11693.52,
    "avg_entry": 606.975683,
-   "current": 596.08,
-   "unrealized_pl": -213.17,
-   "unrealized_plpc": -1.8
+   "current": 597.7,
+   "unrealized_pl": -181.47,
+   "unrealized_plpc": -1.53
   },
   {
    "symbol": "MSFT",
    "qty": 30.950265874,
-   "market_value": 12039.65,
+   "market_value": 12045.84,
    "avg_entry": 383.679741,
-   "current": 389.0,
-   "unrealized_pl": 164.66,
-   "unrealized_plpc": 1.39
+   "current": 389.2,
+   "unrealized_pl": 170.85,
+   "unrealized_plpc": 1.44
   },
   {
    "symbol": "NVDA",
    "qty": 57.304318521,
-   "market_value": 11290.67,
+   "market_value": 11290.66,
    "avg_entry": 207.22679,
-   "current": 197.03,
-   "unrealized_pl": -584.32,
+   "current": 197.0299,
+   "unrealized_pl": -584.33,
    "unrealized_plpc": -4.92
   },
   {
    "symbol": "TSM",
    "qty": 28.902221789,
-   "market_value": 11537.04,
+   "market_value": 11535.74,
    "avg_entry": 410.867721,
-   "current": 399.1747,
-   "unrealized_pl": -337.95,
-   "unrealized_plpc": -2.85
+   "current": 399.13,
+   "unrealized_pl": -339.25,
+   "unrealized_plpc": -2.86
   }
  ],
  "equity_history": {
@@ -877,18 +877,18 @@
  ],
  "error": null,
  "audit": {
-  "ts": "2026-07-27T21:45:04.868983+00:00",
+  "ts": "2026-07-27T21:50:04.689283+00:00",
   "checks": [
    {
     "check": "agent process",
     "status": "PASS",
-    "detail": "pid 4554",
+    "detail": "pid 6290",
     "fix": null
    },
    {
     "check": "alpaca (PAPER)",
     "status": "PASS",
-    "detail": "equity $98,886.79",
+    "detail": "equity $98,932.98",
     "fix": null
    },
    {
@@ -899,15 +899,9 @@
    },
    {
     "check": "dashboard",
-    "status": "FAIL",
-    "detail": "stale 535m",
-    "fix": null
-   },
-   {
-    "check": "dashboard",
     "status": "PASS",
-    "detail": "republished by healer",
-    "fix": "republish"
+    "detail": "5m old",
+    "fix": null
    },
    {
     "check": "signal hygiene",
@@ -936,10 +930,8 @@
   ],
   "passed": 6,
   "warned": 1,
-  "failed": 2,
-  "healed": [
-   "republished dashboard"
-  ],
+  "failed": 1,
+  "healed": [],
   "healthy": false
  },
  "binance": {
@@ -953,9 +945,9 @@
   "channel": "cryptologyio",
   "assets": {
    "SOL": {
-    "bias": -0.243,
-    "score": 37.9,
-    "messages": 2
+    "bias": -0.656,
+    "score": 17.2,
+    "messages": 3
    },
    "BTC": {
     "bias": 0.023,
@@ -971,8 +963,20 @@
   "signals": [
    {
     "multi_asset": false,
+    "time": "2026-07-27T21:45:48+00:00",
+    "age_min": 4.3,
+    "kind": "smart_money",
+    "direction": "bearish",
+    "cdri": null,
+    "assets": [
+     "SOL"
+    ],
+    "text": "\ud83d\udcd0 FIBONACCI \u2014 SOL GOLDEN POCKET ENTERED \ud83c\udf00\nZone: $75.31 \u2013 $75.49 | Current: $75.61\nTrend: DOWNTREND (4h + 1d aligned) | Tier 2\nConfidence: 83/100 [\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2591\u2591] \u2014 HIGH | Direction: SH"
+   },
+   {
+    "multi_asset": false,
     "time": "2026-07-27T20:31:17+00:00",
-    "age_min": 73.9,
+    "age_min": 78.9,
     "kind": "inversion_gap",
     "direction": "bearish",
     "cdri": 57,
@@ -984,7 +988,7 @@
    {
     "multi_asset": false,
     "time": "2026-07-27T20:30:55+00:00",
-    "age_min": 74.2,
+    "age_min": 79.2,
     "kind": "inversion_gap",
     "direction": "bullish",
     "cdri": 57,
@@ -996,7 +1000,7 @@
    {
     "multi_asset": false,
     "time": "2026-07-27T20:30:33+00:00",
-    "age_min": 74.6,
+    "age_min": 79.6,
     "kind": "inversion_gap",
     "direction": "bearish",
     "cdri": 57,
@@ -1008,7 +1012,7 @@
    {
     "multi_asset": false,
     "time": "2026-07-27T20:30:04+00:00",
-    "age_min": 75.1,
+    "age_min": 80.1,
     "kind": "liquidation",
     "direction": "bullish",
     "cdri": null,
@@ -1020,7 +1024,7 @@
    {
     "multi_asset": false,
     "time": "2026-07-27T19:46:36+00:00",
-    "age_min": 118.6,
+    "age_min": 123.5,
     "kind": "smart_money",
     "direction": "bullish",
     "cdri": null,
@@ -1030,7 +1034,7 @@
     "text": "\ud83d\udcd0 FIBONACCI \u2014 SOL GOLDEN POCKET BOUNCE \u26a0\ufe0f \u2014 GATES FAILING\nPrice above zone \u2192 $75.77 | ADX 19.9 < 20 (CHOP)\nTrend: DOWNTREND (4h + 1d aligned)\nConfidence: 78/100 [\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2591\u2591\u2591] \u2014 HIGH"
    }
   ],
-  "read_at": "2026-07-27T21:45:09.321303+00:00"
+  "read_at": "2026-07-27T21:50:08.183167+00:00"
  },
  "channel_twin": {
   "signals_recorded": 52,
@@ -1148,113 +1152,127 @@
   "state": "neutral",
   "multiplier": 1.0,
   "veto_longs": false,
-  "error": "418 Client Error: I'm a teapot for url: https://api.binance.",
+  "error": "binance rate-limit ban active, 15.7 min remaining",
   "proxy": true
  },
  "cryptology": [
   {
    "asset": "BTC",
-   "final": 52.2,
-   "positioning": 51.6,
-   "flow": 53.0,
+   "final": 50.0,
+   "positioning": 50.0,
+   "flow": 50.0,
    "confidence": "low",
-   "liq_state": "sweep_candidate",
-   "oi_state": "neutral",
+   "liq_state": null,
+   "oi_state": null,
    "netflow_state": null
   },
   {
    "asset": "ETH",
-   "final": 53.1,
-   "positioning": 54.9,
-   "flow": 51.0,
+   "final": 50.0,
+   "positioning": 50.0,
+   "flow": 50.0,
    "confidence": "medium",
-   "liq_state": "sweep_candidate",
-   "oi_state": "neutral",
+   "liq_state": null,
+   "oi_state": null,
    "netflow_state": null
   },
   {
    "asset": "SOL",
-   "final": 63.1,
-   "positioning": 73.1,
-   "flow": 51.0,
+   "final": 50.0,
+   "positioning": 50.0,
+   "flow": 50.0,
    "confidence": "medium",
-   "liq_state": "sweep_candidate",
-   "oi_state": "capitulation_flush",
+   "liq_state": null,
+   "oi_state": null,
    "netflow_state": null
   },
   {
    "asset": "LINK",
-   "final": 52.8,
-   "positioning": 54.3,
-   "flow": 51.0,
+   "final": 50.0,
+   "positioning": 50.0,
+   "flow": 50.0,
    "confidence": "medium",
-   "liq_state": "no_sweep",
-   "oi_state": "neutral",
+   "liq_state": null,
+   "oi_state": null,
    "netflow_state": null
   },
   {
    "asset": "AVAX",
-   "final": 55.8,
-   "positioning": 59.6,
-   "flow": 51.0,
+   "final": 50.0,
+   "positioning": 50.0,
+   "flow": 50.0,
    "confidence": "medium",
-   "liq_state": "no_sweep",
-   "oi_state": "capitulation_flush",
+   "liq_state": null,
+   "oi_state": null,
    "netflow_state": null
   }
  ],
  "crypto_radar": [
   {
    "symbol": "BTC",
-   "flow": 69.8,
-   "funding": 7.706e-05,
-   "long_short": 1.524,
-   "taker": 1.0682
+   "flow": 50.0,
+   "funding": null,
+   "long_short": null,
+   "taker": null
   },
   {
    "symbol": "ETH",
-   "flow": 62.2,
-   "funding": 3.841e-05,
-   "long_short": 1.949,
-   "taker": 0.9709
+   "flow": 50.0,
+   "funding": null,
+   "long_short": null,
+   "taker": null
   },
   {
    "symbol": "SOL",
-   "flow": 52.0,
-   "funding": -1.72e-05,
-   "long_short": 2.4953,
-   "taker": 0.8738
+   "flow": 50.0,
+   "funding": null,
+   "long_short": null,
+   "taker": null
   },
   {
    "symbol": "AVAX",
-   "flow": 46.0,
-   "funding": 5.303e-05,
-   "long_short": 2.1377,
-   "taker": 0.8797
+   "flow": 50.0,
+   "funding": null,
+   "long_short": null,
+   "taker": null
   },
   {
    "symbol": "LINK",
-   "flow": 62.2,
-   "funding": 6.363e-05,
-   "long_short": 1.9647,
-   "taker": 0.9081
+   "flow": 50.0,
+   "funding": null,
+   "long_short": null,
+   "taker": null
   },
   {
    "symbol": "LTC",
-   "flow": 67.0,
-   "funding": -2.207e-05,
-   "long_short": 2.7175,
-   "taker": 1.2302
+   "flow": 50.0,
+   "funding": null,
+   "long_short": null,
+   "taker": null
   },
   {
    "symbol": "TRX",
-   "flow": 60.8,
-   "funding": -0.00015733,
-   "long_short": 1.4155,
-   "taker": 0.6755
+   "flow": 50.0,
+   "funding": null,
+   "long_short": null,
+   "taker": null
   }
  ],
  "activity": [
+  {
+   "time": "2026-07-27T21:47:27.407235",
+   "kind": "sell",
+   "text": "EXECUTED SELL CCC $100 \u00b7 Tier A",
+   "detail": "hard stop -30.0% (limit -8%)",
+   "status": "executed"
+  },
+  {
+   "time": "2026-07-27T21:47:27.406285",
+   "kind": "sell",
+   "text": "EXECUTED SELL BBB $100 \u00b7 Tier A",
+   "detail": "hard stop -25.0% (limit -8%)",
+   "status": "executed"
+  },
   {
    "time": "2026-07-27T21:41:42.798046",
    "kind": "sell",
@@ -1338,23 +1356,39 @@
    "text": "EXECUTED BUY LINKUSD $14,880 \u00b7 Tier A",
    "detail": "24/7 sleeve: tech score 55, slot $14,925 of 15% cap",
    "status": "executed"
-  },
-  {
-   "time": "2026-07-27T11:21:23.518339",
-   "kind": "buy",
-   "text": "EXECUTED BUY LINKUSD $14,880 \u00b7 Tier A",
-   "detail": "24/7 sleeve: tech score 55, slot $14,925 of 15% cap",
-   "status": "executed"
-  },
-  {
-   "time": "2026-07-27T11:20:45.511206",
-   "kind": "sell",
-   "text": "EXECUTED SELL CCC $100 \u00b7 Tier A",
-   "detail": "hard stop -30.0% (limit -8%)",
-   "status": "executed"
   }
  ],
  "signals": [
+  {
+   "id": 87,
+   "created_at": "2026-07-27T21:47:27.407235",
+   "symbol": "CCC",
+   "side": "sell",
+   "notional": 100.0,
+   "verdict": null,
+   "composite": null,
+   "confidence": null,
+   "n_outcomes": null,
+   "tier": "A",
+   "status": "executed",
+   "reason": "hard stop -30.0% (limit -8%)",
+   "expires_at": null
+  },
+  {
+   "id": 86,
+   "created_at": "2026-07-27T21:47:27.406285",
+   "symbol": "BBB",
+   "side": "sell",
+   "notional": 100.0,
+   "verdict": null,
+   "composite": null,
+   "confidence": null,
+   "n_outcomes": null,
+   "tier": "A",
+   "status": "executed",
+   "reason": "hard stop -25.0% (limit -8%)",
+   "expires_at": null
+  },
   {
    "id": 85,
    "created_at": "2026-07-27T21:41:42.798046",
@@ -1504,36 +1538,6 @@
    "status": "executed",
    "reason": "24/7 sleeve: tech score 55, slot $7,462 of 15% cap",
    "expires_at": "2026-07-28T11:21:56.181083"
-  },
-  {
-   "id": 75,
-   "created_at": "2026-07-27T11:21:56.179769",
-   "symbol": "ETHUSD",
-   "side": "buy",
-   "notional": 7462.5,
-   "verdict": "crypto_momentum",
-   "composite": 67.0,
-   "confidence": 0.0,
-   "n_outcomes": 19,
-   "tier": "A",
-   "status": "executed",
-   "reason": "24/7 sleeve: tech score 67, slot $7,462 of 15% cap",
-   "expires_at": "2026-07-28T11:21:56.179769"
-  },
-  {
-   "id": 74,
-   "created_at": "2026-07-27T11:21:51.611981",
-   "symbol": "LINKUSD",
-   "side": "buy",
-   "notional": 14880.0,
-   "verdict": "crypto_momentum",
-   "composite": 55.0,
-   "confidence": 0.2,
-   "n_outcomes": 19,
-   "tier": "A",
-   "status": "executed",
-   "reason": "24/7 sleeve: tech score 55, slot $14,925 of 15% cap",
-   "expires_at": "2026-07-28T11:21:51.611981"
   }
  ]
 }
