@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BRX Autonomous Agent Suite — BRX Technologies L.L.C</title>
+<meta name="description" content="Purpose-built AI agents that run, monitor and heal themselves 24/7. Built and operated by BRX Technologies L.L.C, DIFC.">
+<style>
+  :root{
+    --navy:#141C2E; --navy2:#1B2438; --ink:#EDF1F7; --mut:#95A3BC; --dim:#63728C;
+    --line:#2C3A54; --gold:#E8B84B; --up:#35D68A;
+    --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    --sans:-apple-system,'Avenir Next','Segoe UI',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--navy);color:var(--ink);font-family:var(--sans);line-height:1.6;
+       -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  .sheet{border:1px solid var(--line);margin:26px auto;position:relative}
+  .sheet::before,.sheet::after{content:"";position:absolute;width:11px;height:11px;
+    border:1px solid var(--line)}
+  .sheet::before{top:9px;left:9px}.sheet::after{bottom:9px;right:9px}
+
+  header{padding:34px 0 26px;border-bottom:1px solid var(--line)}
+  .stamp{font-family:var(--mono);font-size:10px;letter-spacing:2.2px;color:var(--dim);
+         text-transform:uppercase}
+  h1{font-size:clamp(30px,5vw,50px);font-weight:700;letter-spacing:-.5px;margin:12px 0 10px}
+  .lede{color:var(--mut);font-size:17px;max-width:620px}
+  .meta{display:flex;gap:34px;flex-wrap:wrap;margin-top:26px;font-family:var(--mono);font-size:11px}
+  .meta div span{display:block;color:var(--dim);letter-spacing:1.4px;text-transform:uppercase;font-size:9px}
+  .meta div b{color:var(--ink);font-size:13px;font-weight:600}
+
+  h2{font-size:12px;letter-spacing:2.2px;text-transform:uppercase;color:var(--gold);
+     font-family:var(--mono);margin:52px 0 18px;font-weight:700}
+  h3{font-size:17px;margin-bottom:6px}
+  p.sub{color:var(--mut);font-size:14px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+  .card{border:1px solid var(--line);background:var(--navy2);padding:17px 18px}
+  .card .k{font-family:var(--mono);font-size:9.5px;letter-spacing:1.4px;color:var(--dim);
+           text-transform:uppercase;margin-bottom:7px}
+  .card p{color:var(--mut);font-size:13.5px}
+
+  .price{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:8px}
+  .tier{border:1px solid var(--line);background:var(--navy2);padding:24px 22px;display:flex;
+        flex-direction:column}
+  .tier.feat{border-color:var(--gold)}
+  .tier .nm{font-family:var(--mono);font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;
+            color:var(--gold)}
+  .tier .amt{font-size:38px;font-weight:700;margin:10px 0 2px;font-variant-numeric:tabular-nums}
+  .tier .amt small{font-size:14px;color:var(--dim);font-weight:400}
+  .tier ul{list-style:none;margin:16px 0 20px;font-size:13.5px;color:var(--mut)}
+  .tier li{padding:6px 0 6px 20px;position:relative}
+  .tier li::before{content:"—";position:absolute;left:0;color:var(--gold)}
+  .btn{display:block;text-align:center;padding:11px;border:1px solid var(--gold);color:var(--gold);
+       text-decoration:none;font-family:var(--mono);font-size:11.5px;letter-spacing:1.4px;
+       text-transform:uppercase;margin-top:auto;transition:.15s}
+  .btn:hover{background:var(--gold);color:var(--navy)}
+  .btn.solid{background:var(--gold);color:var(--navy);font-weight:700}
+
+  svg{width:100%;height:auto;display:block}
+  .figcap{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:1.2px;
+          text-transform:uppercase;margin-top:10px}
+
+  footer{margin-top:60px;padding:26px 0 40px;border-top:1px solid var(--line);
+         font-size:11.5px;color:var(--dim);line-height:1.8}
+  footer b{color:var(--mut)}
+  .disclaim{margin-top:14px;font-size:11px;color:var(--dim);max-width:760px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="stamp">System Architecture — Drawing No. BRX-002</div>
+  <h1>The BRX Autonomous Agent Suite</h1>
+  <p class="lede">Purpose-built AI agents that capture, decide, execute and verify —
+     then watch themselves, repair themselves, and report to your phone. While you sleep.</p>
+  <div class="meta">
+    <div><span>Scale</span><b>N.T.S.</b></div>
+    <div><span>Sheet</span><b>1 of 1</b></div>
+    <div><span>Agents</span><b>14 active</b></div>
+    <div><span>Uptime</span><b>24 / 7</b></div>
+    <div><span>Operator</span><b>BRX Technologies L.L.C</b></div>
+  </div>
+</header>
+
+<h2>Data flow — sources to your phone</h2>
+<div class="sheet">
+<svg viewBox="0 0 1040 500" xmlns="http://www.w3.org/2000/svg" font-family="ui-monospace,Menlo,monospace">
+  <defs>
+    <marker id="a" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0 0 L7 3.5 L0 7 z" fill="#E8B84B"/>
+    </marker>
+  </defs>
+  <g font-size="9.5" fill="#63728C" letter-spacing="1.4">
+    <text x="34" y="34">01 · SOURCES</text>
+    <text x="252" y="34">02 · SIGNAL LAYER</text>
+    <text x="500" y="34">03 · DECISION</text>
+    <text x="742" y="34">04 · EXECUTION</text>
+    <text x="742" y="272">05 · ASSURANCE</text>
+  </g>
+
+  <!-- sources -->
+  <g>
+    <rect x="34" y="52" width="176" height="46" fill="#1B2438" stroke="#2C3A54"/>
+    <text x="46" y="72" fill="#EDF1F7" font-size="12">Exchange data</text>
+    <text x="46" y="88" fill="#63728C" font-size="9">Binance · funding · OI · CVD</text>
+
+    <rect x="34" y="110" width="176" height="46" fill="#1B2438" stroke="#2C3A54"/>
+    <text x="46" y="130" fill="#EDF1F7" font-size="12">Signal channel</text>
+    <text x="46" y="146" fill="#63728C" font-size="9">polled every 5 minutes</text>
+
+    <rect x="34" y="168" width="176" height="46" fill="#1B2438" stroke="#2C3A54"/>
+    <text x="46" y="188" fill="#EDF1F7" font-size="12">Market history</text>
+    <text x="46" y="204" fill="#63728C" font-size="9">price · volume · breadth</text>
+
+    <rect x="34" y="226" width="176" height="46" fill="#1B2438" stroke="#2C3A54"/>
+    <text x="46" y="246" fill="#EDF1F7" font-size="12">On-chain + macro</text>
+    <text x="46" y="262" fill="#63728C" font-size="9">netflow · stablecoin supply</text>
+  </g>
+
+  <!-- signal layer -->
+  <g>
+    <rect x="252" y="86" width="190" height="52" fill="#1B2438" stroke="#2C3A54"/>
+    <text x="264" y="108" fill="#EDF1F7" font-size="12">Scoring engine</text>
+    <text x="264" y="124" fill="#63728C" font-size="9">trend · flow · positioning</text>
+
+    <rect x="252" y="150" width="190" height="52" fill="#1B2438" stroke="#2C3A54"/>
+    <text x="264" y="172" fill="#EDF1F7" font-size="12">Channel twin</text>
+    <text x="264" y="188" fill="#63728C" font-size="9">grades its own sources</text>
+
+    <rect x="252" y="214" width="190" height="52" fill="#1B2438" stroke="#2C3A54"/>
+    <text x="264" y="236" fill="#EDF1F7" font-size="12">Regime gate</text>
+    <text x="264" y="252" fill="#63728C" font-size="9">can veto everything</text>
+  </g>
+
+  <!-- decision -->
+  <g>
+    <rect x="500" y="118" width="196" height="120" fill="#1B2438" stroke="#E8B84B"/>
+    <text x="512" y="142" fill="#E8B84B" font-size="12">Decision layer</text>
+    <text x="512" y="164" fill="#95A3BC" font-size="9.5">confidence tiering</text>
+    <text x="512" y="180" fill="#95A3BC" font-size="9.5">position sizing</text>
+    <text x="512" y="196" fill="#95A3BC" font-size="9.5">risk limits + caps</text>
+    <text x="512" y="212" fill="#95A3BC" font-size="9.5">full audit trail</text>
+    <text x="512" y="228" fill="#95A3BC" font-size="9.5">kill switch</text>
+  </g>
+
+  <!-- execution -->
+  <g>
+    <rect x="742" y="52" width="180" height="46" fill="#1B2438" stroke="#2C3A54"/>
+    <text x="754" y="72" fill="#EDF1F7" font-size="12">Order router</text>
+    <text x="754" y="88" fill="#63728C" font-size="9">isolated per instrument</text>
+
+    <rect x="742" y="110" width="180" height="46" fill="#1B2438" stroke="#2C3A54"/>
+    <text x="754" y="130" fill="#EDF1F7" font-size="12">Risk sweeps</text>
+    <text x="754" y="146" fill="#63728C" font-size="9">stops every 15 minutes</text>
+
+    <rect x="742" y="168" width="180" height="46" fill="#1B2438" stroke="#2C3A54"/>
+    <text x="754" y="188" fill="#EDF1F7" font-size="12">Plain-English ledger</text>
+    <text x="754" y="204" fill="#63728C" font-size="9">bought · sold · result</text>
+  </g>
+
+  <!-- assurance -->
+  <g>
+    <rect x="742" y="290" width="180" height="46" fill="#1B2438" stroke="#35D68A"/>
+    <text x="754" y="310" fill="#35D68A" font-size="12">External watchdog</text>
+    <text x="754" y="326" fill="#63728C" font-size="9">restarts a hung system</text>
+
+    <rect x="742" y="348" width="180" height="46" fill="#1B2438" stroke="#35D68A"/>
+    <text x="754" y="368" fill="#35D68A" font-size="12">Self-audit</text>
+    <text x="754" y="384" fill="#63728C" font-size="9">every 5 minutes</text>
+
+    <rect x="500" y="290" width="196" height="104" fill="#1B2438" stroke="#2C3A54"/>
+    <text x="512" y="312" fill="#EDF1F7" font-size="12">Code integrity</text>
+    <text x="512" y="332" fill="#95A3BC" font-size="9.5">scans its own source</text>
+    <text x="512" y="348" fill="#95A3BC" font-size="9.5">blocks known defects</text>
+    <text x="512" y="364" fill="#95A3BC" font-size="9.5">regression suite</text>
+    <text x="512" y="380" fill="#95A3BC" font-size="9.5">bug ledger enforced</text>
+  </g>
+
+  <!-- delivered -->
+  <rect x="742" y="424" width="180" height="52" fill="#1B2438" stroke="#E8B84B"/>
+  <text x="754" y="446" fill="#E8B84B" font-size="12">Your phone</text>
+  <text x="754" y="462" fill="#95A3BC" font-size="9">hourly digest · instant alerts</text>
+
+  <g stroke="#E8B84B" stroke-width="1.1" fill="none" marker-end="url(#a)" opacity=".85">
+    <path d="M210 75 L232 75 L232 112 L250 112"/>
+    <path d="M210 133 L232 133 L232 176 L250 176"/>
+    <path d="M210 191 L226 191 L226 240 L250 240"/>
+    <path d="M210 249 L226 249 L226 240 L250 240"/>
+    <path d="M442 112 L470 112 L470 168 L498 168"/>
+    <path d="M442 176 L470 176 L470 178 L498 178"/>
+    <path d="M442 240 L470 240 L470 190 L498 190"/>
+    <path d="M696 160 L718 160 L718 75 L740 75"/>
+    <path d="M696 172 L718 172 L718 133 L740 133"/>
+    <path d="M696 190 L718 190 L718 191 L740 191"/>
+    <path d="M832 214 L832 288"/>
+    <path d="M696 342 L738 342"/>
+    <path d="M832 394 L832 422"/>
+  </g>
+</svg>
+</div>
+<div class="figcap">Fig. 1 — every arrow is a verified path, not a diagram of intent</div>
+
+<h2>What makes it different</h2>
+<div class="grid">
+  <div class="card"><div class="k">Assurance</div><h3>It watches itself</h3>
+    <p>An external watchdog judges the system by heartbeat, so a process that hangs
+       rather than crashes is caught and restarted. Most automation cannot see that state.</p></div>
+  <div class="card"><div class="k">Integrity</div><h3>It audits its own code</h3>
+    <p>Every known defect class is encoded as a test. The agent scans its own source
+       hourly and refuses to run silently past a regression.</p></div>
+  <div class="card"><div class="k">Learning</div><h3>It grades its sources</h3>
+    <p>Any signal feed it consumes is scored against what actually happened next.
+       Influence is earned by measured accuracy, and decays automatically when accuracy drops.</p></div>
+  <div class="card"><div class="k">Transparency</div><h3>Plain-English record</h3>
+    <p>Every action reads as a sentence — what was bought, what was sold, what the
+       result was, fees included. No black box.</p></div>
+  <div class="card"><div class="k">Discipline</div><h3>Limits it cannot override</h3>
+    <p>Hard stops, drawdown halts, exposure caps and a kill switch sit in code, outside
+       the model's reach. The agent cannot argue its way past them.</p></div>
+  <div class="card"><div class="k">Ownership</div><h3>Runs on your infrastructure</h3>
+    <p>Your machine, your keys, your accounts. Nothing custodial. Credentials never
+       leave your environment.</p></div>
+</div>
+
+<h2>Engagements</h2>
+<div class="price">
+  <div class="tier">
+    <div class="nm">Blueprint</div>
+    <div class="amt">$490<small> once</small></div>
+    <p class="sub">The full architecture, documented, so your team can build it.</p>
+    <ul>
+      <li>Architecture + process maps</li>
+      <li>Decision-layer specification</li>
+      <li>Risk + assurance design</li>
+      <li>The complete defect ledger</li>
+      <li>90-minute walkthrough</li>
+    </ul>
+    <a class="btn" href="#contact">Request</a>
+  </div>
+
+  <div class="tier feat">
+    <div class="nm">Operated</div>
+    <div class="amt">$690<small> / month</small></div>
+    <p class="sub">We build it on your infrastructure and keep it running.</p>
+    <ul>
+      <li>Deployed to your machine</li>
+      <li>Live dashboard on your domain</li>
+      <li>Watchdog + self-healing</li>
+      <li>Hourly reporting to your phone</li>
+      <li>Continuous monitoring</li>
+      <li>Monthly review</li>
+    </ul>
+    <a class="btn solid" href="#contact">Start</a>
+  </div>
+
+  <div class="tier">
+    <div class="nm">Bespoke</div>
+    <div class="amt">POA</div>
+    <p class="sub">A suite built for your operation, not a template.</p>
+    <ul>
+      <li>Discovery + process mapping</li>
+      <li>Custom agents for your workflow</li>
+      <li>Integration with your systems</li>
+      <li>Team training + handover</li>
+      <li>Priority support</li>
+    </ul>
+    <a class="btn" href="#contact">Enquire</a>
+  </div>
+</div>
+
+<h2 id="contact">Contact</h2>
+<div class="card">
+  <h3>BRX Technologies L.L.C</h3>
+  <p>DIFC, Dubai · <a href="https://www.brxdxb.com" style="color:var(--gold)">brxdxb.com</a><br>
+     Leander Tarek Khatib, Co-Founder &amp; CEO</p>
+</div>
+
+<footer>
+  <b>BRX Technologies L.L.C</b> — DIFC, Dubai · brxdxb.com<br>
+  <div class="disclaim">
+    BRX Technologies supplies autonomous software agents and the engineering around them.
+    We do not provide financial, investment or trading advice, do not manage client funds,
+    and do not take custody of any asset or credential. Software is operated by the client
+    on the client's own infrastructure and accounts. Nothing on this page is an offer of a
+    financial service or a representation as to performance or outcomes.
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
