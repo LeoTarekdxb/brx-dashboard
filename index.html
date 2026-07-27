@@ -212,6 +212,12 @@
 </div>
 
 <section class="panel">
+  <div class="phead"><h2>🧪 Strategy Lab</h2><span class="n" id="labn"></span>
+      <span class="hint">forward simulation · live prices · no real money</span></div>
+  <div id="labC"></div>
+</div>
+
+<div class="panel">
   <div class="phead"><h2>System Audit</h2><span class="hint">self-healing · every 5 min</span></div>
   <div id="audit"></div>
 </section>
@@ -288,6 +294,36 @@ function render(d){
       <div class="val">${eqPos.length}</div><div class="chg">open equity positions</div></div>
     <div class="kpi"><div class="lbl">Watchlist Scored</div>
       <div class="val">${(d.verdicts||[]).length}</div><div class="chg">7-gate results</div></div>`;
+
+  // ── STRATEGY LAB — forward paper sim + the gold backtest finding
+  const ps=d.paper_sim||{}, gb=d.gold_backtest||{};
+  let lab=""; const vs=ps.variants||[];
+  if(vs.length){
+    $("labn").textContent=`${vs[0].days||0}d running`;
+    lab+=`<table><tr><th>strategy</th><th class="r">equity</th><th class="r">P&amp;L</th>
+      <th class="r">trades</th><th class="r">win%</th><th class="r">vs hold</th></tr>`;
+    vs.forEach(v=>{
+      const nm=v.name==="buyhold"?"buy &amp; hold (control)":v.name;
+      lab+=`<tr><td class="tk">${nm}${v.in_position?' <span class="chip o">IN</span>':''}</td>
+        <td class="r num">${usd(v.equity)}</td>
+        <td class="r num ${sg(v.pnl)}">${smoney(v.pnl)}</td>
+        <td class="r num">${v.trades}</td>
+        <td class="r num">${v.win_rate==null?"—":v.win_rate+"%"}</td>
+        <td class="r num ${sg(v.buyhold_pct)}">${pct(v.buyhold_pct)}</td></tr>`;});
+    lab+=`</table>`;
+  } else { lab+=`<div class="empty">${ps.error?("error: "+ps.error):"simulation starting — first results within 5 min"}</div>`; }
+  if(gb.best){
+    lab+=`<div style="padding:14px;border-top:1px solid var(--line)">
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:1.3px;text-transform:uppercase;
+        color:var(--gold);font-weight:700;margin-bottom:8px">Gold backtest — ${gb.window_days}d, ${gb.sets_tested} parameter sets</div>
+      <div class="rowline" style="border:0;padding:4px 0"><span class="nm">best: dip ${gb.best.dip_pct}% / rip ${gb.best.rip_pct}% / stop ${gb.best.stop_pct}%</span><span class="pl pos">${pct(gb.best.total_pct)}</span></div>
+      <div class="rowline" style="border:0;padding:4px 0"><span class="nm">same rule with NO stop</span><span class="pl neg">${pct(gb.worst_nostop.total_pct)}</span></div>
+      <div class="rowline" style="border:0;padding:4px 0"><span class="nm">buy &amp; hold over the window</span><span class="pl neg">${pct(gb.buy_hold_pct)}</span></div>
+      <div class="rowline" style="border:0;padding:4px 0"><span class="nm">parameter sets that LOSE money</span><span class="pl neg">${gb.sets_losing} of ${gb.sets_tested}</span></div>
+      <p style="color:var(--mut);font-size:11.5px;margin-top:10px">${gb.finding}</p>
+      <p style="color:var(--dim);font-size:10.5px;margin-top:6px">⚠ ${gb.caveat}</p></div>`;
+  }
+  $("labC").innerHTML=lab;
 
   // ── ACTIVITY — split per book. The crypto feed is built from REAL Binance
   // fills (authoritative), not the paper slot sizes, so a $5 real buy never
