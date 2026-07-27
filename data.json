@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-07-27T02:10:02.306657+00:00",
+ "generated_at": "2026-07-27T02:10:47.391154+00:00",
  "mode": "PAPER TRADING",
  "account": {
-  "equity": 99920.85,
-  "cash": -10150.67,
-  "buying_power": 226759.29,
+  "equity": 99910.85,
+  "cash": -24823.53,
+  "buying_power": 168067.85,
   "last_equity": 99753.07917064207,
-  "day_pl": 167.77,
-  "total_pl": -79.15
+  "day_pl": 157.77,
+  "total_pl": -89.15
  },
  "positions": [
   {
@@ -54,6 +54,15 @@
    "current": 263.4,
    "unrealized_pl": 66.84,
    "unrealized_plpc": 0.56
+  },
+  {
+   "symbol": "LINKUSD",
+   "qty": 1672.124561966,
+   "market_value": 14662.86,
+   "avg_entry": 8.75304043,
+   "current": 8.769,
+   "unrealized_pl": 26.69,
+   "unrealized_plpc": 0.18
   },
   {
    "symbol": "META",
@@ -230,7 +239,7 @@
    "side": "buy",
    "notional": "14988.13",
    "qty": null,
-   "status": "pending_new",
+   "status": "filled",
    "submitted_at": "2026-07-27T02:10:45.197762Z"
   },
   {
@@ -387,6 +396,46 @@
   }
  ],
  "fills": [
+  {
+   "time": "2026-07-27T02:10:45.200901Z",
+   "side": "buy",
+   "symbol": "LINK/USD",
+   "qty": 12.622479981,
+   "price": 8.7961,
+   "value": 111.03
+  },
+  {
+   "time": "2026-07-27T02:10:45.200873Z",
+   "side": "buy",
+   "symbol": "LINK/USD",
+   "qty": 296.437226556,
+   "price": 8.75,
+   "value": 2593.83
+  },
+  {
+   "time": "2026-07-27T02:10:45.200858Z",
+   "side": "buy",
+   "symbol": "LINK/USD",
+   "qty": 1130.000427426,
+   "price": 8.75,
+   "value": 9887.5
+  },
+  {
+   "time": "2026-07-27T02:10:45.200893Z",
+   "side": "buy",
+   "symbol": "LINK/USD",
+   "qty": 4.32521638,
+   "price": 8.79,
+   "value": 38.02
+  },
+  {
+   "time": "2026-07-27T02:10:45.200886Z",
+   "side": "buy",
+   "symbol": "LINK/USD",
+   "qty": 232.93,
+   "price": 8.76864,
+   "value": 2042.48
+  },
   {
    "time": "2026-07-27T01:11:05.56914Z",
    "side": "sell",
@@ -746,46 +795,6 @@
    "qty": 231.5,
    "price": 8.461,
    "value": 1958.72
-  },
-  {
-   "time": "2026-07-26T12:08:49.417545Z",
-   "side": "buy",
-   "symbol": "LINK/USD",
-   "qty": 466.594,
-   "price": 8.486,
-   "value": 3959.52
-  },
-  {
-   "time": "2026-07-26T12:08:49.417552Z",
-   "side": "buy",
-   "symbol": "LINK/USD",
-   "qty": 169.30958395,
-   "price": 8.5317,
-   "value": 1444.5
-  },
-  {
-   "time": "2026-07-25T23:47:58.870635Z",
-   "side": "sell",
-   "symbol": "BTC/USD",
-   "qty": 0.000759854,
-   "price": 64313.8,
-   "value": 48.87
-  },
-  {
-   "time": "2026-07-25T23:47:33.785082Z",
-   "side": "buy",
-   "symbol": "BTC/USD",
-   "qty": 0.000761759,
-   "price": 64357.87,
-   "value": 49.03
-  },
-  {
-   "time": "2026-07-24T13:34:34.92769Z",
-   "side": "buy",
-   "symbol": "GOOGL",
-   "qty": 1.157980354,
-   "price": 319.66,
-   "value": 370.16
   }
  ],
  "verdicts": [
@@ -855,7 +864,7 @@
  ],
  "error": null,
  "audit": {
-  "ts": "2026-07-27T02:10:07.681023+00:00",
+  "ts": "2026-07-27T02:10:52.924439+00:00",
   "checks": [
    {
     "check": "agent process",
@@ -866,19 +875,19 @@
    {
     "check": "alpaca (PAPER)",
     "status": "PASS",
-    "detail": "equity $99,926.20",
+    "detail": "equity $99,910.85",
     "fix": null
    },
    {
     "check": "binance (LIVE)",
     "status": "PASS",
-    "detail": "46.60 USDT free",
+    "detail": "1.64 USDT free",
     "fix": null
    },
    {
     "check": "dashboard",
     "status": "PASS",
-    "detail": "5m old",
+    "detail": "6m old",
     "fix": null
    },
    {
@@ -890,18 +899,18 @@
    {
     "check": "book divergence",
     "status": "PASS",
-    "detail": "1 paper crypto position(s) all mirrored real",
+    "detail": "2 paper crypto position(s) all mirrored real",
     "fix": null
    },
    {
     "check": "dry powder",
-    "status": "PASS",
-    "detail": "$46.60 free USDT available",
+    "status": "WARN",
+    "detail": "$1.64 free USDT \u2014 below $5.00 min notional, no new real entry can fill until a position exits",
     "fix": null
    }
   ],
-  "passed": 7,
-  "warned": 0,
+  "passed": 6,
+  "warned": 1,
   "failed": 0,
   "healed": [],
   "healthy": true
@@ -909,7 +918,7 @@
  "binance": {
   "configured": true,
   "mode": "LIVE",
-  "usdt": 46.6,
+  "usdt": 1.64,
   "positions": [
    {
     "asset": "BTC",
@@ -917,11 +926,15 @@
    },
    {
     "asset": "BNB",
-    "qty": 0.01056652
+    "qty": 0.01050769
    },
    {
     "asset": "TRX",
     "qty": 21.0
+   },
+   {
+    "asset": "LINK",
+    "qty": 5.13
    },
    {
     "asset": "EON",
@@ -957,31 +970,48 @@
   {
    "asset": "BTC",
    "qty": 0.00016274,
-   "price": 65212.0,
+   "price": 65188.67,
    "value": 10.61,
    "entry": 65216.008182,
    "pl": -0.0,
-   "plpc": -0.01
+   "plpc": -0.04
+  },
+  {
+   "asset": "LINK",
+   "qty": 5.13,
+   "price": 8.767,
+   "value": 44.97,
+   "entry": 8.595481,
+   "pl": 0.88,
+   "plpc": 2.0
   },
   {
    "asset": "TRX",
    "qty": 21.0,
-   "price": 0.3318,
+   "price": 0.3317,
    "value": 6.97,
    "entry": 0.3321,
    "pl": -0.01,
-   "plpc": -0.09
+   "plpc": -0.12
   }
  ],
  "binance_account": {
   "mode": "LIVE",
-  "usdt_free": 46.6,
-  "bnb_usd": 6.06,
-  "positions_usd": 17.58,
-  "total_usd": 70.24,
-  "deployed_pct": 25.0
+  "usdt_free": 1.64,
+  "bnb_usd": 6.02,
+  "positions_usd": 62.55,
+  "total_usd": 70.22,
+  "deployed_pct": 89.1
  },
  "binance_fills": [
+  {
+   "time": "2026-07-27T02:10:45.590Z",
+   "side": "buy",
+   "asset": "LINK",
+   "amount": 5.13,
+   "price": 8.764,
+   "cost": 44.96
+  },
   {
    "time": "2026-07-27T01:11:05.970Z",
    "side": "sell",
@@ -1053,14 +1083,6 @@
    "amount": 0.75,
    "price": 6.667,
    "cost": 5.0
-  },
-  {
-   "time": "2026-07-26T19:10:47.597Z",
-   "side": "sell",
-   "asset": "AVAX",
-   "amount": 1.13,
-   "price": 6.667,
-   "cost": 7.53
   }
  ],
  "ledger": {
@@ -1206,42 +1228,54 @@
     "asset": "BTC",
     "amount": 6e-05,
     "entry": 65216.0,
-    "current": 65212.0,
+    "current": 65188.67,
     "cost": 3.91,
     "value": 3.91,
     "unrealized": -0.0,
-    "unrealized_pct": -0.01,
+    "unrealized_pct": -0.04,
     "bought_at": "2026-07-26T22:10:49.497Z",
-    "story": "holding 6e-05 BTC bought @ $65,216.0000 \u00b7 now $65,212.0000 \u00b7 down $0.00"
+    "story": "holding 6e-05 BTC bought @ $65,216.0000 \u00b7 now $65,188.6700 \u00b7 down $0.00"
    },
    {
     "asset": "BTC",
     "amount": 5e-05,
     "entry": 65216.0,
-    "current": 65212.0,
+    "current": 65191.99,
     "cost": 3.26,
     "value": 3.26,
     "unrealized": -0.0,
-    "unrealized_pct": -0.01,
+    "unrealized_pct": -0.04,
     "bought_at": "2026-07-26T22:10:49.497Z",
-    "story": "holding 5e-05 BTC bought @ $65,216.0000 \u00b7 now $65,212.0000 \u00b7 down $0.00"
+    "story": "holding 5e-05 BTC bought @ $65,216.0000 \u00b7 now $65,191.9900 \u00b7 down $0.00"
+   },
+   {
+    "asset": "LINK",
+    "amount": 5.13,
+    "entry": 8.764,
+    "current": 8.768,
+    "cost": 44.96,
+    "value": 44.98,
+    "unrealized": 0.02,
+    "unrealized_pct": 0.05,
+    "bought_at": "2026-07-27T02:10:45.590Z",
+    "story": "holding 5.13 LINK bought @ $8.7640 \u00b7 now $8.7680 \u00b7 up $0.02"
    },
    {
     "asset": "TRX",
     "amount": 21.0,
     "entry": 0.3321,
-    "current": 0.3318,
+    "current": 0.3317,
     "cost": 6.97,
     "value": 6.97,
     "unrealized": -0.01,
-    "unrealized_pct": -0.09,
+    "unrealized_pct": -0.12,
     "bought_at": "2026-07-26T21:58:26.867Z",
-    "story": "holding 21 TRX bought @ $0.3321 \u00b7 now $0.3318 \u00b7 down $0.01"
+    "story": "holding 21 TRX bought @ $0.3321 \u00b7 now $0.3317 \u00b7 down $0.01"
    }
   ],
   "realized_pnl": 0.47,
-  "unrealized_pnl": -0.01,
-  "total_pnl": 0.46,
+  "unrealized_pnl": 0.01,
+  "total_pnl": 0.48,
   "trade_count": 9,
   "win_count": 2,
   "win_rate": 22.2,
@@ -1273,16 +1307,16 @@
   "multiplier": 1.2,
   "veto_longs": false,
   "range_position": 0.1,
-  "vs_200ma": -0.0948,
+  "vs_200ma": -0.095,
   "proxy": true,
   "note": "MVRV/SOPR/NUPL unavailable \u2014 range+trend cycle proxy"
  },
  "cryptology": [
   {
    "asset": "BTC",
-   "final": 68.4,
+   "final": 76.5,
    "positioning": 65.1,
-   "flow": 47.2,
+   "flow": 62.0,
    "confidence": "low",
    "liq_state": "sweep_candidate",
    "oi_state": "short_covering",
@@ -1290,9 +1324,9 @@
   },
   {
    "asset": "ETH",
-   "final": 70.8,
+   "final": 69.8,
    "positioning": 50.8,
-   "flow": 68.9,
+   "flow": 67.2,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "neutral",
@@ -1300,9 +1334,9 @@
   },
   {
    "asset": "SOL",
-   "final": 66.6,
+   "final": 65.0,
    "positioning": 55.1,
-   "flow": 56.0,
+   "flow": 52.9,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "short_covering",
@@ -1320,9 +1354,9 @@
   },
   {
    "asset": "AVAX",
-   "final": 76.5,
+   "final": 75.1,
    "positioning": 62.0,
-   "flow": 65.9,
+   "flow": 63.3,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "capitulation_flush",
@@ -1381,6 +1415,13 @@
   }
  ],
  "activity": [
+  {
+   "time": "2026-07-27T02:10:44.140105",
+   "kind": "buy",
+   "text": "EXECUTED BUY LINKUSD $14,988 \u00b7 Tier A",
+   "detail": "24/7 sleeve: tech score 59, slot $14,988 of 15% cap",
+   "status": "executed"
+  },
   {
    "time": "2026-07-27T01:11:05.741583",
    "kind": "sell",
@@ -1471,16 +1512,24 @@
    "text": "EXECUTED BUY LTCUSD $4,981 \u00b7 Tier A",
    "detail": "24/7 sleeve: tech score 59, slot $4,981 of 15% cap",
    "status": "executed"
-  },
-  {
-   "time": "2026-07-26T12:08:52.285405",
-   "kind": "buy",
-   "text": "EXECUTED BUY AVAXUSD $7,481 \u00b7 Tier A",
-   "detail": "24/7 sleeve: tech score 57, slot $7,481 of 15% cap",
-   "status": "executed"
   }
  ],
  "signals": [
+  {
+   "id": 60,
+   "created_at": "2026-07-27T02:10:44.140105",
+   "symbol": "LINKUSD",
+   "side": "buy",
+   "notional": 14988.13,
+   "verdict": "crypto_momentum",
+   "composite": 59.254999999999995,
+   "confidence": 0.25,
+   "n_outcomes": 8,
+   "tier": "A",
+   "status": "executed",
+   "reason": "24/7 sleeve: tech score 59, slot $14,988 of 15% cap",
+   "expires_at": "2026-07-28T02:10:44.140105"
+  },
   {
    "id": 59,
    "created_at": "2026-07-27T01:11:05.741583",
@@ -1645,21 +1694,6 @@
    "status": "executed",
    "reason": "24/7 sleeve: tech score 58, slot $14,946 of 15% cap",
    "expires_at": "2026-07-27T19:10:47.487217"
-  },
-  {
-   "id": 48,
-   "created_at": "2026-07-26T19:10:47.287403",
-   "symbol": "AVAXUSD",
-   "side": "sell",
-   "notional": 7282.74,
-   "verdict": null,
-   "composite": null,
-   "confidence": null,
-   "n_outcomes": null,
-   "tier": "A",
-   "status": "executed",
-   "reason": "tech score 42 < 45",
-   "expires_at": null
   }
  ]
 }
