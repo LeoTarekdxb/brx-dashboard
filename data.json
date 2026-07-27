@@ -1,32 +1,32 @@
 {
- "generated_at": "2026-07-27T21:43:59.560114+00:00",
+ "generated_at": "2026-07-27T21:45:00.271868+00:00",
  "mode": "PAPER TRADING",
  "account": {
-  "equity": 98879.79,
+  "equity": 98888.48,
   "cash": -10325.19,
-  "buying_power": 224263.34,
+  "buying_power": 224287.68,
   "last_equity": 99753.07917064207,
-  "day_pl": -873.29,
-  "total_pl": -1120.21
+  "day_pl": -864.6,
+  "total_pl": -1111.52
  },
  "positions": [
   {
    "symbol": "AAPL",
    "qty": 36.605495553,
-   "market_value": 12317.75,
+   "market_value": 12316.65,
    "avg_entry": 324.404569,
-   "current": 336.5,
-   "unrealized_pl": 442.76,
-   "unrealized_plpc": 3.73
+   "current": 336.47,
+   "unrealized_pl": 441.66,
+   "unrealized_plpc": 3.72
   },
   {
    "symbol": "AMZN",
    "qty": 50.706648447,
-   "market_value": 11749.24,
+   "market_value": 11752.79,
    "avg_entry": 234.19,
-   "current": 231.71,
-   "unrealized_pl": -125.75,
-   "unrealized_plpc": -1.06
+   "current": 231.78,
+   "unrealized_pl": -122.2,
+   "unrealized_plpc": -1.03
   },
   {
    "symbol": "GOOGL",
@@ -58,38 +58,38 @@
   {
    "symbol": "META",
    "qty": 19.564193985,
-   "market_value": 11658.3,
+   "market_value": 11661.82,
    "avg_entry": 606.975683,
-   "current": 595.9,
-   "unrealized_pl": -216.69,
-   "unrealized_plpc": -1.82
+   "current": 596.08,
+   "unrealized_pl": -213.17,
+   "unrealized_plpc": -1.8
   },
   {
    "symbol": "MSFT",
    "qty": 30.950265874,
-   "market_value": 12043.68,
+   "market_value": 12039.65,
    "avg_entry": 383.679741,
-   "current": 389.13,
-   "unrealized_pl": 168.69,
-   "unrealized_plpc": 1.42
+   "current": 389.0,
+   "unrealized_pl": 164.66,
+   "unrealized_plpc": 1.39
   },
   {
    "symbol": "NVDA",
    "qty": 57.304318521,
-   "market_value": 11288.97,
+   "market_value": 11290.67,
    "avg_entry": 207.22679,
-   "current": 197.0004,
-   "unrealized_pl": -586.02,
-   "unrealized_plpc": -4.93
+   "current": 197.03,
+   "unrealized_pl": -584.32,
+   "unrealized_plpc": -4.92
   },
   {
    "symbol": "TSM",
    "qty": 28.902221789,
-   "market_value": 11531.99,
+   "market_value": 11537.04,
    "avg_entry": 410.867721,
-   "current": 399.0,
-   "unrealized_pl": -343.0,
-   "unrealized_plpc": -2.89
+   "current": 399.1747,
+   "unrealized_pl": -337.95,
+   "unrealized_plpc": -2.85
   }
  ],
  "equity_history": {
@@ -877,7 +877,7 @@
  ],
  "error": null,
  "audit": {
-  "ts": "2026-07-27T21:44:03.866322+00:00",
+  "ts": "2026-07-27T21:45:04.868983+00:00",
   "checks": [
    {
     "check": "agent process",
@@ -888,7 +888,7 @@
    {
     "check": "alpaca (PAPER)",
     "status": "PASS",
-    "detail": "equity $98,890.72",
+    "detail": "equity $98,886.79",
     "fix": null
    },
    {
@@ -900,7 +900,7 @@
    {
     "check": "dashboard",
     "status": "FAIL",
-    "detail": "stale 534m",
+    "detail": "stale 535m",
     "fix": null
    },
    {
@@ -953,8 +953,8 @@
   "channel": "cryptologyio",
   "assets": {
    "SOL": {
-    "bias": -0.239,
-    "score": 38.0,
+    "bias": -0.243,
+    "score": 37.9,
     "messages": 2
    },
    "BTC": {
@@ -972,7 +972,7 @@
    {
     "multi_asset": false,
     "time": "2026-07-27T20:31:17+00:00",
-    "age_min": 72.8,
+    "age_min": 73.9,
     "kind": "inversion_gap",
     "direction": "bearish",
     "cdri": 57,
@@ -984,7 +984,7 @@
    {
     "multi_asset": false,
     "time": "2026-07-27T20:30:55+00:00",
-    "age_min": 73.2,
+    "age_min": 74.2,
     "kind": "inversion_gap",
     "direction": "bullish",
     "cdri": 57,
@@ -996,7 +996,7 @@
    {
     "multi_asset": false,
     "time": "2026-07-27T20:30:33+00:00",
-    "age_min": 73.6,
+    "age_min": 74.6,
     "kind": "inversion_gap",
     "direction": "bearish",
     "cdri": 57,
@@ -1008,7 +1008,7 @@
    {
     "multi_asset": false,
     "time": "2026-07-27T20:30:04+00:00",
-    "age_min": 74.1,
+    "age_min": 75.1,
     "kind": "liquidation",
     "direction": "bullish",
     "cdri": null,
@@ -1020,7 +1020,7 @@
    {
     "multi_asset": false,
     "time": "2026-07-27T19:46:36+00:00",
-    "age_min": 117.5,
+    "age_min": 118.6,
     "kind": "smart_money",
     "direction": "bullish",
     "cdri": null,
@@ -1030,7 +1030,7 @@
     "text": "\ud83d\udcd0 FIBONACCI \u2014 SOL GOLDEN POCKET BOUNCE \u26a0\ufe0f \u2014 GATES FAILING\nPrice above zone \u2192 $75.77 | ADX 19.9 < 20 (CHOP)\nTrend: DOWNTREND (4h + 1d aligned)\nConfidence: 78/100 [\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2591\u2591\u2591] \u2014 HIGH"
    }
   ],
-  "read_at": "2026-07-27T21:44:07.055358+00:00"
+  "read_at": "2026-07-27T21:45:09.321303+00:00"
  },
  "channel_twin": {
   "signals_recorded": 52,
@@ -1174,11 +1174,11 @@
   },
   {
    "asset": "SOL",
-   "final": 59.8,
-   "positioning": 67.1,
+   "final": 63.1,
+   "positioning": 73.1,
    "flow": 51.0,
    "confidence": "medium",
-   "liq_state": "no_sweep",
+   "liq_state": "sweep_candidate",
    "oi_state": "capitulation_flush",
    "netflow_state": null
   },
