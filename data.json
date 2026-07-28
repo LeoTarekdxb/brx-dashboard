@@ -1,23 +1,23 @@
 {
- "generated_at": "2026-07-28T14:30:00.533994+00:00",
+ "generated_at": "2026-07-28T14:40:00.281549+00:00",
  "mode": "PAPER TRADING",
  "account": {
-  "equity": 97791.18,
+  "equity": 97431.84,
   "cash": -31652.22,
-  "buying_power": 197272.39,
+  "buying_power": 196266.23,
   "last_equity": 98219.37248214151,
-  "day_pl": -428.19,
-  "total_pl": -2208.82
+  "day_pl": -787.53,
+  "total_pl": -2568.16
  },
  "positions": [
   {
    "symbol": "JNJ",
    "qty": 340.216165151,
-   "market_value": 93015.1,
+   "market_value": 92639.16,
    "avg_entry": 272.460305,
-   "current": 273.4,
-   "unrealized_pl": 319.7,
-   "unrealized_plpc": 0.34
+   "current": 272.295,
+   "unrealized_pl": -56.24,
+   "unrealized_plpc": -0.06
   },
   {
    "symbol": "LINKUSD",
@@ -31,20 +31,20 @@
   {
    "symbol": "META",
    "qty": 19.564193985,
-   "market_value": 11615.56,
+   "market_value": 11579.66,
    "avg_entry": 606.975683,
-   "current": 593.715,
-   "unrealized_pl": -259.43,
-   "unrealized_plpc": -2.19
+   "current": 591.88,
+   "unrealized_pl": -295.33,
+   "unrealized_plpc": -2.49
   },
   {
    "symbol": "TSM",
    "qty": 28.902221789,
-   "market_value": 11036.31,
+   "market_value": 11094.41,
    "avg_entry": 410.867721,
-   "current": 381.85,
-   "unrealized_pl": -838.68,
-   "unrealized_plpc": -7.06
+   "current": 383.86,
+   "unrealized_pl": -780.58,
+   "unrealized_plpc": -6.57
   }
  ],
  "equity_history": {
@@ -848,7 +848,7 @@
  ],
  "error": null,
  "audit": {
-  "ts": "2026-07-28T14:30:09.418126+00:00",
+  "ts": "2026-07-28T14:40:14.913855+00:00",
   "checks": [
    {
     "check": "agent process",
@@ -859,7 +859,7 @@
    {
     "check": "alpaca (PAPER)",
     "status": "PASS",
-    "detail": "equity $97,802.85",
+    "detail": "equity $97,374.83",
     "fix": null
    },
    {
@@ -960,11 +960,11 @@
   {
    "asset": "LINK",
    "qty": 5.13,
-   "price": 8.28,
-   "value": 42.48,
+   "price": 8.286,
+   "value": 42.51,
    "entry": 8.595481,
-   "pl": -1.62,
-   "plpc": -3.67
+   "pl": -1.59,
+   "plpc": -3.6
   },
   {
    "asset": "TRX",
@@ -979,9 +979,9 @@
  "binance_account": {
   "mode": "LIVE",
   "usdt_free": 11.05,
-  "bnb_usd": 6.1,
-  "positions_usd": 49.3,
-  "total_usd": 66.44,
+  "bnb_usd": 6.11,
+  "positions_usd": 49.33,
+  "total_usd": 66.48,
   "deployed_pct": 74.2
  },
  "binance_fills": [
@@ -1254,13 +1254,13 @@
     "asset": "LINK",
     "amount": 5.13,
     "entry": 8.764,
-    "current": 8.28,
+    "current": 8.286,
     "cost": 44.96,
-    "value": 42.48,
-    "unrealized": -2.48,
-    "unrealized_pct": -5.52,
+    "value": 42.51,
+    "unrealized": -2.45,
+    "unrealized_pct": -5.45,
     "bought_at": "2026-07-27T02:10:45.590Z",
-    "story": "holding 5.13 LINK bought @ $8.7640 \u00b7 now $8.2800 \u00b7 down $2.48"
+    "story": "holding 5.13 LINK bought @ $8.7640 \u00b7 now $8.2860 \u00b7 down $2.45"
    },
    {
     "asset": "TRX",
@@ -1276,8 +1276,8 @@
    }
   ],
   "realized_pnl": 0.45,
-  "unrealized_pnl": -2.64,
-  "total_pnl": -2.19,
+  "unrealized_pnl": -2.61,
+  "total_pnl": -2.16,
   "trade_count": 12,
   "win_count": 2,
   "win_rate": 16.7,
@@ -1322,7 +1322,7 @@
    {
     "multi_asset": false,
     "time": "2026-07-28T14:00:09+00:00",
-    "age_min": 30.2,
+    "age_min": 40.8,
     "kind": "liquidation",
     "direction": "bullish",
     "cdri": null,
@@ -1334,7 +1334,7 @@
    {
     "multi_asset": false,
     "time": "2026-07-28T14:00:04+00:00",
-    "age_min": 30.3,
+    "age_min": 40.9,
     "kind": "smart_money",
     "direction": "bearish",
     "cdri": null,
@@ -1344,7 +1344,7 @@
    {
     "multi_asset": false,
     "time": "2026-07-28T13:46:30+00:00",
-    "age_min": 43.9,
+    "age_min": 54.5,
     "kind": "smart_money",
     "direction": "bullish",
     "cdri": null,
@@ -1356,7 +1356,7 @@
    {
     "multi_asset": true,
     "time": "2026-07-28T13:05:22+00:00",
-    "age_min": 85.0,
+    "age_min": 95.6,
     "kind": "smart_money",
     "direction": "bullish",
     "cdri": null,
@@ -1367,126 +1367,126 @@
     "text": "\ud83d\udfe2 \ud83e\udde0 SMART MONEY \u2014 13:05 UTC 28 Jul\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\n\u26a1 FRESH ACTIVITY (last 2h)\n\ud83d\udd14 HL opens BTC: \ud83d\udd34$7M\n\ud83d\udcca Nansen fresh BTC SHORT: HL Perps Whale $64M\n\ud83d\udcca Nansen fresh "
    }
   ],
-  "read_at": "2026-07-28T14:30:22.863471+00:00"
+  "read_at": "2026-07-28T14:40:57.579142+00:00"
  },
  "paper_sim": {
   "variants": [
    {
     "name": "dip1.0_rip0.5_stop3",
-    "equity": 1007.78,
-    "pnl": 7.78,
-    "pnl_pct": 0.778,
+    "equity": 1009.07,
+    "pnl": 9.07,
+    "pnl_pct": 0.907,
     "trades": 1,
     "wins": 1,
     "losses": 0,
     "win_rate": 100.0,
     "in_position": true,
-    "days": 0.65,
-    "buyhold_pct": -1.259
+    "days": 0.66,
+    "buyhold_pct": -1.131
    },
    {
     "name": "GOLD_dip0.8_rip0.2_stop2",
-    "equity": 1001.14,
-    "pnl": 1.14,
-    "pnl_pct": 0.114,
+    "equity": 1000.66,
+    "pnl": 0.66,
+    "pnl_pct": 0.066,
     "trades": 0,
     "wins": 0,
     "losses": 0,
     "win_rate": null,
     "in_position": true,
-    "days": 0.34,
-    "buyhold_pct": -0.557
-   },
-   {
-    "name": "GOLD_dip0.5_rip0.3_stop2",
-    "equity": 997.95,
-    "pnl": -2.05,
-    "pnl_pct": -0.205,
-    "trades": 0,
-    "wins": 0,
-    "losses": 0,
-    "win_rate": null,
-    "in_position": true,
-    "days": 0.34,
-    "buyhold_pct": -0.557
+    "days": 0.35,
+    "buyhold_pct": -0.605
    },
    {
     "name": "dip0.5_rip0.3_stop2",
-    "equity": 996.45,
-    "pnl": -3.55,
-    "pnl_pct": -0.355,
+    "equity": 997.74,
+    "pnl": -2.26,
+    "pnl_pct": -0.226,
     "trades": 1,
     "wins": 1,
     "losses": 0,
     "win_rate": 100.0,
     "in_position": true,
-    "days": 0.65,
-    "buyhold_pct": -1.259
+    "days": 0.66,
+    "buyhold_pct": -1.131
    },
    {
     "name": "dip0.5_rip0.3_nostop",
-    "equity": 996.45,
-    "pnl": -3.55,
-    "pnl_pct": -0.355,
+    "equity": 997.74,
+    "pnl": -2.26,
+    "pnl_pct": -0.226,
     "trades": 1,
     "wins": 1,
     "losses": 0,
     "win_rate": 100.0,
     "in_position": true,
-    "days": 0.65,
-    "buyhold_pct": -1.259
+    "days": 0.66,
+    "buyhold_pct": -1.131
+   },
+   {
+    "name": "GOLD_dip0.5_rip0.3_stop2",
+    "equity": 997.46,
+    "pnl": -2.54,
+    "pnl_pct": -0.254,
+    "trades": 0,
+    "wins": 0,
+    "losses": 0,
+    "win_rate": null,
+    "in_position": true,
+    "days": 0.35,
+    "buyhold_pct": -0.605
    },
    {
     "name": "GOLD_dip0.3_rip0.2_stop1",
-    "equity": 996.12,
-    "pnl": -3.88,
-    "pnl_pct": -0.388,
+    "equity": 995.64,
+    "pnl": -4.36,
+    "pnl_pct": -0.436,
     "trades": 0,
     "wins": 0,
     "losses": 0,
     "win_rate": null,
     "in_position": true,
-    "days": 0.34,
-    "buyhold_pct": -0.557
+    "days": 0.35,
+    "buyhold_pct": -0.605
    },
    {
     "name": "GOLD_buyhold",
-    "equity": 994.37,
-    "pnl": -5.63,
-    "pnl_pct": -0.563,
+    "equity": 993.89,
+    "pnl": -6.11,
+    "pnl_pct": -0.611,
     "trades": 0,
     "wins": 0,
     "losses": 0,
     "win_rate": null,
     "in_position": true,
-    "days": 0.34,
-    "buyhold_pct": -0.557
+    "days": 0.35,
+    "buyhold_pct": -0.605
    },
    {
     "name": "buyhold",
-    "equity": 986.67,
-    "pnl": -13.33,
-    "pnl_pct": -1.333,
+    "equity": 987.94,
+    "pnl": -12.06,
+    "pnl_pct": -1.206,
     "trades": 0,
     "wins": 0,
     "losses": 0,
     "win_rate": null,
     "in_position": true,
-    "days": 0.65,
-    "buyhold_pct": -1.259
+    "days": 0.66,
+    "buyhold_pct": -1.131
    },
    {
     "name": "dip0.3_rip0.2_stop1",
-    "equity": 985.85,
-    "pnl": -14.15,
-    "pnl_pct": -1.415,
+    "equity": 987.12,
+    "pnl": -12.88,
+    "pnl_pct": -1.288,
     "trades": 2,
     "wins": 1,
     "losses": 1,
     "win_rate": 50.0,
     "in_position": true,
-    "days": 0.65,
-    "buyhold_pct": -1.259
+    "days": 0.66,
+    "buyhold_pct": -1.131
    }
   ],
   "bankroll": 1000.0,
@@ -1620,12 +1620,12 @@
  },
  "channel_twin": {
   "signals_recorded": 100,
-  "outcomes_graded": 209,
+  "outcomes_graded": 210,
   "accuracy_4h": {
    "inversion_gap": {
-    "n": 20,
+    "n": 21,
     "hits": 8,
-    "rate": 40.0
+    "rate": 38.1
    },
    "liquidation": {
     "n": 19,
@@ -1704,13 +1704,13 @@
   "weight": {
    "weight": 0.0,
    "basis": "measured",
-   "samples": 89,
-   "rate_pct": 37.1,
+   "samples": 90,
+   "rate_pct": 36.7,
    "per_kind": {
     "inversion_gap": {
-     "n": 20,
+     "n": 21,
      "hits": 8,
-     "rate": 40.0
+     "rate": 38.1
     },
     "liquidation": {
      "n": 19,
@@ -1734,17 +1734,17 @@
   "state": "accumulation",
   "multiplier": 1.2,
   "veto_longs": false,
-  "range_position": 0.07,
-  "vs_200ma": -0.1206,
+  "range_position": 0.071,
+  "vs_200ma": -0.1195,
   "proxy": true,
   "note": "MVRV/SOPR/NUPL unavailable \u2014 range+trend cycle proxy"
  },
  "cryptology": [
   {
    "asset": "BTC",
-   "final": 61.9,
+   "final": 66.2,
    "positioning": 60.5,
-   "flow": 40.6,
+   "flow": 48.7,
    "confidence": "low",
    "liq_state": "sweep_candidate",
    "oi_state": "neutral",
@@ -1752,9 +1752,9 @@
   },
   {
    "asset": "ETH",
-   "final": 78.5,
-   "positioning": 74.2,
-   "flow": 54.7,
+   "final": 60,
+   "positioning": 74.0,
+   "flow": 44.1,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "capitulation_flush",
@@ -1762,9 +1762,9 @@
   },
   {
    "asset": "SOL",
-   "final": 81.5,
-   "positioning": 74.6,
-   "flow": 59.8,
+   "final": 77.4,
+   "positioning": 74.2,
+   "flow": 52.7,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "neutral",
@@ -1773,8 +1773,8 @@
   {
    "asset": "LINK",
    "final": 60,
-   "positioning": 79.6,
-   "flow": 40.1,
+   "positioning": 79.0,
+   "flow": 42.3,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "capitulation_flush",
@@ -1782,9 +1782,9 @@
   },
   {
    "asset": "AVAX",
-   "final": 67.0,
-   "positioning": 67.8,
-   "flow": 41.1,
+   "final": 73.2,
+   "positioning": 68.0,
+   "flow": 52.4,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "capitulation_flush",
@@ -1795,35 +1795,35 @@
   {
    "symbol": "BTC",
    "flow": 54.8,
-   "funding": 6.335e-05,
+   "funding": 6.336e-05,
    "long_short": 1.858,
    "taker": 0.7969
   },
   {
    "symbol": "ETH",
    "flow": 52.0,
-   "funding": -2.06e-06,
+   "funding": -1.24e-06,
    "long_short": 2.3898,
    "taker": 0.8538
   },
   {
    "symbol": "SOL",
    "flow": 45.8,
-   "funding": -7.823e-05,
+   "funding": -7.469e-05,
    "long_short": 2.6914,
    "taker": 0.7613
   },
   {
    "symbol": "AVAX",
    "flow": 54.8,
-   "funding": 2.471e-05,
+   "funding": 2.208e-05,
    "long_short": 1.7941,
    "taker": 0.6967
   },
   {
    "symbol": "LINK",
    "flow": 60.8,
-   "funding": -2.352e-05,
+   "funding": -1.953e-05,
    "long_short": 1.9797,
    "taker": 0.6845
   },
@@ -1837,7 +1837,7 @@
   {
    "symbol": "TRX",
    "flow": 70.8,
-   "funding": -0.00013657,
+   "funding": -0.00014289,
    "long_short": 1.1386,
    "taker": 0.78
   }
