@@ -1,50 +1,50 @@
 {
- "generated_at": "2026-07-29T09:50:00.278167+00:00",
+ "generated_at": "2026-07-29T10:00:00.318777+00:00",
  "mode": "PAPER TRADING",
  "account": {
-  "equity": 96046.28,
+  "equity": 96049.81,
   "cash": -31944.89,
-  "buying_power": 191004.83,
+  "buying_power": 190908.29,
   "last_equity": 94975.38394230952,
-  "day_pl": 1070.9,
-  "total_pl": -3953.72
+  "day_pl": 1074.43,
+  "total_pl": -3950.19
  },
  "positions": [
   {
    "symbol": "BTCUSD",
    "qty": 0.219255496,
-   "market_value": 14139.6,
+   "market_value": 14177.61,
    "avg_entry": 64404.81004733,
-   "current": 64489.16,
-   "unrealized_pl": 18.49,
-   "unrealized_plpc": 0.13
+   "current": 64662.512,
+   "unrealized_pl": 56.5,
+   "unrealized_plpc": 0.4
   },
   {
    "symbol": "JNJ",
    "qty": 340.216165151,
-   "market_value": 90851.32,
+   "market_value": 90847.92,
    "avg_entry": 272.460305,
-   "current": 267.04,
-   "unrealized_pl": -1844.08,
+   "current": 267.03,
+   "unrealized_pl": -1847.48,
    "unrealized_plpc": -1.99
   },
   {
    "symbol": "META",
    "qty": 19.564193985,
-   "market_value": 11647.74,
+   "market_value": 11650.48,
    "avg_entry": 606.975683,
-   "current": 595.36,
-   "unrealized_pl": -227.25,
-   "unrealized_plpc": -1.91
+   "current": 595.5,
+   "unrealized_pl": -224.51,
+   "unrealized_plpc": -1.89
   },
   {
    "symbol": "TSM",
    "qty": 28.902221789,
-   "market_value": 11352.5,
+   "market_value": 11318.69,
    "avg_entry": 410.867721,
-   "current": 392.79,
-   "unrealized_pl": -522.49,
-   "unrealized_plpc": -4.4
+   "current": 391.62,
+   "unrealized_pl": -556.3,
+   "unrealized_plpc": -4.69
   }
  ],
  "equity_history": {
@@ -850,7 +850,7 @@
  ],
  "error": null,
  "audit": {
-  "ts": "2026-07-29T09:50:05.422803+00:00",
+  "ts": "2026-07-29T10:00:06.072029+00:00",
   "checks": [
    {
     "check": "agent process",
@@ -861,7 +861,7 @@
    {
     "check": "alpaca (PAPER)",
     "status": "PASS",
-    "detail": "equity $96,042.68",
+    "detail": "equity $96,041.61",
     "fix": null
    },
    {
@@ -962,28 +962,28 @@
   {
    "asset": "BTC",
    "qty": 0.0003,
-   "price": 64560.0,
-   "value": 19.37,
+   "price": 64711.72,
+   "value": 19.41,
    "entry": 64353.1852,
-   "pl": 0.06,
-   "plpc": 0.32
+   "pl": 0.11,
+   "plpc": 0.56
   },
   {
    "asset": "TRX",
    "qty": 21.0,
-   "price": 0.3261,
+   "price": 0.3262,
    "value": 6.85,
    "entry": 0.3321,
-   "pl": -0.13,
-   "plpc": -1.81
+   "pl": -0.12,
+   "plpc": -1.78
   }
  ],
  "binance_account": {
   "mode": "LIVE",
   "usdt_free": 0.66,
   "bnb_usd": 6.12,
-  "positions_usd": 26.22,
-  "total_usd": 32.99,
+  "positions_usd": 26.26,
+  "total_usd": 33.04,
   "deployed_pct": 79.5
  },
  "binance_fills": [
@@ -1301,30 +1301,30 @@
     "asset": "BTC",
     "amount": 0.0003,
     "entry": 64465.47,
-    "current": 64560.0,
+    "current": 64711.72,
     "cost": 19.34,
-    "value": 19.37,
-    "unrealized": 0.03,
-    "unrealized_pct": 0.15,
+    "value": 19.41,
+    "unrealized": 0.07,
+    "unrealized_pct": 0.38,
     "bought_at": "2026-07-29T07:10:56.385Z",
-    "story": "holding 0.0003 BTC bought @ $64,465.4700 \u00b7 now $64,560.0000 \u00b7 up $0.03"
+    "story": "holding 0.0003 BTC bought @ $64,465.4700 \u00b7 now $64,711.7200 \u00b7 up $0.07"
    },
    {
     "asset": "TRX",
     "amount": 21.0,
     "entry": 0.3321,
-    "current": 0.3261,
+    "current": 0.3262,
     "cost": 6.97,
     "value": 6.85,
-    "unrealized": -0.13,
-    "unrealized_pct": -1.81,
+    "unrealized": -0.12,
+    "unrealized_pct": -1.78,
     "bought_at": "2026-07-26T21:58:26.867Z",
-    "story": "holding 21 TRX bought @ $0.3321 \u00b7 now $0.3261 \u00b7 down $0.13"
+    "story": "holding 21 TRX bought @ $0.3321 \u00b7 now $0.3262 \u00b7 down $0.12"
    }
   ],
   "realized_pnl": -1.75,
-  "unrealized_pnl": -0.1,
-  "total_pnl": -1.85,
+  "unrealized_pnl": -0.05,
+  "total_pnl": -1.8,
   "trade_count": 15,
   "win_count": 2,
   "win_rate": 13.3,
@@ -1374,7 +1374,7 @@
    {
     "multi_asset": false,
     "time": "2026-07-29T09:30:47+00:00",
-    "age_min": 19.5,
+    "age_min": 29.8,
     "kind": "inversion_gap",
     "direction": "bearish",
     "cdri": 57,
@@ -1386,7 +1386,7 @@
    {
     "multi_asset": false,
     "time": "2026-07-29T09:30:26+00:00",
-    "age_min": 19.8,
+    "age_min": 30.1,
     "kind": "inversion_gap",
     "direction": "bullish",
     "cdri": 57,
@@ -1398,7 +1398,7 @@
    {
     "multi_asset": false,
     "time": "2026-07-29T09:19:09+00:00",
-    "age_min": 31.1,
+    "age_min": 41.4,
     "kind": "smart_money",
     "direction": "bullish",
     "cdri": null,
@@ -1408,7 +1408,7 @@
     "text": "\ud83d\udcd0 FIBONACCI \u2014 BTC GOLDEN POCKET BOUNCE \u26a0\ufe0f \u2014 GATES FAILING\nPrice above zone \u2192 $64,391.10 | Tier 3 CONFLICT\nTrend: TIER 3 CONFLICT (EMA \u2260 Structure \u2014 NO TRADE)\nConfidence: 70/100 [\u2588\u2588"
    }
   ],
-  "read_at": "2026-07-29T09:50:16.573326+00:00"
+  "read_at": "2026-07-29T10:00:34.174567+00:00"
  },
  "paper_sim": {
   "variants": [
@@ -1422,8 +1422,8 @@
     "losses": 0,
     "win_rate": 100.0,
     "in_position": false,
-    "days": 1.46,
-    "buyhold_pct": 0.821
+    "days": 1.47,
+    "buyhold_pct": 1.032
    },
    {
     "name": "dip0.5_rip0.3_nostop",
@@ -1435,8 +1435,21 @@
     "losses": 0,
     "win_rate": 100.0,
     "in_position": false,
-    "days": 1.46,
-    "buyhold_pct": 0.821
+    "days": 1.47,
+    "buyhold_pct": 1.032
+   },
+   {
+    "name": "buyhold",
+    "equity": 1009.57,
+    "pnl": 9.57,
+    "pnl_pct": 0.957,
+    "trades": 0,
+    "wins": 0,
+    "losses": 0,
+    "win_rate": null,
+    "in_position": true,
+    "days": 1.47,
+    "buyhold_pct": 1.032
    },
    {
     "name": "dip1.0_rip0.5_stop3",
@@ -1448,21 +1461,8 @@
     "losses": 0,
     "win_rate": 100.0,
     "in_position": false,
-    "days": 1.46,
-    "buyhold_pct": 0.821
-   },
-   {
-    "name": "buyhold",
-    "equity": 1007.46,
-    "pnl": 7.46,
-    "pnl_pct": 0.746,
-    "trades": 0,
-    "wins": 0,
-    "losses": 0,
-    "win_rate": null,
-    "in_position": true,
-    "days": 1.46,
-    "buyhold_pct": 0.821
+    "days": 1.47,
+    "buyhold_pct": 1.032
    },
    {
     "name": "GOLD_dip0.5_rip0.3_stop2",
@@ -1475,7 +1475,7 @@
     "win_rate": 100.0,
     "in_position": false,
     "days": 1.15,
-    "buyhold_pct": -0.225
+    "buyhold_pct": -0.283
    },
    {
     "name": "GOLD_dip0.8_rip0.2_stop2",
@@ -1488,20 +1488,20 @@
     "win_rate": 100.0,
     "in_position": false,
     "days": 1.15,
-    "buyhold_pct": -0.225
+    "buyhold_pct": -0.283
    },
    {
     "name": "GOLD_dip0.3_rip0.2_stop1",
-    "equity": 1004.77,
-    "pnl": 4.77,
-    "pnl_pct": 0.477,
+    "equity": 1004.19,
+    "pnl": 4.19,
+    "pnl_pct": 0.419,
     "trades": 2,
     "wins": 2,
     "losses": 0,
     "win_rate": 100.0,
     "in_position": true,
     "days": 1.15,
-    "buyhold_pct": -0.225
+    "buyhold_pct": -0.283
    },
    {
     "name": "dip0.3_rip0.2_stop1",
@@ -1513,21 +1513,21 @@
     "losses": 1,
     "win_rate": 87.5,
     "in_position": false,
-    "days": 1.46,
-    "buyhold_pct": 0.821
+    "days": 1.47,
+    "buyhold_pct": 1.032
    },
    {
     "name": "GOLD_buyhold",
-    "equity": 997.69,
-    "pnl": -2.31,
-    "pnl_pct": -0.231,
+    "equity": 997.11,
+    "pnl": -2.89,
+    "pnl_pct": -0.289,
     "trades": 0,
     "wins": 0,
     "losses": 0,
     "win_rate": null,
     "in_position": true,
     "days": 1.15,
-    "buyhold_pct": -0.225
+    "buyhold_pct": -0.283
    }
   ],
   "bankroll": 1000.0,
@@ -1775,17 +1775,17 @@
   "state": "accumulation",
   "multiplier": 1.2,
   "veto_longs": false,
-  "range_position": 0.09,
-  "vs_200ma": -0.1005,
+  "range_position": 0.092,
+  "vs_200ma": -0.0986,
   "proxy": true,
   "note": "MVRV/SOPR/NUPL unavailable \u2014 range+trend cycle proxy"
  },
  "cryptology": [
   {
    "asset": "BTC",
-   "final": 70.2,
-   "positioning": 61.2,
-   "flow": 55.3,
+   "final": 68.5,
+   "positioning": 61.6,
+   "flow": 51.6,
    "confidence": "low",
    "liq_state": "sweep_candidate",
    "oi_state": "short_covering",
@@ -1793,9 +1793,9 @@
   },
   {
    "asset": "ETH",
-   "final": 63.4,
+   "final": 70.0,
    "positioning": 52.2,
-   "flow": 53.6,
+   "flow": 65.8,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "short_covering",
@@ -1803,9 +1803,9 @@
   },
   {
    "asset": "SOL",
-   "final": 68.2,
-   "positioning": 61.2,
-   "flow": 51.5,
+   "final": 60.3,
+   "positioning": 61.0,
+   "flow": 37.2,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "short_covering",
@@ -1813,9 +1813,9 @@
   },
   {
    "asset": "LINK",
-   "final": 51.0,
-   "positioning": 59.3,
-   "flow": 21.9,
+   "final": 52.3,
+   "positioning": 59.0,
+   "flow": 24.8,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "neutral",
@@ -1823,9 +1823,9 @@
   },
   {
    "asset": "AVAX",
-   "final": 70.2,
-   "positioning": 61.7,
-   "flow": 54.5,
+   "final": 74.8,
+   "positioning": 67.8,
+   "flow": 55.6,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "neutral",
@@ -1836,7 +1836,7 @@
   {
    "symbol": "BTC",
    "flow": 54.8,
-   "funding": 7.606e-05,
+   "funding": 7.405e-05,
    "long_short": 1.495,
    "taker": 0.7149
   },
@@ -1850,40 +1850,54 @@
   {
    "symbol": "SOL",
    "flow": 47.2,
-   "funding": 5.26e-06,
+   "funding": 6.65e-06,
    "long_short": 2.5829,
    "taker": 0.9281
   },
   {
    "symbol": "AVAX",
    "flow": 68.2,
-   "funding": -5.005e-05,
-   "long_short": 1.9206,
+   "funding": -5.087e-05,
+   "long_short": 1.9129,
    "taker": 0.9486
   },
   {
    "symbol": "LINK",
    "flow": 54.8,
-   "funding": 7.997e-05,
-   "long_short": 1.8514,
+   "funding": 8.237e-05,
+   "long_short": 1.8678,
    "taker": 0.797
   },
   {
    "symbol": "LTC",
    "flow": 39.8,
-   "funding": 5.341e-05,
+   "funding": 5.085e-05,
    "long_short": 2.6324,
    "taker": 0.7957
   },
   {
    "symbol": "TRX",
    "flow": 85.8,
-   "funding": -2.322e-05,
-   "long_short": 1.1155,
+   "funding": -2.313e-05,
+   "long_short": 1.1249,
    "taker": 1.064
   }
  ],
  "activity": [
+  {
+   "time": "2026-07-29T10:00:13.579168",
+   "kind": "sell",
+   "text": "EXECUTED SELL CCC $100 \u00b7 Tier A",
+   "detail": "hard stop -30.0% (limit -8%)",
+   "status": "executed"
+  },
+  {
+   "time": "2026-07-29T10:00:13.577790",
+   "kind": "sell",
+   "text": "EXECUTED SELL BBB $100 \u00b7 Tier A",
+   "detail": "hard stop -25.0% (limit -8%)",
+   "status": "executed"
+  },
   {
    "time": "2026-07-29T07:10:54.758549",
    "kind": "buy",
@@ -1967,23 +1981,39 @@
    "text": "EXECUTED SELL AAPL $12,390 \u00b7 Tier A",
    "detail": "verdict collapsed to monitor",
    "status": "executed"
-  },
-  {
-   "time": "2026-07-28T10:00:15.570494",
-   "kind": "sell",
-   "text": "EXECUTED SELL CCC $100 \u00b7 Tier A",
-   "detail": "hard stop -30.0% (limit -8%)",
-   "status": "executed"
-  },
-  {
-   "time": "2026-07-28T10:00:15.569133",
-   "kind": "sell",
-   "text": "EXECUTED SELL BBB $100 \u00b7 Tier A",
-   "detail": "hard stop -25.0% (limit -8%)",
-   "status": "executed"
   }
  ],
  "signals": [
+  {
+   "id": 113,
+   "created_at": "2026-07-29T10:00:13.579168",
+   "symbol": "CCC",
+   "side": "sell",
+   "notional": 100.0,
+   "verdict": null,
+   "composite": null,
+   "confidence": null,
+   "n_outcomes": null,
+   "tier": "A",
+   "status": "executed",
+   "reason": "hard stop -30.0% (limit -8%)",
+   "expires_at": null
+  },
+  {
+   "id": 112,
+   "created_at": "2026-07-29T10:00:13.577790",
+   "symbol": "BBB",
+   "side": "sell",
+   "notional": 100.0,
+   "verdict": null,
+   "composite": null,
+   "confidence": null,
+   "n_outcomes": null,
+   "tier": "A",
+   "status": "executed",
+   "reason": "hard stop -25.0% (limit -8%)",
+   "expires_at": null
+  },
   {
    "id": 111,
    "created_at": "2026-07-29T07:10:54.758549",
@@ -2125,36 +2155,6 @@
    "symbol": "GOOGL",
    "side": "sell",
    "notional": 12096.97,
-   "verdict": null,
-   "composite": null,
-   "confidence": null,
-   "n_outcomes": null,
-   "tier": "A",
-   "status": "executed",
-   "reason": "verdict collapsed to monitor",
-   "expires_at": null
-  },
-  {
-   "id": 101,
-   "created_at": "2026-07-28T13:45:03.616135",
-   "symbol": "AMZN",
-   "side": "sell",
-   "notional": 11673.43,
-   "verdict": null,
-   "composite": null,
-   "confidence": null,
-   "n_outcomes": null,
-   "tier": "A",
-   "status": "executed",
-   "reason": "verdict collapsed to monitor",
-   "expires_at": null
-  },
-  {
-   "id": 100,
-   "created_at": "2026-07-28T13:45:02.872112",
-   "symbol": "AAPL",
-   "side": "sell",
-   "notional": 12389.68,
    "verdict": null,
    "composite": null,
    "confidence": null,
