@@ -1,21 +1,22 @@
 {
- "generated_at": "2026-07-31T13:00:00.260072+00:00",
+ "generated_at": "2026-07-31T13:10:00.294267+00:00",
  "mode": "PAPER TRADING",
  "account": {
-  "equity": 91138.84,
+  "equity": 90948.47,
   "cash": -34092.62,
-  "buying_power": 175215.96,
+  "buying_power": 174684.09,
   "last_equity": 90383.18416954266,
-  "day_pl": 755.66
+  "day_pl": 565.29,
+  "total_pl": -9051.53
  },
  "positions": [
   {
    "symbol": "BTCUSD",
    "qty": 0.219255496,
-   "market_value": 13950.59,
+   "market_value": 13950.17,
    "avg_entry": 64404.813597262,
-   "current": 63627.081,
-   "unrealized_pl": -170.52,
+   "current": 63625.2,
+   "unrealized_pl": -170.93,
    "unrealized_plpc": -1.21
   },
   {
@@ -39,25 +40,758 @@
   {
    "symbol": "JNJ",
    "qty": 340.216165151,
-   "market_value": 87622.67,
+   "market_value": 87513.8,
    "avg_entry": 272.460305,
-   "current": 257.55,
-   "unrealized_pl": -5072.73,
-   "unrealized_plpc": -5.47
+   "current": 257.23,
+   "unrealized_pl": -5181.6,
+   "unrealized_plpc": -5.59
   },
   {
    "symbol": "USO",
    "qty": 111.547417475,
-   "market_value": 14598.21,
+   "market_value": 14517.13,
    "avg_entry": 128.770888,
-   "current": 130.87,
-   "unrealized_pl": 234.15,
-   "unrealized_plpc": 1.63
+   "current": 130.1431,
+   "unrealized_pl": 153.07,
+   "unrealized_plpc": 1.07
   }
  ],
- "equity_history": null,
- "recent_orders": [],
- "fills": [],
+ "equity_history": {
+  "timestamps": [
+   1777593600,
+   1777680000,
+   1777939200,
+   1778025600,
+   1778112000,
+   1778198400,
+   1778284800,
+   1778544000,
+   1778630400,
+   1778716800,
+   1778803200,
+   1778889600,
+   1779148800,
+   1779235200,
+   1779321600,
+   1779408000,
+   1779494400,
+   1779840000,
+   1779926400,
+   1780012800,
+   1780099200,
+   1780358400,
+   1780444800,
+   1780531200,
+   1780617600,
+   1780704000,
+   1780963200,
+   1781049600,
+   1781136000,
+   1781222400,
+   1781308800,
+   1781568000,
+   1781654400,
+   1781740800,
+   1781827200,
+   1782172800,
+   1782259200,
+   1782345600,
+   1782432000,
+   1782518400,
+   1782777600,
+   1782864000,
+   1782950400,
+   1783036800,
+   1783382400,
+   1783468800,
+   1783555200,
+   1783641600,
+   1783728000,
+   1783987200,
+   1784073600,
+   1784160000,
+   1784246400,
+   1784332800,
+   1784592000,
+   1784678400,
+   1784764800,
+   1784851200,
+   1784937600,
+   1785196800,
+   1785283200,
+   1785369600,
+   1785456000
+  ],
+  "equity": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   100000.0,
+   100000.0,
+   99753.08,
+   98219.37,
+   94975.38,
+   93356.44,
+   90383.18
+  ]
+ },
+ "recent_orders": [
+  {
+   "symbol": "DBC",
+   "side": "buy",
+   "notional": "4524.3",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-30T14:15:12.643312Z"
+  },
+  {
+   "symbol": "CPER",
+   "side": "buy",
+   "notional": "4524.3",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-30T14:15:11.936747Z"
+  },
+  {
+   "symbol": "META",
+   "side": "sell",
+   "notional": null,
+   "qty": "19.564193985",
+   "status": "filled",
+   "submitted_at": "2026-07-30T08:00:13.005948Z"
+  },
+  {
+   "symbol": "TSM",
+   "side": "sell",
+   "notional": null,
+   "qty": "28.902221789",
+   "status": "filled",
+   "submitted_at": "2026-07-29T14:45:02.056526Z"
+  },
+  {
+   "symbol": "USO",
+   "side": "buy",
+   "notional": "14364.07",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-29T14:15:13.373161Z"
+  },
+  {
+   "symbol": "BTC/USD",
+   "side": "buy",
+   "notional": "14438.85",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-29T07:10:55.989019Z"
+  },
+  {
+   "symbol": "LINK/USD",
+   "side": "sell",
+   "notional": null,
+   "qty": "1672.124561966",
+   "status": "filled",
+   "submitted_at": "2026-07-29T04:10:42.459772Z"
+  },
+  {
+   "symbol": "JNJ",
+   "side": "buy",
+   "notional": "80820.42",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-28T13:45:06.713072Z"
+  },
+  {
+   "symbol": "NVDA",
+   "side": "sell",
+   "notional": null,
+   "qty": "57.304318521",
+   "status": "filled",
+   "submitted_at": "2026-07-28T13:45:05.841792Z"
+  },
+  {
+   "symbol": "MSFT",
+   "side": "sell",
+   "notional": null,
+   "qty": "30.950265874",
+   "status": "filled",
+   "submitted_at": "2026-07-28T13:45:05.179328Z"
+  },
+  {
+   "symbol": "GOOGL",
+   "side": "sell",
+   "notional": null,
+   "qty": "37.157980354",
+   "status": "filled",
+   "submitted_at": "2026-07-28T13:45:04.520313Z"
+  },
+  {
+   "symbol": "AMZN",
+   "side": "sell",
+   "notional": null,
+   "qty": "50.706648447",
+   "status": "filled",
+   "submitted_at": "2026-07-28T13:45:03.879668Z"
+  },
+  {
+   "symbol": "AAPL",
+   "side": "sell",
+   "notional": null,
+   "qty": "36.605495553",
+   "status": "filled",
+   "submitted_at": "2026-07-28T13:45:03.060308Z"
+  },
+  {
+   "symbol": "ETH/USD",
+   "side": "sell",
+   "notional": null,
+   "qty": "2.493988948",
+   "status": "filled",
+   "submitted_at": "2026-07-27T12:11:32.174273Z"
+  },
+  {
+   "symbol": "ETH/USD",
+   "side": "buy",
+   "notional": "5010.97",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-27T11:10:52.999118Z"
+  },
+  {
+   "symbol": "BTC/USD",
+   "side": "sell",
+   "notional": null,
+   "qty": "0.224024087",
+   "status": "filled",
+   "submitted_at": "2026-07-27T09:11:07.988635Z"
+  },
+  {
+   "symbol": "LINK/USD",
+   "side": "buy",
+   "notional": "14988.13",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-27T02:10:45.197762Z"
+  },
+  {
+   "symbol": "LTC/USD",
+   "side": "sell",
+   "notional": null,
+   "qty": "304.476370548",
+   "status": "filled",
+   "submitted_at": "2026-07-27T01:11:05.565772Z"
+  },
+  {
+   "symbol": "LINK/USD",
+   "side": "sell",
+   "notional": null,
+   "qty": "865.23507499",
+   "status": "filled",
+   "submitted_at": "2026-07-27T01:11:04.526389Z"
+  },
+  {
+   "symbol": "BTC/USD",
+   "side": "buy",
+   "notional": "14929.46",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-26T22:10:49.024849Z"
+  },
+  {
+   "symbol": "LTC/USD",
+   "side": "buy",
+   "notional": "14946.05",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-26T19:10:48.433524Z"
+  },
+  {
+   "symbol": "AVAX/USD",
+   "side": "sell",
+   "notional": null,
+   "qty": "1086.813397818",
+   "status": "filled",
+   "submitted_at": "2026-07-26T19:10:47.10233Z"
+  },
+  {
+   "symbol": "LTC/USD",
+   "side": "sell",
+   "notional": null,
+   "qty": "102.938022101",
+   "status": "filled",
+   "submitted_at": "2026-07-26T14:43:00.962279Z"
+  },
+  {
+   "symbol": "LTC/USD",
+   "side": "buy",
+   "notional": "4980.9",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-26T13:11:05.413603Z"
+  },
+  {
+   "symbol": "AVAX/USD",
+   "side": "buy",
+   "notional": "7481.46",
+   "qty": null,
+   "status": "filled",
+   "submitted_at": "2026-07-26T12:08:53.552768Z"
+  }
+ ],
+ "fills": [
+  {
+   "time": "2026-07-30T14:15:14.595315Z",
+   "side": "buy",
+   "symbol": "DBC",
+   "qty": 1.341746248,
+   "price": 29.32,
+   "value": 39.34
+  },
+  {
+   "time": "2026-07-30T14:15:14.593651Z",
+   "side": "buy",
+   "symbol": "DBC",
+   "qty": 52.0,
+   "price": 29.32,
+   "value": 1524.64
+  },
+  {
+   "time": "2026-07-30T14:15:14.289605Z",
+   "side": "buy",
+   "symbol": "DBC",
+   "qty": 31.0,
+   "price": 29.31,
+   "value": 908.61
+  },
+  {
+   "time": "2026-07-30T14:15:13.482372Z",
+   "side": "buy",
+   "symbol": "CPER",
+   "qty": 1.533452502,
+   "price": 39.16,
+   "value": 60.05
+  },
+  {
+   "time": "2026-07-30T14:15:13.480618Z",
+   "side": "buy",
+   "symbol": "CPER",
+   "qty": 69.0,
+   "price": 39.16,
+   "value": 2702.04
+  },
+  {
+   "time": "2026-07-30T14:15:13.096362Z",
+   "side": "buy",
+   "symbol": "DBC",
+   "qty": 70.0,
+   "price": 29.31,
+   "value": 2051.7
+  },
+  {
+   "time": "2026-07-30T14:15:12.399925Z",
+   "side": "buy",
+   "symbol": "CPER",
+   "qty": 45.0,
+   "price": 39.16,
+   "value": 1762.2
+  },
+  {
+   "time": "2026-07-30T13:32:41.400426Z",
+   "side": "sell",
+   "symbol": "META",
+   "qty": 0.564193985,
+   "price": 528.25,
+   "value": 298.04
+  },
+  {
+   "time": "2026-07-30T13:32:41.398824Z",
+   "side": "sell",
+   "symbol": "META",
+   "qty": 1.0,
+   "price": 528.25,
+   "value": 528.25
+  },
+  {
+   "time": "2026-07-30T13:31:50.669111Z",
+   "side": "sell",
+   "symbol": "META",
+   "qty": 18.0,
+   "price": 529.0,
+   "value": 9522.0
+  },
+  {
+   "time": "2026-07-29T14:45:03.010752Z",
+   "side": "sell",
+   "symbol": "TSM",
+   "qty": 0.902221789,
+   "price": 377.71,
+   "value": 340.78
+  },
+  {
+   "time": "2026-07-29T14:45:03.009201Z",
+   "side": "sell",
+   "symbol": "TSM",
+   "qty": 28.0,
+   "price": 377.71,
+   "value": 10575.88
+  },
+  {
+   "time": "2026-07-29T14:15:16.61276Z",
+   "side": "buy",
+   "symbol": "USO",
+   "qty": 1.547417475,
+   "price": 128.75,
+   "value": 199.23
+  },
+  {
+   "time": "2026-07-29T14:15:16.611146Z",
+   "side": "buy",
+   "symbol": "USO",
+   "qty": 7.0,
+   "price": 128.75,
+   "value": 901.25
+  },
+  {
+   "time": "2026-07-29T14:15:16.261839Z",
+   "side": "buy",
+   "symbol": "USO",
+   "qty": 1.0,
+   "price": 128.76,
+   "value": 128.76
+  },
+  {
+   "time": "2026-07-29T14:15:15.172137Z",
+   "side": "buy",
+   "symbol": "USO",
+   "qty": 37.0,
+   "price": 128.76,
+   "value": 4764.12
+  },
+  {
+   "time": "2026-07-29T14:15:14.380662Z",
+   "side": "buy",
+   "symbol": "USO",
+   "qty": 65.0,
+   "price": 128.78,
+   "value": 8370.7
+  },
+  {
+   "time": "2026-07-29T07:10:55.992958Z",
+   "side": "buy",
+   "symbol": "BTC/USD",
+   "qty": 0.052491108,
+   "price": 64409.94,
+   "value": 3380.95
+  },
+  {
+   "time": "2026-07-29T07:10:55.992943Z",
+   "side": "buy",
+   "symbol": "BTC/USD",
+   "qty": 0.167247815,
+   "price": 64403.2,
+   "value": 10771.29
+  },
+  {
+   "time": "2026-07-29T04:10:42.463382Z",
+   "side": "sell",
+   "symbol": "LINK/USD",
+   "qty": 1203.664194541,
+   "price": 8.307965,
+   "value": 10000.0
+  },
+  {
+   "time": "2026-07-29T04:10:42.463369Z",
+   "side": "sell",
+   "symbol": "LINK/USD",
+   "qty": 232.5,
+   "price": 8.3155,
+   "value": 1933.35
+  },
+  {
+   "time": "2026-07-29T04:10:42.463393Z",
+   "side": "sell",
+   "symbol": "LINK/USD",
+   "qty": 235.960367425,
+   "price": 8.2931,
+   "value": 1956.84
+  },
+  {
+   "time": "2026-07-28T13:45:10.307481Z",
+   "side": "sell",
+   "symbol": "NVDA",
+   "qty": 0.304318521,
+   "price": 194.13,
+   "value": 59.08
+  },
+  {
+   "time": "2026-07-28T13:45:10.305937Z",
+   "side": "sell",
+   "symbol": "NVDA",
+   "qty": 47.0,
+   "price": 194.13,
+   "value": 9124.11
+  },
+  {
+   "time": "2026-07-28T13:45:09.150812Z",
+   "side": "sell",
+   "symbol": "NVDA",
+   "qty": 6.0,
+   "price": 194.14,
+   "value": 1164.84
+  },
+  {
+   "time": "2026-07-28T13:45:08.554065Z",
+   "side": "sell",
+   "symbol": "GOOGL",
+   "qty": 0.157980354,
+   "price": 325.65,
+   "value": 51.45
+  },
+  {
+   "time": "2026-07-28T13:45:08.552643Z",
+   "side": "sell",
+   "symbol": "GOOGL",
+   "qty": 1.0,
+   "price": 325.65,
+   "value": 325.65
+  },
+  {
+   "time": "2026-07-28T13:45:08.087933Z",
+   "side": "buy",
+   "symbol": "JNJ",
+   "qty": 0.878903969,
+   "price": 274.08,
+   "value": 240.89
+  },
+  {
+   "time": "2026-07-28T13:45:08.086278Z",
+   "side": "buy",
+   "symbol": "JNJ",
+   "qty": 294.0,
+   "price": 274.08,
+   "value": 80579.52
+  },
+  {
+   "time": "2026-07-28T13:45:08.070731Z",
+   "side": "sell",
+   "symbol": "NVDA",
+   "qty": 4.0,
+   "price": 194.2,
+   "value": 776.8
+  },
+  {
+   "time": "2026-07-28T13:45:07.469182Z",
+   "side": "sell",
+   "symbol": "GOOGL",
+   "qty": 30.0,
+   "price": 325.64,
+   "value": 9769.2
+  },
+  {
+   "time": "2026-07-28T13:45:05.921866Z",
+   "side": "sell",
+   "symbol": "MSFT",
+   "qty": 0.950265874,
+   "price": 394.41,
+   "value": 374.79
+  },
+  {
+   "time": "2026-07-28T13:45:05.920391Z",
+   "side": "sell",
+   "symbol": "MSFT",
+   "qty": 30.0,
+   "price": 394.41,
+   "value": 11832.3
+  },
+  {
+   "time": "2026-07-28T13:45:05.748871Z",
+   "side": "sell",
+   "symbol": "GOOGL",
+   "qty": 6.0,
+   "price": 325.7,
+   "value": 1954.2
+  },
+  {
+   "time": "2026-07-28T13:45:05.458794Z",
+   "side": "sell",
+   "symbol": "AMZN",
+   "qty": 0.706648447,
+   "price": 230.17,
+   "value": 162.65
+  },
+  {
+   "time": "2026-07-28T13:45:05.457282Z",
+   "side": "sell",
+   "symbol": "AMZN",
+   "qty": 50.0,
+   "price": 230.17,
+   "value": 11508.5
+  },
+  {
+   "time": "2026-07-28T13:45:05.049356Z",
+   "side": "sell",
+   "symbol": "AAPL",
+   "qty": 0.605495553,
+   "price": 338.48,
+   "value": 204.95
+  },
+  {
+   "time": "2026-07-28T13:45:05.047708Z",
+   "side": "sell",
+   "symbol": "AAPL",
+   "qty": 15.0,
+   "price": 338.48,
+   "value": 5077.2
+  },
+  {
+   "time": "2026-07-28T13:45:03.21383Z",
+   "side": "sell",
+   "symbol": "AAPL",
+   "qty": 21.0,
+   "price": 338.46,
+   "value": 7107.66
+  },
+  {
+   "time": "2026-07-27T12:11:32.177216Z",
+   "side": "sell",
+   "symbol": "ETH/USD",
+   "qty": 1.493988948,
+   "price": 1959.3,
+   "value": 2927.17
+  },
+  {
+   "time": "2026-07-27T12:11:32.177205Z",
+   "side": "sell",
+   "symbol": "ETH/USD",
+   "qty": 1.0,
+   "price": 1960.59,
+   "value": 1960.59
+  },
+  {
+   "time": "2026-07-27T11:10:53.002834Z",
+   "side": "buy",
+   "symbol": "ETH/USD",
+   "qty": 2.500239547,
+   "price": 1965.0,
+   "value": 4912.97
+  },
+  {
+   "time": "2026-07-27T09:11:07.991821Z",
+   "side": "sell",
+   "symbol": "BTC/USD",
+   "qty": 0.165049,
+   "price": 65049.8,
+   "value": 10736.4
+  },
+  {
+   "time": "2026-07-27T09:11:07.991833Z",
+   "side": "sell",
+   "symbol": "BTC/USD",
+   "qty": 0.058975087,
+   "price": 65041.4,
+   "value": 3835.82
+  },
+  {
+   "time": "2026-07-27T02:10:45.200901Z",
+   "side": "buy",
+   "symbol": "LINK/USD",
+   "qty": 12.622479981,
+   "price": 8.7961,
+   "value": 111.03
+  },
+  {
+   "time": "2026-07-27T02:10:45.200873Z",
+   "side": "buy",
+   "symbol": "LINK/USD",
+   "qty": 296.437226556,
+   "price": 8.75,
+   "value": 2593.83
+  },
+  {
+   "time": "2026-07-27T02:10:45.200858Z",
+   "side": "buy",
+   "symbol": "LINK/USD",
+   "qty": 1130.000427426,
+   "price": 8.75,
+   "value": 9887.5
+  },
+  {
+   "time": "2026-07-27T02:10:45.200893Z",
+   "side": "buy",
+   "symbol": "LINK/USD",
+   "qty": 4.32521638,
+   "price": 8.79,
+   "value": 38.02
+  },
+  {
+   "time": "2026-07-27T02:10:45.200886Z",
+   "side": "buy",
+   "symbol": "LINK/USD",
+   "qty": 232.93,
+   "price": 8.76864,
+   "value": 2042.48
+  },
+  {
+   "time": "2026-07-27T01:11:05.56914Z",
+   "side": "sell",
+   "symbol": "LTC/USD",
+   "qty": 107.77,
+   "price": 46.9669,
+   "value": 5061.62
+  }
+ ],
  "verdicts": [
   {
    "ticker": "JNJ",
@@ -123,9 +857,9 @@
    "thesis": ""
   }
  ],
- "error": "Alpaca fetch failed: HTTPSConnectionPool(host='paper-api.alpaca.markets', port=443): Max retries exceeded with url: /v2/account/portfolio/history?period=3M&timeframe=1D (Caused by ConnectTimeoutError(<HTTPSConnection(host='paper-api.alpaca.markets', port=443) at 0x111961090>, 'Connection to paper-api.alpaca.markets timed out. (connect timeout=20)'))",
+ "error": null,
  "audit": {
-  "ts": "2026-07-31T13:00:02.450522+00:00",
+  "ts": "2026-07-31T13:10:02.442219+00:00",
   "checks": [
    {
     "check": "agent process",
@@ -136,7 +870,7 @@
    {
     "check": "alpaca (PAPER)",
     "status": "PASS",
-    "detail": "equity $91,121.78",
+    "detail": "equity $90,969.73",
     "fix": null
    },
    {
@@ -539,22 +1273,22 @@
   "ok": true,
   "channel": "cryptologyio",
   "assets": {
-   "ETH": {
-    "bias": 0.405,
-    "score": 70.3,
-    "messages": 4
-   },
    "BTC": {
     "bias": 1.0,
     "score": 100.0,
     "messages": 2
+   },
+   "ETH": {
+    "bias": 0.304,
+    "score": 65.2,
+    "messages": 3
    }
   },
   "signals": [
    {
     "multi_asset": false,
     "time": "2026-07-31T12:49:45+00:00",
-    "age_min": 10.3,
+    "age_min": 20.3,
     "kind": "vwap_cross",
     "direction": "bearish",
     "cdri": null,
@@ -566,7 +1300,7 @@
    {
     "multi_asset": false,
     "time": "2026-07-31T12:49:22+00:00",
-    "age_min": 10.7,
+    "age_min": 20.7,
     "kind": "smart_money",
     "direction": "bullish",
     "cdri": null,
@@ -578,7 +1312,7 @@
    {
     "multi_asset": false,
     "time": "2026-07-31T12:30:15+00:00",
-    "age_min": 29.8,
+    "age_min": 39.8,
     "kind": "smart_money",
     "direction": "bullish",
     "cdri": null,
@@ -590,7 +1324,7 @@
    {
     "multi_asset": false,
     "time": "2026-07-31T12:30:16+00:00",
-    "age_min": 29.8,
+    "age_min": 39.8,
     "kind": "smart_money",
     "direction": "bullish",
     "cdri": null,
@@ -602,7 +1336,7 @@
    {
     "multi_asset": false,
     "time": "2026-07-31T12:19:26+00:00",
-    "age_min": 40.6,
+    "age_min": 50.6,
     "kind": "smart_money",
     "direction": "bullish",
     "cdri": null,
@@ -610,166 +1344,154 @@
      "BTC"
     ],
     "text": "\ud83d\udcd0 FIBONACCI \u2014 BTC GOLDEN POCKET BROKE DOWN \u26a0\ufe0f\nPrice fell below zone \u2192 $63,765.60\nTrend: TIER 3 CONFLICT (EMA \u2260 Structure \u2014 NO TRADE)\nConfidence: 62/100 [\u2588\u2588\u2588\u2588\u2588\u2588\u2591\u2591\u2591\u2591] \u2014 MEDIUM | Dire"
-   },
-   {
-    "multi_asset": false,
-    "time": "2026-07-31T11:30:48+00:00",
-    "age_min": 89.3,
-    "kind": "inversion_gap",
-    "direction": "bullish",
-    "cdri": 54,
-    "assets": [
-     "ETH"
-    ],
-    "text": "\ud83d\udd04 INVERSION GAP \u2014 ETH\n\nZone: $1,887.00\u2013$1,907.99 \u2192 Level: $1,897.49\nActs as: SUPPORT\nDistance: 0.1% from current price ($1,888.92)\n\nPreviously filled FVG now acting as SUPPORT \u2014 st"
    }
   ],
-  "read_at": "2026-07-31T13:00:03.988663+00:00"
+  "read_at": "2026-07-31T13:10:03.775272+00:00"
  },
  "paper_sim": {
   "variants": [
    {
     "name": "GOLD_dip0.5_rip0.3_stop2",
-    "equity": 1017.44,
-    "pnl": 17.44,
-    "pnl_pct": 1.744,
+    "equity": 1016.54,
+    "pnl": 16.54,
+    "pnl_pct": 1.654,
     "trades": 8,
     "wins": 8,
     "losses": 0,
     "win_rate": 100.0,
     "in_position": true,
-    "days": 3.28,
-    "buyhold_pct": -0.017
+    "days": 3.29,
+    "buyhold_pct": -0.105
+   },
+   {
+    "name": "dip0.5_rip0.3_stop2",
+    "equity": 1009.7,
+    "pnl": 9.7,
+    "pnl_pct": 0.97,
+    "trades": 12,
+    "wins": 12,
+    "losses": 0,
+    "win_rate": 100.0,
+    "in_position": true,
+    "days": 3.6,
+    "buyhold_pct": -0.454
+   },
+   {
+    "name": "dip0.5_rip0.3_nostop",
+    "equity": 1009.7,
+    "pnl": 9.7,
+    "pnl_pct": 0.97,
+    "trades": 12,
+    "wins": 12,
+    "losses": 0,
+    "win_rate": 100.0,
+    "in_position": true,
+    "days": 3.6,
+    "buyhold_pct": -0.454
    },
    {
     "name": "VNTG_dip0.5_rip0.3_stop2",
-    "equity": 1010.15,
-    "pnl": 10.15,
-    "pnl_pct": 1.015,
+    "equity": 1009.26,
+    "pnl": 9.26,
+    "pnl_pct": 0.926,
     "trades": 6,
     "wins": 6,
     "losses": 0,
     "win_rate": 100.0,
     "in_position": true,
-    "days": 2.03,
-    "buyhold_pct": 0.398
-   },
-   {
-    "name": "dip0.5_rip0.3_stop2",
-    "equity": 1009.93,
-    "pnl": 9.93,
-    "pnl_pct": 0.993,
-    "trades": 12,
-    "wins": 12,
-    "losses": 0,
-    "win_rate": 100.0,
-    "in_position": true,
-    "days": 3.59,
-    "buyhold_pct": -0.431
-   },
-   {
-    "name": "dip0.5_rip0.3_nostop",
-    "equity": 1009.93,
-    "pnl": 9.93,
-    "pnl_pct": 0.993,
-    "trades": 12,
-    "wins": 12,
-    "losses": 0,
-    "win_rate": 100.0,
-    "in_position": true,
-    "days": 3.59,
-    "buyhold_pct": -0.431
+    "days": 2.04,
+    "buyhold_pct": 0.309
    },
    {
     "name": "dip1.0_rip0.5_stop3",
-    "equity": 1005.64,
-    "pnl": 5.64,
-    "pnl_pct": 0.564,
+    "equity": 1005.41,
+    "pnl": 5.41,
+    "pnl_pct": 0.541,
     "trades": 4,
     "wins": 4,
     "losses": 0,
     "win_rate": 100.0,
     "in_position": true,
-    "days": 3.59,
-    "buyhold_pct": -0.431
+    "days": 3.6,
+    "buyhold_pct": -0.454
    },
    {
     "name": "GOLD_dip0.8_rip0.2_stop2",
-    "equity": 1002.26,
-    "pnl": 2.26,
-    "pnl_pct": 0.226,
+    "equity": 1001.38,
+    "pnl": 1.38,
+    "pnl_pct": 0.138,
     "trades": 5,
     "wins": 5,
     "losses": 0,
     "win_rate": 100.0,
     "in_position": true,
-    "days": 3.28,
-    "buyhold_pct": -0.017
+    "days": 3.29,
+    "buyhold_pct": -0.105
    },
    {
     "name": "GOLD_buyhold",
-    "equity": 999.77,
-    "pnl": -0.23,
-    "pnl_pct": -0.023,
+    "equity": 998.88,
+    "pnl": -1.12,
+    "pnl_pct": -0.112,
     "trades": 0,
     "wins": 0,
     "losses": 0,
     "win_rate": null,
     "in_position": true,
-    "days": 3.28,
-    "buyhold_pct": -0.017
+    "days": 3.29,
+    "buyhold_pct": -0.105
    },
    {
     "name": "GOLD_dip0.3_rip0.2_stop1",
-    "equity": 999.11,
-    "pnl": -0.89,
-    "pnl_pct": -0.089,
+    "equity": 998.23,
+    "pnl": -1.77,
+    "pnl_pct": -0.177,
     "trades": 11,
     "wins": 9,
     "losses": 2,
     "win_rate": 81.8,
     "in_position": true,
-    "days": 3.28,
-    "buyhold_pct": -0.017
-   },
-   {
-    "name": "VNTG_dip0.8_rip0.2_stop2",
-    "equity": 995.22,
-    "pnl": -4.78,
-    "pnl_pct": -0.478,
-    "trades": 2,
-    "wins": 2,
-    "losses": 0,
-    "win_rate": 100.0,
-    "in_position": true,
-    "days": 2.03,
-    "buyhold_pct": 0.398
+    "days": 3.29,
+    "buyhold_pct": -0.105
    },
    {
     "name": "buyhold",
-    "equity": 994.94,
-    "pnl": -5.06,
-    "pnl_pct": -0.506,
+    "equity": 994.72,
+    "pnl": -5.28,
+    "pnl_pct": -0.528,
     "trades": 0,
     "wins": 0,
     "losses": 0,
     "win_rate": null,
     "in_position": true,
-    "days": 3.59,
-    "buyhold_pct": -0.431
+    "days": 3.6,
+    "buyhold_pct": -0.454
+   },
+   {
+    "name": "VNTG_dip0.8_rip0.2_stop2",
+    "equity": 994.34,
+    "pnl": -5.66,
+    "pnl_pct": -0.566,
+    "trades": 2,
+    "wins": 2,
+    "losses": 0,
+    "win_rate": 100.0,
+    "in_position": true,
+    "days": 2.04,
+    "buyhold_pct": 0.309
    },
    {
     "name": "dip0.3_rip0.2_stop1",
-    "equity": 982.53,
-    "pnl": -17.47,
-    "pnl_pct": -1.747,
+    "equity": 982.31,
+    "pnl": -17.69,
+    "pnl_pct": -1.769,
     "trades": 20,
     "wins": 17,
     "losses": 3,
     "win_rate": 85.0,
     "in_position": true,
-    "days": 3.59,
-    "buyhold_pct": -0.431
+    "days": 3.6,
+    "buyhold_pct": -0.454
    }
   ],
   "bankroll": 1000.0,
@@ -1018,7 +1740,7 @@
   "multiplier": 1.2,
   "veto_longs": false,
   "range_position": 0.078,
-  "vs_200ma": -0.1083,
+  "vs_200ma": -0.1085,
   "proxy": true,
   "note": "MVRV/SOPR/NUPL unavailable \u2014 range+trend cycle proxy"
  },
@@ -1026,8 +1748,8 @@
   {
    "asset": "BTC",
    "final": 60,
-   "positioning": 70.9,
-   "flow": 39.5,
+   "positioning": 70.8,
+   "flow": 47.3,
    "confidence": "low",
    "liq_state": "sweep_candidate",
    "oi_state": "neutral",
@@ -1035,29 +1757,29 @@
   },
   {
    "asset": "ETH",
-   "final": 60,
-   "positioning": 74.5,
-   "flow": 49.9,
+   "final": 70.5,
+   "positioning": 68.2,
+   "flow": 47.2,
    "confidence": "medium",
-   "liq_state": "sweep_candidate",
+   "liq_state": "no_sweep",
    "oi_state": "neutral",
    "netflow_state": "distribution"
   },
   {
    "asset": "SOL",
-   "final": 66.2,
-   "positioning": 64.6,
-   "flow": 43.6,
+   "final": 59.2,
+   "positioning": 52.6,
+   "flow": 45.4,
    "confidence": "medium",
-   "liq_state": "sweep_candidate",
-   "oi_state": "capitulation_flush",
+   "liq_state": "no_sweep",
+   "oi_state": "neutral",
    "netflow_state": "distribution"
   },
   {
    "asset": "LINK",
-   "final": 62.6,
+   "final": 60.1,
    "positioning": 56.3,
-   "flow": 47.1,
+   "flow": 42.5,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "neutral",
@@ -1065,9 +1787,9 @@
   },
   {
    "asset": "AVAX",
-   "final": 75.1,
-   "positioning": 66.7,
-   "flow": 57.5,
+   "final": 75.0,
+   "positioning": 66.2,
+   "flow": 58.0,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "neutral",
@@ -1077,52 +1799,52 @@
  "crypto_radar": [
   {
    "symbol": "BTC",
-   "flow": 54.8,
-   "funding": 1.882e-05,
-   "long_short": 1.71,
-   "taker": 0.8115
+   "flow": 69.8,
+   "funding": 1.928e-05,
+   "long_short": 1.7442,
+   "taker": 1.0992
   },
   {
    "symbol": "ETH",
-   "flow": 59.5,
-   "funding": -2.383e-05,
-   "long_short": 2.4235,
-   "taker": 0.9615
+   "flow": 52.0,
+   "funding": -2.236e-05,
+   "long_short": 2.4722,
+   "taker": 0.8637
   },
   {
    "symbol": "SOL",
-   "flow": 61.0,
-   "funding": 4.889e-05,
-   "long_short": 2.5511,
-   "taker": 1.106
+   "flow": 39.8,
+   "funding": 4.899e-05,
+   "long_short": 2.5587,
+   "taker": 0.6939
   },
   {
    "symbol": "AVAX",
    "flow": 60.8,
-   "funding": -3.917e-05,
-   "long_short": 1.9257,
-   "taker": 0.8879
+   "funding": -3.234e-05,
+   "long_short": 1.9621,
+   "taker": 0.8588
   },
   {
    "symbol": "LINK",
-   "flow": 62.2,
-   "funding": 8.997e-05,
-   "long_short": 1.8177,
-   "taker": 0.9422
+   "flow": 76.0,
+   "funding": 9.028e-05,
+   "long_short": 1.7972,
+   "taker": 1.1054
   },
   {
    "symbol": "LTC",
-   "flow": 46.0,
-   "funding": 1.007e-05,
-   "long_short": 2.2092,
-   "taker": 0.54
+   "flow": 67.2,
+   "funding": 5.58e-06,
+   "long_short": 2.1686,
+   "taker": 1.3291
   },
   {
    "symbol": "TRX",
-   "flow": 82.0,
-   "funding": -4.885e-05,
-   "long_short": 1.6316,
-   "taker": 1.7702
+   "flow": 60.8,
+   "funding": -4.884e-05,
+   "long_short": 1.6069,
+   "taker": 0.8817
   }
  ],
  "activity": [
