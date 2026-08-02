@@ -1,23 +1,23 @@
 {
- "generated_at": "2026-08-02T01:20:00.249208+00:00",
+ "generated_at": "2026-08-02T01:30:00.338999+00:00",
  "mode": "PAPER TRADING",
  "account": {
-  "equity": 90459.34,
+  "equity": 90434.57,
   "cash": -34092.62,
   "buying_power": 173698.33,
   "last_equity": 90443.5306827032,
-  "day_pl": 15.81,
-  "total_pl": -9540.66
+  "day_pl": -8.96,
+  "total_pl": -9565.43
  },
  "positions": [
   {
    "symbol": "BTCUSD",
    "qty": 0.219255496,
-   "market_value": 13813.1,
+   "market_value": 13788.33,
    "avg_entry": 64404.813597262,
-   "current": 63000.0,
-   "unrealized_pl": -308.01,
-   "unrealized_plpc": -2.18
+   "current": 62887.04,
+   "unrealized_pl": -332.78,
+   "unrealized_plpc": -2.36
   },
   {
    "symbol": "CPER",
@@ -859,7 +859,7 @@
  ],
  "error": null,
  "audit": {
-  "ts": "2026-08-02T01:20:02.268004+00:00",
+  "ts": "2026-08-02T01:30:02.227229+00:00",
   "checks": [
    {
     "check": "agent process",
@@ -870,7 +870,7 @@
    {
     "check": "alpaca (PAPER)",
     "status": "PASS",
-    "detail": "equity $90,459.34",
+    "detail": "equity $90,452.14",
     "fix": null
    },
    {
@@ -1274,8 +1274,8 @@
   "channel": "cryptologyio",
   "assets": {
    "BTC": {
-    "bias": 0.383,
-    "score": 69.2,
+    "bias": 0.387,
+    "score": 69.4,
     "messages": 3
    },
    "SOL": {
@@ -1288,7 +1288,7 @@
    {
     "multi_asset": false,
     "time": "2026-08-02T00:31:29+00:00",
-    "age_min": 48.6,
+    "age_min": 58.6,
     "kind": "smart_money",
     "direction": "bullish",
     "cdri": null,
@@ -1300,7 +1300,7 @@
    {
     "multi_asset": false,
     "time": "2026-08-02T00:30:58+00:00",
-    "age_min": 49.1,
+    "age_min": 59.1,
     "kind": "smart_money",
     "direction": "bullish",
     "cdri": null,
@@ -1312,7 +1312,7 @@
    {
     "multi_asset": false,
     "time": "2026-08-02T00:17:25+00:00",
-    "age_min": 62.6,
+    "age_min": 72.6,
     "kind": "vwap_cross",
     "direction": "bearish",
     "cdri": null,
@@ -1324,7 +1324,7 @@
    {
     "multi_asset": false,
     "time": "2026-08-02T00:17:05+00:00",
-    "age_min": 63.0,
+    "age_min": 73.0,
     "kind": "vwap_cross",
     "direction": "bearish",
     "cdri": null,
@@ -1334,7 +1334,7 @@
     "text": "\ud83c\udfc4 VWAP CROSS \u2014 BTC LOST VWAP SUPPORT\nVWAP: $66,099.00 | Price: $62,792.00\nTrend: UPTREND\n\n\ud83d\udd34 BEARISH \u2014 sellers took control. Price below institutional avg.\n\u2192 Short bias active. Any "
    }
   ],
-  "read_at": "2026-08-02T01:20:03.715237+00:00"
+  "read_at": "2026-08-02T01:30:03.828441+00:00"
  },
  "paper_sim": {
   "variants": [
@@ -1348,8 +1348,8 @@
     "losses": 0,
     "win_rate": 100.0,
     "in_position": true,
-    "days": 4.79,
-    "buyhold_pct": 0.298
+    "days": 4.8,
+    "buyhold_pct": 0.299
    },
    {
     "name": "VNTG_dip0.5_rip0.3_stop2",
@@ -1365,30 +1365,30 @@
     "buyhold_pct": 0.715
    },
    {
+    "name": "GOLD_dip0.8_rip0.2_stop2",
+    "equity": 1005.43,
+    "pnl": 5.43,
+    "pnl_pct": 0.543,
+    "trades": 5,
+    "wins": 5,
+    "losses": 0,
+    "win_rate": 100.0,
+    "in_position": true,
+    "days": 4.8,
+    "buyhold_pct": 0.299
+   },
+   {
     "name": "FIX_btc_rip2.0_stop1.0",
-    "equity": 1005.62,
-    "pnl": 5.62,
-    "pnl_pct": 0.562,
+    "equity": 1005.16,
+    "pnl": 5.16,
+    "pnl_pct": 0.516,
     "trades": 0,
     "wins": 0,
     "losses": 0,
     "win_rate": null,
     "in_position": true,
     "days": 1.06,
-    "buyhold_pct": 0.185
-   },
-   {
-    "name": "GOLD_dip0.8_rip0.2_stop2",
-    "equity": 1005.42,
-    "pnl": 5.42,
-    "pnl_pct": 0.542,
-    "trades": 5,
-    "wins": 5,
-    "losses": 0,
-    "win_rate": 100.0,
-    "in_position": true,
-    "days": 4.79,
-    "buyhold_pct": 0.298
+    "buyhold_pct": 0.139
    },
    {
     "name": "GOLD_dip0.3_rip0.2_stop1",
@@ -1400,34 +1400,34 @@
     "losses": 2,
     "win_rate": 84.6,
     "in_position": false,
-    "days": 4.79,
-    "buyhold_pct": 0.298
+    "days": 4.8,
+    "buyhold_pct": 0.299
    },
    {
     "name": "GOLD_buyhold",
-    "equity": 1002.92,
-    "pnl": 2.92,
-    "pnl_pct": 0.292,
+    "equity": 1002.93,
+    "pnl": 2.93,
+    "pnl_pct": 0.293,
     "trades": 0,
     "wins": 0,
     "losses": 0,
     "win_rate": null,
     "in_position": true,
-    "days": 4.79,
-    "buyhold_pct": 0.298
+    "days": 4.8,
+    "buyhold_pct": 0.299
    },
    {
     "name": "dip0.5_rip0.3_stop2",
-    "equity": 1001.62,
-    "pnl": 1.62,
-    "pnl_pct": 0.162,
+    "equity": 1001.16,
+    "pnl": 1.16,
+    "pnl_pct": 0.116,
     "trades": 13,
     "wins": 12,
     "losses": 1,
     "win_rate": 92.3,
     "in_position": true,
-    "days": 5.1,
-    "buyhold_pct": -1.608
+    "days": 5.11,
+    "buyhold_pct": -1.653
    },
    {
     "name": "FIX_gold_rip1.0_stop0.5",
@@ -1440,7 +1440,7 @@
     "win_rate": null,
     "in_position": false,
     "days": 1.06,
-    "buyhold_pct": 0.13
+    "buyhold_pct": 0.131
    },
    {
     "name": "FIX_gold_rip1.5_stop0.5",
@@ -1453,7 +1453,7 @@
     "win_rate": null,
     "in_position": false,
     "days": 1.06,
-    "buyhold_pct": 0.13
+    "buyhold_pct": 0.131
    },
    {
     "name": "VNTG_dip0.8_rip0.2_stop2",
@@ -1470,16 +1470,16 @@
    },
    {
     "name": "dip0.5_rip0.3_nostop",
-    "equity": 997.99,
-    "pnl": -2.01,
-    "pnl_pct": -0.201,
+    "equity": 997.53,
+    "pnl": -2.47,
+    "pnl_pct": -0.247,
     "trades": 12,
     "wins": 12,
     "losses": 0,
     "win_rate": 100.0,
     "in_position": true,
-    "days": 5.1,
-    "buyhold_pct": -1.608
+    "days": 5.11,
+    "buyhold_pct": -1.653
    },
    {
     "name": "FIX_btc_rip1.0_stop0.5",
@@ -1492,7 +1492,7 @@
     "win_rate": 0.0,
     "in_position": false,
     "days": 1.06,
-    "buyhold_pct": 0.185
+    "buyhold_pct": 0.139
    },
    {
     "name": "dip1.0_rip0.5_stop3",
@@ -1504,21 +1504,21 @@
     "losses": 1,
     "win_rate": 83.3,
     "in_position": false,
-    "days": 5.1,
-    "buyhold_pct": -1.608
+    "days": 5.11,
+    "buyhold_pct": -1.653
    },
    {
     "name": "buyhold",
-    "equity": 983.18,
-    "pnl": -16.82,
-    "pnl_pct": -1.682,
+    "equity": 982.73,
+    "pnl": -17.27,
+    "pnl_pct": -1.727,
     "trades": 0,
     "wins": 0,
     "losses": 0,
     "win_rate": null,
     "in_position": true,
-    "days": 5.1,
-    "buyhold_pct": -1.608
+    "days": 5.11,
+    "buyhold_pct": -1.653
    },
    {
     "name": "dip0.3_rip0.2_stop1",
@@ -1530,8 +1530,8 @@
     "losses": 5,
     "win_rate": 78.3,
     "in_position": false,
-    "days": 5.1,
-    "buyhold_pct": -1.608
+    "days": 5.11,
+    "buyhold_pct": -1.653
    }
   ],
   "bankroll": 1000.0,
@@ -1664,7 +1664,7 @@
   "caveat": "Best-of-60 selected after seeing the data \u2014 overfitted. Forward returns will be lower."
  },
  "pattern": {
-  "at": "2026-08-02T01:20:14.165591+00:00",
+  "at": "2026-08-02T01:30:15.883025+00:00",
   "asset": "gold",
   "top_drivers": [
    {
@@ -1760,7 +1760,7 @@
    "economic": [
     "Gold has value at $4,000 as investors look beyond Fed hawkishness - KITCO",
     "Trump wanted interest rate cuts to be 'Rocket Fuel' for the economy. He is losing that fight so far - ABC News - Breaking News, Latest News and Videos",
-    "Exclusive | Fed\u2019s Barkin Says It\u2019s a \u2018Close Call\u2019 Whether Rates Are High Enough - WSJ",
+    "Exclusive | Fed\u2019s Barkin Says It\u2019s a \u2018Close Call\u2019 Whether Rates Are High Enough - wsj.com",
     "Fed rates dissenters make their case for higher rates - Axios",
     "Fed officials who voted to hike rates say action is needed now against inflation - CNBC",
     "Here's why the 3 dissenters on the Fed wanted to raise interest rates - Yahoo Finance"
@@ -1911,16 +1911,16 @@
   "multiplier": 1.2,
   "veto_longs": false,
   "range_position": 0.066,
-  "vs_200ma": -0.1147,
+  "vs_200ma": -0.1151,
   "proxy": true,
   "note": "MVRV/SOPR/NUPL unavailable \u2014 range+trend cycle proxy"
  },
  "cryptology": [
   {
    "asset": "BTC",
-   "final": 64.3,
+   "final": 69.5,
    "positioning": 52.9,
-   "flow": 54.3,
+   "flow": 64.1,
    "confidence": "low",
    "liq_state": "no_sweep",
    "oi_state": "neutral",
@@ -1928,9 +1928,9 @@
   },
   {
    "asset": "ETH",
-   "final": 60.0,
-   "positioning": 47.8,
-   "flow": 52.7,
+   "final": 53.3,
+   "positioning": 47.4,
+   "flow": 40.8,
    "confidence": "medium",
    "liq_state": "no_sweep",
    "oi_state": "neutral",
@@ -1938,19 +1938,19 @@
   },
   {
    "asset": "SOL",
-   "final": 61.1,
-   "positioning": 62.2,
-   "flow": 37.1,
+   "final": 56.1,
+   "positioning": 61.2,
+   "flow": 29.1,
    "confidence": "medium",
-   "liq_state": "no_sweep",
+   "liq_state": "sweep_candidate",
    "oi_state": "neutral",
    "netflow_state": "distribution"
   },
   {
    "asset": "LINK",
-   "final": 65.1,
-   "positioning": 61.2,
-   "flow": 45.7,
+   "final": 64.5,
+   "positioning": 60.1,
+   "flow": 45.9,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "neutral",
@@ -1960,7 +1960,7 @@
    "asset": "AVAX",
    "final": 60,
    "positioning": 77.0,
-   "flow": 39.9,
+   "flow": 43.0,
    "confidence": "medium",
    "liq_state": "sweep_candidate",
    "oi_state": "neutral",
@@ -1971,49 +1971,49 @@
   {
    "symbol": "BTC",
    "flow": 61.0,
-   "funding": 4.644e-05,
+   "funding": 4.64e-05,
    "long_short": 2.2072,
    "taker": 1.0452
   },
   {
    "symbol": "ETH",
    "flow": 54.8,
-   "funding": 4.797e-05,
+   "funding": 5.023e-05,
    "long_short": 2.6206,
    "taker": 1.0795
   },
   {
    "symbol": "SOL",
    "flow": 67.0,
-   "funding": -2.644e-05,
+   "funding": -1.857e-05,
    "long_short": 2.8153,
    "taker": 1.3873
   },
   {
    "symbol": "AVAX",
    "flow": 90.0,
-   "funding": -0.00019584,
+   "funding": -0.00019296,
    "long_short": 1.5846,
    "taker": 1.2319
   },
   {
    "symbol": "LINK",
    "flow": 76.0,
-   "funding": 5.891e-05,
+   "funding": 6.596e-05,
    "long_short": 1.4869,
    "taker": 1.2801
   },
   {
    "symbol": "LTC",
    "flow": 67.0,
-   "funding": -2.665e-05,
+   "funding": -2.418e-05,
    "long_short": 2.1397,
    "taker": 1.0172
   },
   {
    "symbol": "TRX",
    "flow": 76.0,
-   "funding": 6.439e-05,
+   "funding": 6.366e-05,
    "long_short": 1.4907,
    "taker": 1.6137
   }
